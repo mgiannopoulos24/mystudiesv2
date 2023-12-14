@@ -8,7 +8,11 @@
 1. React
 2. NPM
 
-Πηγές:
+Γλώσσες που χρησιμοποιήθηκαν:
+1. JavaScript
+2. HTML
+3. CSS
 
-1.React Beginner Tutorial(https://www.youtube.com/watch?v=Rh3tobg7hEo)
-1.UI Components (https://mui.com/material-ui/)
+Πηγές:
+1. [React Beginner Tutorial](https://www.youtube.com/watch?v=Rh3tobg7hEo)
+2. [UI Components](https://mui.com/material-ui/)
