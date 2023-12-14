@@ -1,0 +1,98 @@
+.three-columns{
+    display: flex;
+}
+
+
+
+.column-1{
+    flex: 33%;
+}
+
+.column-2{
+    flex: 33%;
+    align-items: center;
+    margin-top:250px;
+}
+
+ul{
+    align-items: center;
+
+}
+.animated-text {
+    font-size: 2em; /* Adjust the font size as needed */
+    font-weight: bold;
+    transition: color 0.5s ease-in-out;
+    /* Add other text styling properties as needed */
+}
+  
+.red {
+    color: red;
+}
+  
+.blue {
+    color: blue;
+}
+  
+.green {
+    color: green;
+}
+
+.column-3{
+    flex: 33%;
+}
+
+.row-2{
+    justify-content: space-between;
+    display: flex;
+}
+
+.cell-1{
+    margin-left: 170px;
+}
+
+.cell-2{
+    margin-right: 170px;
+}
+
+.button{
+    border: none;
+    color: black;
+    padding: 5px;
+    text-align: center;
+    display: inline-block;
+    font-size: 12px;
+    box-shadow: 0 2px 4px 
+}
+
+.button:active {
+    background-color: #48abe0;
+    box-shadow: 0 0 2px darkslategray;
+    transform: translateY(2px);
+  }
+    
+.button1{
+    border-radius: 70%;
+    background-color: rgb(199, 93, 93);
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+button text{
+    font-size: medium;
+}
+
+.button2{
+    border-radius: 70%;
+    background-color: pink;
+    width: 100px;
+    height: 100px;
+}
+
+.button3{
+    border-radius: 70%;
+    background-color: lightgreen;
+    width: 100px;
+    height: 100px;
+}
+

@@ -1,0 +1,49 @@
+.three-columns-header{
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    
+}
+
+
+.image{
+    display: flex;
+    align-items: left;
+}
+
+.column-1-header{
+    flex:33%
+}
+
+.column-2-header{
+    flex:33%;
+    align-items: center;
+}
+
+.row-1-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.switch-container {
+    display: flex;
+    margin-left: 8px; 
+}
+
+.column-3-header{
+    flex:33%
+}
+
+
+.row-2-header{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+.row-2-header img{
+    width: 36px;
+    height: 36px;
+}
