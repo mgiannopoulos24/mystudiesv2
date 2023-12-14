@@ -2,7 +2,8 @@ import React from "react"
 import "./Main_Page.css"
 import { useState, useEffect } from "react";
 import Tooltip from "@mui/material/Tooltip";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 
 const MainPage = () => {
 
@@ -25,10 +26,12 @@ const MainPage = () => {
           popperRef.current.update();
         }
       };
-      
+
+      const navigate = useNavigate();
+
       const handleButtonClick = (destination) => {
         // Perform any additional actions if needed
-        window.location.href = destination;
+        navigate(destination);
       };
 
       const renderTooltip = (content, index, placement,destination) => (
@@ -133,7 +136,7 @@ const MainPage = () => {
                           </ul>,
                           1,
                           "left",
-                          "QuickAccessProf"
+                          "/QuickAccessProf"
                           )}
                            
                         </div>
