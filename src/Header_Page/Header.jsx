@@ -12,7 +12,7 @@ import user_icon from "../Header_Page/assets/user_icon.png"
 
 export const Header = () => {
 
-  const [toggleDarkMode, setToggleDarkMode] = useState(true);
+  const [toggleDarkMode, setToggleDarkMode] = useState(false);
 
   const toggleDarkTheme = () => {
     setToggleDarkMode(!toggleDarkMode);
