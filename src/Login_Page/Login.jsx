@@ -21,7 +21,7 @@ const Login =() => {
                     </div>
                     <div className="input-psw">
                         <FontAwesomeIcon icon={faLock} />
-                        <input type="password" placeholder="Κωδικός" />
+                        <input type="password" placeholder="Κωδικός Πρόσβασης" />
                     </div>
                 </div>
                 <div className="support-container">
