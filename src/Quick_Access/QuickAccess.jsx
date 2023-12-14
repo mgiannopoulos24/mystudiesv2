@@ -63,11 +63,11 @@ export const QuickAccess=()=>{
             <div class='column-2'>
                 <h1>Ταχεία Πρόσβαση</h1>
                 <ul>
-                    <li>Μαθήματα</li>
-                    <li>Βαθμολόγιο</li>
-                    <li>Δήλωση Μαθημάτων</li>
-                    <li>Υποβολή Αίτησης</li>
-                    <li>Ιστορικό Δηλώσεων</li>
+                    <li><a href='/QuickAccessStud/Subjects'>Μαθήματα</a></li>
+                    <li><a href='/QuickAccessStud/Scorecard'>Βαθμολόγιο</a></li>
+                    <li><a href='/QuickAccessStud/CoursesDeclaration'>Δήλωση Μαθημάτων</a></li>
+                    <li><a href='/QuickAccessStud/Certificates'>Αίτηση Πιστοποιητικών</a></li>
+                    <li><a href='/QuickAccessStud/ActionHistory'>Ιστορικό Ενεργειών</a></li>
                 </ul>
             </div>
         </div>
