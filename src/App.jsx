@@ -19,7 +19,7 @@ export default function App(){
       <Header/>
       <Routes>  
         <Route path="/" element={<MainPage/>} />           
-        <Route path="/QuickAccess" element={<QuickAccess />} />
+        <Route path="/QuickAccessStud" element={<QuickAccess />} />
       </Routes>
     </> 
     </Router>
