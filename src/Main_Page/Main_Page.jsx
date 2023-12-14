@@ -121,7 +121,7 @@ const MainPage = () => {
                         </ul>,
                         0,
                         "top",
-                        "/QuickAccess"
+                        "/QuickAccessStud"
                         )}              
                     </div>
                     <div className="row row-2">
@@ -132,7 +132,8 @@ const MainPage = () => {
                           <li>Παρακολούθηση Βαθμολογίου</li>
                           </ul>,
                           1,
-                          "left"
+                          "left",
+                          "QuickAccessProf"
                           )}
                            
                         </div>
@@ -145,7 +146,8 @@ const MainPage = () => {
                           <li>Συμπλήρωση Εντύπων</li>
                           </ul>,
                           2,
-                          "right"
+                          "right",
+                          "/QuickAccessSecr"
                           )}
                         </div>
                     </div>
