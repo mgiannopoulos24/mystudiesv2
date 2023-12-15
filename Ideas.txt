@@ -1,5 +1,7 @@
 Main Page: Κυκλάκια να κάνουν γυρω γύρω
 
+Login Page: AutoComplete στα στοιχεία
+
 Subjects: Παχύτερα line στα rows, Στοιχεία διδάσκοντος
 
 QuickAccessStud: 
