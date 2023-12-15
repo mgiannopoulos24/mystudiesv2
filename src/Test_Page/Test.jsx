@@ -29,7 +29,11 @@ function Row(props) {
   return (
     <React.Fragment>
       <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
-        <TableCell>
+        {row.semester === 'Πρόγραμμα Σπουδών'?(
+          <TableCell colSpan={3}>{row.semester}</TableCell>
+        ):(
+          <>   
+        <TableCell>     
           <IconButton
             aria-label="expand row"
             size="small"
@@ -37,10 +41,13 @@ function Row(props) {
           >
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
+
         </TableCell>
         <TableCell component="th" scope="row">
           {row.semester}
         </TableCell>
+        </>
+        )}
       </TableRow>
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
@@ -201,8 +208,11 @@ export const Subjects = () => {
     <TableContainer component={Paper}>
       <Table aria-label="collapsible table">
         <TableHead>
+          <TableRow>
+            <TableCell colSpan={3}>Πρόγραμμα Σπουδών</TableCell>
+          </TableRow>
         </TableHead>
-        <TableBody align="Left">
+        <TableBody>
           {rows.map((row) => {
             const filteredSubjects=row.subjects.filter((subject)=>
                 subject[filterCriteria].toLowerCase().includes(searchTerm.toLowerCase())
