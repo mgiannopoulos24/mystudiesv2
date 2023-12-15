@@ -29,11 +29,12 @@ function Row(props) {
   return (
     <React.Fragment>
       <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
+      <TableCell style={{ width: '33%'}}>  
         {row.semester === 'Πρόγραμμα Σπουδών'?(
-          <TableCell colSpan={3}>{row.semester}</TableCell>
-        ):(
-          <>   
-        <TableCell>     
+          <span>{row.semester}</span>
+        ):(     
+          <>
+          
           <IconButton
             aria-label="expand row"
             size="small"
@@ -41,16 +42,15 @@ function Row(props) {
           >
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
-
-        </TableCell>
-        <TableCell component="th" scope="row">
-          {row.semester}
-        </TableCell>
-        </>
+          <span>{row.semester}</span>
+          </> 
         )}
+        </TableCell>
+        <TableCell style={{ width: '33%' }}></TableCell> {/*spacing*/}
+        <TableCell style={{ width: '33%' }}></TableCell> {/*spacing*/}
       </TableRow>
       <TableRow>
-        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
+        <TableCell colSpan={3} style={{ paddingBottom: 0, paddingTop: 0 }} >
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box sx={{ margin: 1 }}>
               <Typography variant="h6" gutterBottom component="div">
@@ -190,32 +190,31 @@ const rows = [
 
 
 export const Subjects = () => {
-    const [searchTerm, setSearchTerm] = React.useState('');
-    const [filterCriteria, setFilterCriteria] = React.useState('id'); // Initial filter criteria
+  const [searchTerm, setSearchTerm] = React.useState('');
   return (
     <>
     <div className='row-1-sub'>
-        <label>Filter by:</label>
-        <select onChange={(e)=> setFilterCriteria(e.target.value)} value={filterCriteria}>
-            <option value="id">ID</option>
-            <option value="title">Title</option>
-            <option value="professor">Professor</option>
-        </select>
-        <label>Search:</label>
-        <input type="text" value={searchTerm} onChange={(e)=> setSearchTerm(e.target.value)}/>
+        <label>Αναζήτηση:</label>
+        <input type="text" placeholder="Κωδικός, Τίτλος ή Διδάσκων"value={searchTerm} onChange={(e)=> setSearchTerm(e.target.value)}/>
     </div>
     <div>
     <TableContainer component={Paper}>
       <Table aria-label="collapsible table">
         <TableHead>
           <TableRow>
-            <TableCell colSpan={3}>Πρόγραμμα Σπουδών</TableCell>
+            <TableCell align='center' colSpan={3}><h2>Πρόγραμμα Σπουδών</h2></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => {
             const filteredSubjects=row.subjects.filter((subject)=>
-                subject[filterCriteria].toLowerCase().includes(searchTerm.toLowerCase())
+                Object.values(subject).some(
+                  (value)=>
+                    typeof value === 'string' &&
+                    value.normalize().toLowerCase().includes(searchTerm.toLowerCase())
+                  ) ||
+                  (subject.id &&
+                    subject.id.toLowerCase().includes(searchTerm.toLowerCase()))
                 );
             if (filteredSubjects.length>0){
                 return <Row key={row.semester}row={{...row,subjects:filteredSubjects}}/>
