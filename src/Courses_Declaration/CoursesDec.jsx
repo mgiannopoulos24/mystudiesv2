@@ -14,6 +14,12 @@ import Paper from '@mui/material/Paper';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import SearchIcon from '@mui/icons-material/Search';
+import Button from '@mui/material/Button';
+import {styled} from '@mui/material/styles'
+import { useState } from 'react';
+
+
+
 import './CoursesDec.css'
 
 function createData(semester, subjects) {
@@ -23,10 +29,116 @@ function createData(semester, subjects) {
   };
 }
 
+
+const TemporaryButton = styled(Button)({
+  boxShadow: 'none',
+  textTransform: 'none',
+  fontSize: 14,
+  padding: '2px 5px',
+  border: '1px solid',
+  lineHeight: 1.5,
+  backgroundColor: 'transparent',
+  borderColor: '#008000',
+  color:'#008000',
+  fontFamily: [
+    '-apple-system',
+    'BlinkMacSystemFont',
+    '"Segoe UI"',
+    'Roboto',
+    '"Helvetica Neue"',
+    'Arial',
+    'sans-serif',
+    '"Apple Color Emoji"',
+    '"Segoe UI Emoji"',
+    '"Segoe UI Symbol"',
+  ].join(','),
+  '&:hover': {
+    backgroundColor: 'rgba(0, 99, 204, 0.2)',
+    borderColor: '#008000',
+    boxShadow: 'none',
+  },
+  '&:active': {
+    boxShadow: 'none',
+    backgroundColor: '#008000',
+    borderColor: '#008000',
+  },
+  '&:focus': {
+    boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
+  },
+});
+
+const DefiniteButton = styled(Button)({
+  boxShadow: 'none',
+  textTransform: 'none',
+  fontSize: 14,
+  padding: '2px 5px',
+  border: '1px solid',
+  lineHeight: 1.5,
+  backgroundColor: '#008000',
+  borderColor: '#00FF00',
+  fontFamily: [
+    '-apple-system',
+    'BlinkMacSystemFont',
+    '"Segoe UI"',
+    'Roboto',
+    '"Helvetica Neue"',
+    'Arial',
+    'sans-serif',
+    '"Apple Color Emoji"',
+    '"Segoe UI Emoji"',
+    '"Segoe UI Symbol"',
+  ].join(','),
+  '&:hover': {
+    backgroundColor: '#008000',
+    borderColor: '#008000',
+    boxShadow: 'none',
+  },
+  '&:active': {
+    boxShadow: 'none',
+    backgroundColor: '#00FF00',
+    borderColor: '#00FF00',
+  },
+  '&:focus': {
+    boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
+  },
+});
+const OptionsBox = styled('div')({
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  padding: '150px',
+  backgroundColor: 'white',
+  border: '1px solid #ccc',
+  borderRadius: '5px',
+  zIndex: 2,
+  display: 'flex',
+  flexDirection: 'column',
+});
+
+const TopRow = styled('div')({
+  marginBottom: '10px', // Adjust as needed
+});
+
+const BottomRow = styled('div')({
+  display: 'flex',
+  justifyContent: 'space-between', // Align items with space between
+});
+
+const YesButton = styled(Button)({
+  textTransform: 'none', // Keep the original case of the text
+  // Add other button styles as needed
+});
+
+const EditButton = styled(Button)({
+  textTransform: 'none', // Keep the original case of the text
+  // Add other button styles as needed
+});
+
 function Row(props) {
   const { row } = props;
   const [open, setOpen] = React.useState(false);
-
+  
   return (
     <React.Fragment>
       <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
@@ -192,11 +304,43 @@ const rows = [
 
 export const CoursesDec = () => {
   const [searchTerm, setSearchTerm] = React.useState('');
+  const [showOptions, setShowOptions] = useState(false);
+
+  const handleDefiniteButtonClick = () => {
+    setShowOptions(true);
+  };
+
+  const handleEditClick = () => {
+    setShowOptions(false);
+    // Perform any additional actions when 'Edit' is clicked
+  };
+
+  const handleYesClick = () => {
+    // Handle 'Yes' click if needed
+  };
   return (
     <>
-    <div className='row-1-sub'>
+    <div className="three-column-score">
+      <div className="column-1-score"><TemporaryButton variant="outlined">Προσωρινή Υποβολή</TemporaryButton><span><DefiniteButton variant="contained" onClick={handleDefiniteButtonClick}>Οριστική Υποβολή</DefiniteButton></span>
+      {showOptions && (
+        <OptionsBox>
+          <TopRow>
+            <h2>Εν Χριστώ Αδερφέ μου, είσαι σίγουρος ότι θέλεις να υποβάλεις την αίτηση σου;</h2>
+          </TopRow>
+          <BottomRow>
+            <YesButton variant="contained" onClick={handleYesClick}>ΝΑΙ.Είμαι έτοιμος για όλα</YesButton>
+            <EditButton variant="outlined" onClick={handleEditClick}>Συγγνώμη αμάρτησα. Πάω πίσω</EditButton>
+          </BottomRow>
+        </OptionsBox>
+      )}
+      </div>
+      <div className="column-2-score"></div>
+      <div className="column-3-score">
+        
         <IconButton size="small"><SearchIcon/></IconButton>
         <input type="text" placeholder="Κωδικός, Τίτλος ή Διδάσκων" value={searchTerm} onChange={(e)=> setSearchTerm(e.target.value)}/>
+      
+      </div>
     </div>
     <div>
     <TableContainer component={Paper}>
