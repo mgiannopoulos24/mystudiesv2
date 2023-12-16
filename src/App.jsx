@@ -7,8 +7,8 @@ import Subjects from "./Subjects/Subjects";
 import Login from "./Login_Page/Login"
 import MainPage from "./Main_Page/Main_Page";
 import Scorecard from "./Scorecard/Scorecard";
-//import Test from "./Test_Page/Test";
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+// import Test from "./Test_Page/Test";
 
 
 
