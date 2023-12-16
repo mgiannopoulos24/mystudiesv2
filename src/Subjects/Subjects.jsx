@@ -13,8 +13,8 @@ import Typography from '@mui/material/Typography';
 import Paper from '@mui/material/Paper';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-
-import './Subjects.css';
+import SearchIcon from '@mui/icons-material/Search';
+import './Subjects.css'
 
 function createData(semester, subjects) {
   return {
@@ -30,7 +30,12 @@ function Row(props) {
   return (
     <React.Fragment>
       <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
-        <TableCell>
+      <TableCell style={{ width: '33%'}}>  
+        {row.semester === 'Πρόγραμμα Σπουδών'?(
+          <span>{row.semester}</span>
+        ):(     
+          <>
+          
           <IconButton
             aria-label="expand row"
             size="small"
@@ -38,13 +43,15 @@ function Row(props) {
           >
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
+          <span>{row.semester}</span>
+          </> 
+        )}
         </TableCell>
-        <TableCell component="th" scope="row">
-          {row.semester}
-        </TableCell>
+        <TableCell style={{ width: '33%' }}></TableCell> {/*spacing*/}
+        <TableCell style={{ width: '33%' }}></TableCell> {/*spacing*/}
       </TableRow>
       <TableRow>
-        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={2}>
+        <TableCell colSpan={3} style={{ paddingBottom: 0, paddingTop: 0 }} >
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box sx={{ margin: 1 }}>
               <Typography variant="h6" gutterBottom component="div">
@@ -53,7 +60,7 @@ function Row(props) {
               <Table size="small" aria-label="subjects">
                 <TableHead>
                   <TableRow>
-                    <TableCell>ID</TableCell>
+                    <TableCell>Κωδικός</TableCell>
                     <TableCell>Τίτλος</TableCell>
                     <TableCell>Διδάσκων</TableCell>
                     <TableCell>Συγγράμματα</TableCell>
@@ -94,6 +101,7 @@ Row.propTypes = {
     ).isRequired,
   }).isRequired,
 };
+
 
 const rows = [
   createData('Εξάμηνο 1', [
@@ -179,23 +187,48 @@ const rows = [
   ]),
 ];
 
+
+
+
 export const Subjects = () => {
+  const [searchTerm, setSearchTerm] = React.useState('');
   return (
+    <>
+    <div className='row-1-sub'>
+        <IconButton size="small"><SearchIcon/></IconButton>
+        <input type="text" placeholder="Κωδικός, Τίτλος ή Διδάσκων" value={searchTerm} onChange={(e)=> setSearchTerm(e.target.value)}/>
+    </div>
+    <div>
     <TableContainer component={Paper}>
       <Table aria-label="collapsible table">
         <TableHead>
           <TableRow>
-            <TableCell />
-            <TableCell><h1>Μαθήματα</h1></TableCell>
+            <TableCell align='center' colSpan={3}><h2>Πρόγραμμα Σπουδών</h2></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <Row key={row.semester} row={row} />
-          ))}
+          {rows.map((row) => {
+            const filteredSubjects=row.subjects.filter((subject)=>
+                Object.values(subject).some(
+                  (value)=>
+                    typeof value === 'string' &&
+                    value.toLowerCase().includes(searchTerm.toLowerCase())
+                  ) ||
+                  (subject.id &&
+                    subject.id.toLowerCase().includes(searchTerm.toLowerCase()))
+                );
+            if (filteredSubjects.length>0){
+                return <Row key={row.semester}row={{...row,subjects:filteredSubjects}}/>
+            }
+
+            return null;
+          })}
+            
         </TableBody>
       </Table>
     </TableContainer>
+    </div>
+    </>
   );
 };
 
