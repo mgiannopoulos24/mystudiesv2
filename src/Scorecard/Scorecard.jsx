@@ -65,6 +65,7 @@ function Row(props) {
                     <TableCell>Διδάσκων</TableCell>
                     <TableCell>Συγγράμματα</TableCell>
                     <TableCell>ECTS</TableCell>
+                    <TableCell>Βαθμός</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -75,6 +76,7 @@ function Row(props) {
                       <TableCell>{subjectRow.professor}</TableCell>
                       <TableCell>{subjectRow.books}</TableCell>
                       <TableCell>{subjectRow.points}</TableCell>
+                      <TableCell>{subjectRow.grade}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -111,6 +113,7 @@ const rows = [
       professor: 'Παπαδόπουλος',
       books: <a href="https://www.example.com/book1" target="_blank" rel="noreferrer">Βιβλίο 1</a>,
       points: 6,
+      grade: 4,
     },
     // Add other subjects for the first semester
   ]),
@@ -121,6 +124,7 @@ const rows = [
       professor: 'Κουμπαράκης',
       books: <a href="https://aima.cs.berkeley.edu/" target="_blank" rel="noreferrer">ΑΙΜΑ</a>,
       points: 3,
+      grade: 10,
     },
     // Add other subjects for the  semester
   ]),
@@ -132,6 +136,7 @@ const rows = [
       professor: 'Κουμπαράκης',
       books: <a href="https://aima.cs.berkeley.edu/" target="_blank" rel="noreferrer">ΑΙΜΑ</a>,
       points: 3,
+      grade: 10,
     },
     // Add other subjects for the  semester
   ]),
@@ -142,6 +147,7 @@ const rows = [
       professor: 'Κουμπαράκης',
       books: <a href="https://aima.cs.berkeley.edu/" target="_blank" rel="noreferrer">ΑΙΜΑ</a>,
       points: 3,
+      grade: 10,
     },
     // Add other subjects for the  semester
   ]),
@@ -152,6 +158,7 @@ const rows = [
       professor: 'Κουμπαράκης',
       books: <a href="https://aima.cs.berkeley.edu/" target="_blank" rel="noreferrer">ΑΙΜΑ</a>,
       points: 3,
+      grade: 10,
     },
     // Add other subjects for the  semester
   ]),
@@ -162,6 +169,7 @@ const rows = [
       professor: 'Κουμπαράκης',
       books: <a href="https://aima.cs.berkeley.edu/" target="_blank" rel="noreferrer">ΑΙΜΑ</a>,
       points: 3,
+      grade: 10,
     },
     // Add other subjects for the  semester
   ]),
@@ -172,6 +180,7 @@ const rows = [
       professor: 'Κουμπαράκης',
       books: <a href="https://aima.cs.berkeley.edu/" target="_blank" rel="noreferrer">ΑΙΜΑ</a>,
       points: 3,
+      grade: 10,
     },
     // Add other subjects for the  semester
   ]),
@@ -182,6 +191,7 @@ const rows = [
       professor: 'Κουμπαράκης',
       books: <a href="https://aima.cs.berkeley.edu/" target="_blank" rel="noreferrer">ΑΙΜΑ</a>,
       points: 3,
+      grade: 10,
     },
     // Add other subjects for the  semester
   ]),
