@@ -14,7 +14,48 @@ import Paper from '@mui/material/Paper';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import SearchIcon from '@mui/icons-material/Search';
+import Button from '@mui/material/Button';
+import {styled} from '@mui/material/styles'
 import './Scorecard.css'
+
+
+const GradesButton = styled(Button)({
+  boxShadow: 'none',
+  textTransform: 'none',
+  fontSize: 14,
+  padding: '2px 5px',
+  border: '1px solid',
+  lineHeight: 1.5,
+  backgroundColor: 'transparent',
+  borderColor: '#008000',
+  color:'#008000',
+  fontFamily: [
+    '-apple-system',
+    'BlinkMacSystemFont',
+    '"Segoe UI"',
+    'Roboto',
+    '"Helvetica Neue"',
+    'Arial',
+    'sans-serif',
+    '"Apple Color Emoji"',
+    '"Segoe UI Emoji"',
+    '"Segoe UI Symbol"',
+  ].join(','),
+  '&:hover': {
+    backgroundColor: 'rgba(0, 99, 204, 0.2)',
+    borderColor: '#008000',
+    boxShadow: 'none',
+  },
+  '&:active': {
+    boxShadow: 'none',
+    backgroundColor: '#008000',
+    borderColor: '#008000',
+  },
+  '&:focus': {
+    boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
+  },
+});
+
 
 function createData(semester, subjects) {
   return {
@@ -204,9 +245,15 @@ export const Scorecard = () => {
   const [searchTerm, setSearchTerm] = React.useState('');
   return (
     <>
-    <div className='row-1-sub'>
-        <IconButton size="small"><SearchIcon/></IconButton>
-        <input type="text" placeholder="Κωδικός, Τίτλος ή Διδάσκων" value={searchTerm} onChange={(e)=> setSearchTerm(e.target.value)}/>
+    <div className='three-column-score'>
+      <div className='column-1-score'>
+        <GradesButton variant="outlined">Εκτύπωση Βαθμολογίου</GradesButton>
+      </div>
+      <div className='column-2-score'></div>
+      <div className='column-3-score'>
+          <IconButton size="small"><SearchIcon/></IconButton>
+          <input type="text" placeholder="Κωδικός, Τίτλος ή Διδάσκων" value={searchTerm} onChange={(e)=> setSearchTerm(e.target.value)}/>
+      </div>
     </div>
     <div>
     <TableContainer component={Paper}>
