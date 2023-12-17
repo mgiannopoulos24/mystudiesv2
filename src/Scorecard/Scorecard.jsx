@@ -14,9 +14,14 @@ import Paper from '@mui/material/Paper';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import SearchIcon from '@mui/icons-material/Search';
+import PrintRoundedIcon from '@mui/icons-material/PrintRounded';
+import FileDownloadRoundedIcon from '@mui/icons-material/FileDownloadRounded';
 import Button from '@mui/material/Button';
+
 import {styled} from '@mui/material/styles'
+import { useState } from 'react';
 import './Scorecard.css'
+
 
 
 const GradesButton = styled(Button)({
@@ -56,6 +61,94 @@ const GradesButton = styled(Button)({
   },
 });
 
+const DropdownMenu = styled('select')({
+  appearance: 'none',
+  cursor: 'pointer',
+  '&:hover': {
+    background: '#333', // Replace with your desired darker color
+    color: '#fff', // Replace with your desired text color
+  },
+  '&::after': {
+    content: '""',
+    position: 'absolute',
+    top: '50%',
+    right: '8px',
+    transform: 'translateY(-50%)',
+    borderTop: '6px solid transparent',
+    borderBottom: '6px solid transparent',
+    borderLeft: '6px solid #333', // Adjust the color and size as needed
+  }
+});
+
+const CloseButton = styled(Button)({
+  margin: '3px 3px 3px auto',
+  padding: '3px 3px 5px 5px',
+  color: 'black',
+  '&:hover': {
+    backgroundColor: '#FF0000',
+    borderColor: '#FF0000',
+    color: 'white',
+    boxShadow: 'none',
+  }, 
+});
+
+const HeaderColumns = styled('div')({
+  display: 'flex',
+  justifyContent: 'space-between', // Space columns evenly
+  '& > div': {
+    flex: '0 0 33%',
+    display:'flex',
+    flexDirection:'column', // Each column has a flex of 33%
+    '&:last-child': {
+      alignSelf: 'flex-end', // Align the last column to the end
+    },
+    '&:nth-child(2)': {
+      alignItems: 'center',
+      padding: '0', 
+      margin: '0',// Align the content of the second column to the center
+      '& h4': {
+        margin: '0',
+        marginTop: '7px' // Remove margin from h2 element to prevent extra space
+      },
+    },
+  }
+});
+
+
+const AdditionalRow = styled('div')({
+  display: 'flex',
+  justifyContent: 'space-between', // Space columns evenly
+  '& > div': {
+    flex: '0 0 33%', // Each column has a flexible width
+    '&:first-child': {
+      display: 'flex',
+      justifyContent:'center',
+      alignSelf:'center',
+    },
+    '&:last-child': {
+      display: 'flex',
+      justifyContent: 'flex-end',
+      marginRight:'10px',
+    },
+  },
+});
+
+
+const OptionsBox = styled('div')({
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  padding: '10px',
+  backgroundColor: 'white',
+  border: '1px solid #ccc',
+  borderRadius: '5px',
+  zIndex: 2,
+  display: 'flex',
+  flexDirection: 'column', // Create two rows
+  width: '600px',
+  height: '500px',
+});
 
 function createData(semester, subjects) {
   return {
@@ -243,15 +336,47 @@ const rows = [
 
 export const Scorecard = () => {
   const [searchTerm, setSearchTerm] = React.useState('');
+  const [showOptions, setShowOptions] = useState(false);
+  const handleCloseOptions = () => {
+    setShowOptions(false);
+  };
+
+  const handleGradesButtonClick = () => {
+    setShowOptions(true);
+  };
+
   return (
     <>
     <div className='three-column-score'>
       <div className='column-1-score'>
-        <GradesButton variant="outlined">Εκτύπωση Βαθμολογίου</GradesButton>
+        <GradesButton variant="outlined" onClick={handleGradesButtonClick}>Εκτύπωση Βαθμολογίου</GradesButton>
+        {showOptions && (
+          <OptionsBox>
+            <HeaderColumns>
+              <div></div>
+              <div><h4>Βαθμολόγιο</h4></div>
+              <div><CloseButton onClick={handleCloseOptions}>X</CloseButton></div>
+            </HeaderColumns>
+            <AdditionalRow>
+              <div>Προσπάθειες<span>
+                <DropdownMenu>
+                  <option value="All">Όλες</option>
+                  <option value="Fail">Αποτυχία</option>
+                  <option value="Pass">Επιτύχια</option>
+                </DropdownMenu>
+                </span></div>
+              <div>
+              </div>
+              <div>
+                <PrintRoundedIcon></PrintRoundedIcon><FileDownloadRoundedIcon></FileDownloadRoundedIcon>
+              </div>
+            </AdditionalRow>
+          </OptionsBox>
+        )}
       </div>
       <div className='column-2-score'></div>
       <div className='column-3-score'>
-          <IconButton size="small"><SearchIcon/></IconButton>
+          <IconButton size="small" disabled><SearchIcon/></IconButton>
           <input type="text" placeholder="Κωδικός, Τίτλος ή Διδάσκων" value={searchTerm} onChange={(e)=> setSearchTerm(e.target.value)}/>
       </div>
     </div>
