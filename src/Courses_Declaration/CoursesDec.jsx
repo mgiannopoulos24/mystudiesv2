@@ -320,8 +320,8 @@ export const CoursesDec = () => {
   };
   return (
     <>
-    <div className="three-column-score">
-      <div className="column-1-score"><TemporaryButton variant="outlined">Προσωρινή Υποβολή</TemporaryButton><span><DefiniteButton variant="contained" onClick={handleDefiniteButtonClick}>Οριστική Υποβολή</DefiniteButton></span>
+    <div className="three-column-coursedec">
+      <div className="column-1-coursedec"><TemporaryButton variant="outlined">Προσωρινή Υποβολή</TemporaryButton><span><DefiniteButton variant="contained" onClick={handleDefiniteButtonClick}>Οριστική Υποβολή</DefiniteButton></span>
       {showOptions && (
         <OptionsBox>
           <TopRow>
@@ -334,8 +334,8 @@ export const CoursesDec = () => {
         </OptionsBox>
       )}
       </div>
-      <div className="column-2-score"></div>
-      <div className="column-3-score">
+      <div className="column-2-coursedec"></div>
+      <div className="column-3-coursedec">
         
         <IconButton size="small"><SearchIcon/></IconButton>
         <input type="text" placeholder="Κωδικός, Τίτλος ή Διδάσκων" value={searchTerm} onChange={(e)=> setSearchTerm(e.target.value)}/>

@@ -1,11 +1,11 @@
 
-.three-column-score{
+.three-column-coursedec{
     display: flex;
     height:34px;
     margin-top: 40px;
 }
 
-.column-1-score {
+.column-1-coursedec {
     flex: 33%;
     margin-left: 10px;
 }
@@ -13,11 +13,11 @@
 span{
     margin-left: 5px; 
 }
-.column-2-score {
+.column-2-coursedec {
     flex: 33%;
 }
 
-.column-3-score{ 
+.column-3-coursedec{ 
     display: flex;
     justify-content: right;
     margin-right: 10px;
