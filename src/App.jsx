@@ -24,8 +24,8 @@ export default function App(){
         <Route path="/QuickAccessStud/*" element={<QuickAccess />} />
         <Route path="/QuickAccessStud/Subjects" element={<Subjects/>}/>
         <Route path="/QuickAccessStud/Scorecard" element={<Scorecard/>}/>
-        <Route path="/QuickAccessStud/Certificates" element={<Login/>}/>
         <Route path="/QuickAccessStud/CoursesDeclaration" element={<CoursesDec/>}/>
+        <Route path="/QuickAccessStud/Certificates" element={<Login/>}/>
         <Route path="/QuickAccessStud/ActionHistory" element={<Login/>}/> 
       </Routes>
     </Router>
