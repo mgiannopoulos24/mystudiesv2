@@ -11,9 +11,6 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 // import firebaseApp from "./Firebase/firebase"
 // import { getFirestore } from 'firebase/firestore'
 //import Test from "./Test_Page/Test";
-
-
-
 //const db = getFirestore(firebaseApp);
 
 
