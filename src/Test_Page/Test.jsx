@@ -1,64 +1,66 @@
 import React, { useState } from 'react';
-import { doc, getDoc } from 'firebase/firestore'
+import { doc, setDoc } from 'firebase/firestore'
 import './Test.css'
+import { docUser as registerDocUser } from './Test_2';
 
-export default function Login({db}){
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+
+export default function Register({db}){
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');  
+
+  // Handles the register functionality of the user
+  async function handleRegister(e){
+    e.preventDefault()
     
-      // Handles the login functionality of the user
-    async function handleLogin (e){
-        e.preventDefault()
-        
-        // We create a doc that 'points' at collection 'users' with primary key user's input email 
-        const ref = doc(db, "users", email); 
-        // Now "Bring me, from the collection 'users' the document with name/value 'email'"
-        const res = await getDoc(ref);
+    // This object represents the user's form that it will be saved in our database.
+    const userToRegister = {
+        ...registerDocUser,
+        email: email,
+        password: password,
+      };
 
-        //If the user with email = "email" and password = "passowrd" exists in the db...
-        if (res.exists() && res.data().email === email && res.data().password === password) {
-            // Get the role and email...
-            const user_role = res.data().role
-            const user_email = res.data().email
+    try{
+       // Create a Firebase doc that 'points' to our db and creates a collection "users" with primary key the email of the user
+      const ref_user = doc(db, "users", email)
+      // Then we use setDoc to push the 'user object' to the referenced user
+      const res_user = await setDoc(ref_user, userToRegister);
+    
 
-            // Store the email and role as keys in your browser local storage
-            localStorage.setItem('role', user_role)
-            localStorage.setItem('email', user_email)
+      // Redirect to login route
+      window.location.href = '/Login'
 
-            // Go to page /courses
-            window.location.href = './courses'
-            console.log("Found User:", res.data());
-        } else {
-            console.log("No such document!");
-        }
+    }catch(e){
+      console.log(e)
     }
-
+    
+  }
     return(
-        <div className='login'>
-            <form onSubmit={handleLogin} className='login-container'>
-                <h2>Login</h2>
-                <div className='login-row'>
-                    <label>Email:</label>
-                    &nbsp;&nbsp;&nbsp;
-                    <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                </div>
-                <div className='login-row'>
-                    <label>Password:</label>
-                    &nbsp;&nbsp;&nbsp;
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                </div>
-                <button type='submit'>Login</button>
-                <a href='/register'>Create new user</a>
-            </form>
-        </div>
-    )
+      <div className='register'>
+        <form onSubmit={handleRegister} className='register-container'>
+            <h2>Register</h2>
+            <div className='register-row'>
+                <label>Email:</label>
+                &nbsp;&nbsp;&nbsp;
+                <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                />
+            </div>
+            <div className='register-row'>
+                <label>Password:</label>
+                &nbsp;&nbsp;&nbsp;
+                <input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+            </div>
+            <button type='submit'>Register</button>
+            <a href='/Login'>Already have an Account?</a>
+        </form>
+      </div>
+    );
 }
