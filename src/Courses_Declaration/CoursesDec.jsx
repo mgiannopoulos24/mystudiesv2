@@ -17,6 +17,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import Button from '@mui/material/Button';
 import {styled} from '@mui/material/styles'
 import { useState } from 'react';
+import Checkbox from '@mui/material/Checkbox';
+import {doc, getDoc, updateDoc} from 'firebase/firestore'
 
 
 
@@ -138,6 +140,21 @@ const EditButton = styled(Button)({
 function Row(props) {
   const { row } = props;
   const [open, setOpen] = React.useState(false);
+
+  const handleCheckboxChange = (semester, subjectId) => {
+    // Toggle the checkbox state
+    const updatedSubjects = row.subjects.map(subject =>
+      subject.id === subjectId
+        ? {
+            ...subject,
+            checkbox: { ...subject.checkbox, checked: !subject.checkbox.checked },
+          }
+        : subject
+    );
+
+    // Update the state or perform any other actions based on the updatedSubjects
+  };
+
   
   return (
     <React.Fragment>
@@ -187,6 +204,8 @@ function Row(props) {
                       <TableCell>{subjectRow.professor}</TableCell>
                       <TableCell>{subjectRow.books}</TableCell>
                       <TableCell>{subjectRow.points}</TableCell>
+                      <TableCell style={{ textAlign: 'right' }}>
+                      <Checkbox checked={subjectRow.checkbox.checked} onChange={() => handleCheckboxChange(row.semester, subjectRow.id)}/></TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -223,6 +242,7 @@ const rows = [
       professor: 'Παπαδόπουλος',
       books: <a href="https://www.example.com/book1" target="_blank" rel="noreferrer">Βιβλίο 1</a>,
       points: 6,
+      checkbox: { label: 'Checkbox 1', checked: false },
     },
     // Add other subjects for the first semester
   ]),
@@ -302,9 +322,10 @@ const rows = [
 
 
 
-export const CoursesDec = () => {
+export const CoursesDec = ({ db, userEmail }) => {
   const [searchTerm, setSearchTerm] = React.useState('');
   const [showOptions, setShowOptions] = useState(false);
+  const [selectedCourses, setSelectedCourses] = useState([]);
 
   const handleDefiniteButtonClick = () => {
     setShowOptions(true);
@@ -315,9 +336,30 @@ export const CoursesDec = () => {
     // Perform any additional actions when 'Edit' is clicked
   };
 
-  const handleYesClick = () => {
-    // Handle 'Yes' click if needed
+  const handleYesClick = async () => {
+    // Assuming you have the user's email as a prop
+    try {
+      const userRef = doc(db, 'users', userEmail);
+
+      // Get the user's current data
+      const userSnap = await getDoc(userRef);
+      const userData = userSnap.data();
+
+      // Update the user's courses with the selected ones
+      const updatedCourses = [...userData.courses, ...selectedCourses];
+
+      // Update the user's data in the database
+      await updateDoc(userRef, { courses: updatedCourses });
+
+      // Close the options box
+      setShowOptions(false);
+
+    } catch (error) {
+      console.error('Error updating user courses:', error);
+    }
   };
+
+
   return (
     <>
     <div className="three-column-coursedec">
