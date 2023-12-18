@@ -158,7 +158,7 @@ function createData(semester, subjects) {
 }
 
 function Row(props) {
-  const { row } = props;
+  const { row,userCourses } = props;
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -211,6 +211,7 @@ function Row(props) {
                       <TableCell>{subjectRow.books}</TableCell>
                       <TableCell>{subjectRow.points}</TableCell>
                       <TableCell>{subjectRow.grade}</TableCell>
+                      <TableCell>{userCourses.find((course) => course.name === subjectRow.title)?.grade || '-'}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -334,7 +335,7 @@ const rows = [
 
 
 
-export const Scorecard = () => {
+export const Scorecard = ({userCourses}) => {
   const [searchTerm, setSearchTerm] = React.useState('');
   const [showOptions, setShowOptions] = useState(false);
   const handleCloseOptions = () => {
@@ -400,7 +401,7 @@ export const Scorecard = () => {
                     subject.id.toLowerCase().includes(searchTerm.toLowerCase()))
                 );
             if (filteredSubjects.length>0){
-                return <Row key={row.semester}row={{...row,subjects:filteredSubjects}}/>
+                return <Row key={row.semester}row={{...row,subjects:filteredSubjects}} userCourses={userCourses}/>
             }
 
             return null;
