@@ -8,15 +8,13 @@ import Login from "./Login_Page/Login"
 import MainPage from "./Main_Page/Main_Page";
 import Scorecard from "./Scorecard/Scorecard";
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import { firebaseConfig } from './Firebase/firebase';
-import { initializeApp } from 'firebase/app'
+import firebaseApp from "./Firebase/firebase"
 import { getFirestore } from 'firebase/firestore'
+import Test from "./Test_Page/Test";
+import { docUser } from './Test_Page/Test';
 
-// import Test from "./Test_Page/Test";
 
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+const db = getFirestore(firebaseApp);
 
 
 export default function App(){
@@ -30,10 +28,11 @@ export default function App(){
         <Route path="/*" element={<MainPage/>} />           
         <Route path="/QuickAccessStud/*" element={<QuickAccess />} />
         <Route path="/QuickAccessStud/Subjects" element={<Subjects/>}/>
-        <Route path="/QuickAccessStud/Scorecard" element={<Scorecard/>}/>
+        <Route path="/QuickAccessStud/Scorecard" element={<Scorecard userCourses={docUser.courses}/>}/>
         <Route path="/QuickAccessStud/CoursesDeclaration" element={<CoursesDec/>}/>
         <Route path="/QuickAccessStud/Certificates" element={<Test db={db}/>}/>
         <Route path="/QuickAccessStud/ActionHistory" element={<Login/>}/> 
+        <Route path="/Login" element={<Login/>}/> 
       </Routes>
     </Router>
     </>
