@@ -18,10 +18,6 @@ import Button from '@mui/material/Button';
 import {styled} from '@mui/material/styles'
 import { useState } from 'react';
 import Checkbox from '@mui/material/Checkbox';
-import {doc, getDoc, updateDoc} from 'firebase/firestore'
-
-
-
 import './CoursesDec.css'
 
 function createData(semester, subjects) {
@@ -141,19 +137,9 @@ function Row(props) {
   const { row } = props;
   const [open, setOpen] = React.useState(false);
 
-  const handleCheckboxChange = (semester, subjectId) => {
-    // Toggle the checkbox state
-    const updatedSubjects = row.subjects.map(subject =>
-      subject.id === subjectId
-        ? {
-            ...subject,
-            checkbox: { ...subject.checkbox, checked: !subject.checkbox.checked },
-          }
-        : subject
-    );
 
     // Update the state or perform any other actions based on the updatedSubjects
-  };
+
 
   
   return (
@@ -205,7 +191,7 @@ function Row(props) {
                       <TableCell>{subjectRow.books}</TableCell>
                       <TableCell>{subjectRow.points}</TableCell>
                       <TableCell style={{ textAlign: 'right' }}>
-                      <Checkbox checked={subjectRow.checkbox.checked} onChange={() => handleCheckboxChange(row.semester, subjectRow.id)}/></TableCell>
+                      <TableCell></TableCell><Checkbox/></TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -325,7 +311,6 @@ const rows = [
 export const CoursesDec = ({ db, userEmail }) => {
   const [searchTerm, setSearchTerm] = React.useState('');
   const [showOptions, setShowOptions] = useState(false);
-  const [selectedCourses, setSelectedCourses] = useState([]);
 
   const handleDefiniteButtonClick = () => {
     setShowOptions(true);
@@ -336,28 +321,13 @@ export const CoursesDec = ({ db, userEmail }) => {
     // Perform any additional actions when 'Edit' is clicked
   };
 
-  const handleYesClick = async () => {
+  const handleYesClick = () => {
     // Assuming you have the user's email as a prop
-    try {
-      const userRef = doc(db, 'users', userEmail);
+  
+      setShowOptions(true);
 
-      // Get the user's current data
-      const userSnap = await getDoc(userRef);
-      const userData = userSnap.data();
-
-      // Update the user's courses with the selected ones
-      const updatedCourses = [...userData.courses, ...selectedCourses];
-
-      // Update the user's data in the database
-      await updateDoc(userRef, { courses: updatedCourses });
-
-      // Close the options box
-      setShowOptions(false);
-
-    } catch (error) {
-      console.error('Error updating user courses:', error);
     }
-  };
+
 
 
   return (

@@ -17,7 +17,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import PrintRoundedIcon from '@mui/icons-material/PrintRounded';
 import FileDownloadRoundedIcon from '@mui/icons-material/FileDownloadRounded';
 import Button from '@mui/material/Button';
-
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import {styled} from '@mui/material/styles'
 import { useState } from 'react';
 import './Scorecard.css'
@@ -158,7 +158,7 @@ function createData(semester, subjects) {
 }
 
 function Row(props) {
-  const { row,userCourses } = props;
+  const { row} = props;
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -211,7 +211,6 @@ function Row(props) {
                       <TableCell>{subjectRow.books}</TableCell>
                       <TableCell>{subjectRow.points}</TableCell>
                       <TableCell>{subjectRow.grade}</TableCell>
-                      <TableCell>{userCourses.find((course) => course.name === subjectRow.title)?.grade || '-'}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -356,7 +355,7 @@ export const Scorecard = ({userCourses}) => {
             <HeaderColumns>
               <div></div>
               <div><h4>Βαθμολόγιο</h4></div>
-              <div><CloseButton onClick={handleCloseOptions}>X</CloseButton></div>
+              <div><CloseButton onClick={handleCloseOptions}><CloseRoundedIcon></CloseRoundedIcon></CloseButton></div>
             </HeaderColumns>
             <AdditionalRow>
               <div>Προσπάθειες<span>
@@ -401,7 +400,7 @@ export const Scorecard = ({userCourses}) => {
                     subject.id.toLowerCase().includes(searchTerm.toLowerCase()))
                 );
             if (filteredSubjects.length>0){
-                return <Row key={row.semester}row={{...row,subjects:filteredSubjects}} userCourses={userCourses}/>
+                return <Row key={row.semester}row={{...row,subjects:filteredSubjects}}/>
             }
 
             return null;
