@@ -114,6 +114,11 @@ const OptionsBox = styled('div')({
   flexDirection: 'column',
 });
 
+const CheckedLessonsList = styled('ul')({
+  listStyleType: 'none',
+  padding: 0,
+});
+
 const TopRow = styled('div')({
   marginBottom: '10px', // Adjust as needed
 });
@@ -180,6 +185,7 @@ function Row(props) {
                     <TableCell>Διδάσκων</TableCell>
                     <TableCell>Συγγράμματα</TableCell>
                     <TableCell>ECTS</TableCell>
+                    <TableCell>Δήλωση</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -190,8 +196,7 @@ function Row(props) {
                       <TableCell>{subjectRow.professor}</TableCell>
                       <TableCell>{subjectRow.books}</TableCell>
                       <TableCell>{subjectRow.points}</TableCell>
-                      <TableCell style={{ textAlign: 'right' }}>
-                      <TableCell></TableCell><Checkbox/></TableCell>
+                      <TableCell><Checkbox/></TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -228,7 +233,6 @@ const rows = [
       professor: 'Παπαδόπουλος',
       books: <a href="https://www.example.com/book1" target="_blank" rel="noreferrer">Βιβλίο 1</a>,
       points: 6,
-      checkbox: { label: 'Checkbox 1', checked: false },
     },
     // Add other subjects for the first semester
   ]),
@@ -337,11 +341,14 @@ export const CoursesDec = ({ db, userEmail }) => {
       {showOptions && (
         <OptionsBox>
           <TopRow>
-            <h2>Εν Χριστώ Αδερφέ μου, είσαι σίγουρος ότι θέλεις να υποβάλεις την αίτηση σου;</h2>
+            <h2><center>Είσαι σίγουρος ότι θέλεις να οριστικοποιήσεις την δήλωση σου;</center></h2>
+              <CheckedLessonsList>
+                <Typography variant='subtitle1'>Επιλεγμένα Μαθήματα</Typography>
+              </CheckedLessonsList>
           </TopRow>
           <BottomRow>
-            <YesButton variant="contained" onClick={handleYesClick}>ΝΑΙ.Είμαι έτοιμος για όλα</YesButton>
-            <EditButton variant="outlined" onClick={handleEditClick}>Συγγνώμη αμάρτησα. Πάω πίσω</EditButton>
+            <YesButton variant="contained" onClick={handleYesClick}>Συνέχεια</YesButton>
+            <EditButton variant="outlined" onClick={handleEditClick}>Επεξεργασία Δήλωσης</EditButton>
           </BottomRow>
         </OptionsBox>
       )}
