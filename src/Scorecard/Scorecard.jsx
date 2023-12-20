@@ -14,14 +14,14 @@ import Paper from '@mui/material/Paper';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import SearchIcon from '@mui/icons-material/Search';
-import PrintRoundedIcon from '@mui/icons-material/PrintRounded';
-import FileDownloadRoundedIcon from '@mui/icons-material/FileDownloadRounded';
+//import PrintRoundedIcon from '@mui/icons-material/PrintRounded';
+//import FileDownloadRoundedIcon from '@mui/icons-material/FileDownloadRounded';
 import Button from '@mui/material/Button';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+//import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import {styled} from '@mui/material/styles'
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './Scorecard.css'
-
+//import PrintableTable from './PrintableTable';
 
 
 const GradesButton = styled(Button)({
@@ -61,94 +61,24 @@ const GradesButton = styled(Button)({
   },
 });
 
-const DropdownMenu = styled('select')({
-  appearance: 'none',
-  cursor: 'pointer',
-  '&:hover': {
-    background: '#333', // Replace with your desired darker color
-    color: '#fff', // Replace with your desired text color
-  },
-  '&::after': {
-    content: '""',
-    position: 'absolute',
-    top: '50%',
-    right: '8px',
-    transform: 'translateY(-50%)',
-    borderTop: '6px solid transparent',
-    borderBottom: '6px solid transparent',
-    borderLeft: '6px solid #333', // Adjust the color and size as needed
-  }
-});
-
-const CloseButton = styled(Button)({
-  margin: '3px 3px 3px auto',
-  padding: '3px 3px 5px 5px',
-  color: 'black',
-  '&:hover': {
-    backgroundColor: '#FF0000',
-    borderColor: '#FF0000',
-    color: 'white',
-    boxShadow: 'none',
-  }, 
-});
-
-const HeaderColumns = styled('div')({
-  display: 'flex',
-  justifyContent: 'space-between', // Space columns evenly
-  '& > div': {
-    flex: '0 0 33%',
-    display:'flex',
-    flexDirection:'column', // Each column has a flex of 33%
-    '&:last-child': {
-      alignSelf: 'flex-end', // Align the last column to the end
-    },
-    '&:nth-child(2)': {
-      alignItems: 'center',
-      padding: '0', 
-      margin: '0',// Align the content of the second column to the center
-      '& h4': {
-        margin: '0',
-        marginTop: '7px' // Remove margin from h2 element to prevent extra space
-      },
-    },
-  }
-});
-
-
-const AdditionalRow = styled('div')({
-  display: 'flex',
-  justifyContent: 'space-between', // Space columns evenly
-  '& > div': {
-    flex: '0 0 33%', // Each column has a flexible width
-    '&:first-child': {
-      display: 'flex',
-      justifyContent:'center',
-      alignSelf:'center',
-    },
-    '&:last-child': {
-      display: 'flex',
-      justifyContent: 'flex-end',
-      marginRight:'10px',
-    },
-  },
-});
-
-
-const OptionsBox = styled('div')({
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  padding: '10px',
-  backgroundColor: 'white',
-  border: '1px solid #ccc',
-  borderRadius: '5px',
-  zIndex: 2,
-  display: 'flex',
-  flexDirection: 'column', // Create two rows
-  width: '600px',
-  height: '500px',
-});
+// const DropdownMenu = styled('select')({
+//   appearance: 'none',
+//   cursor: 'pointer',
+//   '&:hover': {
+//     background: '#333', // Replace with your desired darker color
+//     color: '#fff', // Replace with your desired text color
+//   },
+//   '&::after': {
+//     content: '""',
+//     position: 'absolute',
+//     top: '50%',
+//     right: '8px',
+//     transform: 'translateY(-50%)',
+//     borderTop: '6px solid transparent',
+//     borderBottom: '6px solid transparent',
+//     borderLeft: '6px solid #333', // Adjust the color and size as needed
+//   }
+// });
 
 function createData(semester, subjects) {
   return {
@@ -242,9 +172,9 @@ Row.propTypes = {
 const rows = [
   createData('Εξάμηνο 1', [
     {
-      id: 'YΣ01',
-      title: 'Εισαγωγή στην Πληροφορική',
-      professor: 'Παπαδόπουλος',
+      id: 'Κ04',
+      title: 'Εισαγωγή στον Προγραμματισμό',
+      professor: 'Σταματόπουλος',
       books: <a href="https://www.example.com/book1" target="_blank" rel="noreferrer">Βιβλίο 1</a>,
       points: 6,
       grade: 4,
@@ -253,9 +183,9 @@ const rows = [
   ]),
   createData('Εξάμηνο 2', [
     {
-      id: 'YΣ02',
-      title: 'Τεχνητή Νοημοσύνη',
-      professor: 'Κουμπαράκης',
+      id: 'K01',
+      title: 'Ανάλυση Ι',
+      professor: 'Δοδός',
       books: <a href="https://aima.cs.berkeley.edu/" target="_blank" rel="noreferrer">ΑΙΜΑ</a>,
       points: 3,
       grade: 10,
@@ -265,10 +195,10 @@ const rows = [
   // Repeat for other semesters
   createData('Εξάμηνο 3', [
     {
-      id: 'YΣ02',
-      title: 'Τεχνητή Νοημοσύνη',
-      professor: 'Κουμπαράκης',
-      books: <a href="https://aima.cs.berkeley.edu/" target="_blank" rel="noreferrer">ΑΙΜΑ</a>,
+      id: 'Κ10',
+      title: 'Αντικειμενοστραφής Προγραμματισμός',
+      professor: 'Καράλη',
+      books: <a href="" target="_blank" rel="noreferrer">Βιβλίο</a>,
       points: 3,
       grade: 10,
     },
@@ -276,10 +206,10 @@ const rows = [
   ]),
   createData('Εξάμηνο 4', [
     {
-      id: 'YΣ02',
-      title: 'Τεχνητή Νοημοσύνη',
-      professor: 'Κουμπαράκης',
-      books: <a href="https://aima.cs.berkeley.edu/" target="_blank" rel="noreferrer">ΑΙΜΑ</a>,
+      id: 'Κ29',
+      title: 'Σχεδίαση και Χρήση Βάσεων Δεδομένων',
+      professor: 'Γουνόπουλος',
+      books: <a href="https://aima.cs.berkeley.edu/" target="_blank" rel="noreferrer">Βιβλίο</a>,
       points: 3,
       grade: 10,
     },
@@ -298,9 +228,9 @@ const rows = [
   ]),
   createData('Εξάμηνο 6', [
     {
-      id: 'YΣ02',
-      title: 'Τεχνητή Νοημοσύνη',
-      professor: 'Κουμπαράκης',
+      id: 'ΥΣ05',
+      title: 'Προγραμματισμός Συστήματος',
+      professor: 'Ρουσσοπούλου',
       books: <a href="https://aima.cs.berkeley.edu/" target="_blank" rel="noreferrer">ΑΙΜΑ</a>,
       points: 3,
       grade: 10,
@@ -309,9 +239,9 @@ const rows = [
   ]),
   createData('Εξάμηνο 7', [
     {
-      id: 'YΣ02',
-      title: 'Τεχνητή Νοημοσύνη',
-      professor: 'Κουμπαράκης',
+      id: 'ΥΣ08',
+      title: 'Επικοινωνία Ανθρώπου Μηχανής',
+      professor: 'Ρούσσου',
       books: <a href="https://aima.cs.berkeley.edu/" target="_blank" rel="noreferrer">ΑΙΜΑ</a>,
       points: 3,
       grade: 10,
@@ -320,9 +250,9 @@ const rows = [
   ]),
   createData('Εξάμηνο 8', [
     {
-      id: 'YΣ02',
-      title: 'Τεχνητή Νοημοσύνη',
-      professor: 'Κουμπαράκης',
+      id: 'ΘΠ05',
+      title: 'Κρυπτογραφία',
+      professor: 'Χατζηκοκολάκης',
       books: <a href="https://aima.cs.berkeley.edu/" target="_blank" rel="noreferrer">ΑΙΜΑ</a>,
       points: 3,
       grade: 10,
@@ -334,45 +264,31 @@ const rows = [
 
 
 
-export const Scorecard = ({userCourses}) => {
+export const Scorecard = () => {
   const [searchTerm, setSearchTerm] = React.useState('');
-  const [showOptions, setShowOptions] = useState(false);
-  const handleCloseOptions = () => {
-    setShowOptions(false);
-  };
+  //const [showOptions, setShowOptions] = useState(false);
+  const tableRef = useRef(null);
 
-  const handleGradesButtonClick = () => {
-    setShowOptions(true);
+  const handlePrint = () => {
+    // Open a new window for printing
+    const printWindow = window.open('', '');
+    // Render the printable component in the new window
+    printWindow.document.write('<html><head><title>Print</title></head><body>');
+    printWindow.document.write('<div style="margin: 20px;">');
+    printWindow.document.write('<style>@media print{body{margin:0;padding:0}.no-print, .no-print *{display:none !important;}}</style>');
+    printWindow.document.write('<PrintableTable rows={rows} />');
+    printWindow.document.write('</div></body></html>');
+    // Close the document stream
+    printWindow.document.close();
+    // Print the window
+    printWindow.print();
   };
 
   return (
     <>
     <div className='three-column-score'>
       <div className='column-1-score'>
-        <GradesButton variant="outlined" onClick={handleGradesButtonClick}>Εκτύπωση Βαθμολογίου</GradesButton>
-        {showOptions && (
-          <OptionsBox>
-            <HeaderColumns>
-              <div></div>
-              <div><h4>Βαθμολόγιο</h4></div>
-              <div><CloseButton onClick={handleCloseOptions}><CloseRoundedIcon></CloseRoundedIcon></CloseButton></div>
-            </HeaderColumns>
-            <AdditionalRow>
-              <div>Προσπάθειες<span>
-                <DropdownMenu>
-                  <option value="All">Όλες</option>
-                  <option value="Fail">Αποτυχία</option>
-                  <option value="Pass">Επιτύχια</option>
-                </DropdownMenu>
-                </span></div>
-              <div>
-              </div>
-              <div>
-                <PrintRoundedIcon></PrintRoundedIcon><FileDownloadRoundedIcon></FileDownloadRoundedIcon>
-              </div>
-            </AdditionalRow>
-          </OptionsBox>
-        )}
+        <GradesButton variant="outlined" onClick={handlePrint}>Εκτύπωση Βαθμολογίου</GradesButton>
       </div>
       <div className='column-2-score'></div>
       <div className='column-3-score'>
@@ -382,7 +298,7 @@ export const Scorecard = ({userCourses}) => {
     </div>
     <div>
     <TableContainer component={Paper}>
-      <Table aria-label="collapsible table">
+      <Table ref={tableRef} aria-label="collapsible table">
         <TableHead>
           <TableRow>
             <TableCell align='center' colSpan={3}><h2>Πρόγραμμα Σπουδών</h2></TableCell>
