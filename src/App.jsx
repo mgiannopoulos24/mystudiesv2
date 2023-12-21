@@ -19,7 +19,7 @@ export default function App(){
 
   return (
     <>
-    <Router>
+    {/* <Router>
       
       <Header/>
       <Routes>
@@ -32,8 +32,8 @@ export default function App(){
         <Route path="/QuickAccessStud/ActionHistory" element={<Login/>}/> 
         <Route path="/Login" element={<Login/>}/> 
       </Routes>
-    </Router>
-    
+    </Router> */}
+    <Profile/>
     </>
   );
 

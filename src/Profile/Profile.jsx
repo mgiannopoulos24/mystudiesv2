@@ -8,7 +8,7 @@ export const Profile =()=>{
     return(
         <div className='three-columns-pheader'>
             <div className='column-1-header'>
-                        <h2>My Studies</h2>
+                <h2>My Studies</h2>
             </div>
             <div className='column-2-header'>
                         
