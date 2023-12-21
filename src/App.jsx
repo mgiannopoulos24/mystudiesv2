@@ -19,12 +19,12 @@ export default function App(){
 
   return (
     <>
-    {/* <Router>
+    <Router>
       
       <Header/>
       <Routes>
-        <Route path="/*" element={<MainPage/>} />           
-        <Route path="/QuickAccessStud/*" element={<QuickAccess />} />
+        <Route path="/*" element={<Login/>} />           
+        <Route path="/Profile" element={<Profile/>} />
         <Route path="/QuickAccessStud/Subjects" element={<Subjects/>}/>
         <Route path="/QuickAccessStud/Scorecard" element={<Scorecard/>}/>
         <Route path="/QuickAccessStud/CoursesDeclaration" element={<CoursesDec/>}/>
@@ -32,8 +32,8 @@ export default function App(){
         <Route path="/QuickAccessStud/ActionHistory" element={<Login/>}/> 
         <Route path="/Login" element={<Login/>}/> 
       </Routes>
-    </Router> */}
-    <Profile/>
+    </Router>
+    
     </>
   );
 
