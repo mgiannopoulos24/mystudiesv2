@@ -20,7 +20,7 @@ export const Profile =()=>{
                         <div className='dropdown'>
                             <button className='dropbutton'>Δηλώσεις<span><ExpandMoreRoundedIcon style={{fontSize: '15px'}}/></span></button>
                             <div className='dropdown-content'>
-                                <a href=''>Δήλωση Μαθημάτων</a>
+                                <a href='/QuickAccessStud/CoursesDec'>Δήλωση Μαθημάτων</a>
                                 <a href=''>Προηγούμενες Δηλώσεις</a>
                                 <a href=''>Συγγράματα</a>
                             </div>
