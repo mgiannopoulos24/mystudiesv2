@@ -3,7 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
-import { doc, getDoc } from 'firebase/firestore'
+import { doc, getDoc } from 'firebase/firestore';
+import {Link} from "react-router-dom";
 const Login =({db}) => {
 
     const [email, setEmail] = useState('');
@@ -61,7 +62,9 @@ const Login =({db}) => {
                 </div>
                 <div className="submit-container">
                     <div className="submit">
-                        <button>Είσοδος</button>
+                        <Link to="/Profile">
+                            <button>Είσοδος</button>
+                        </Link>
                     </div>
                 </div>
             </div>          
