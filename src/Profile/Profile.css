@@ -13,7 +13,7 @@
 
 
 .column-2-header{
-    flex:45%;
+    flex:48%;
 }
 
 .column-3-header{
@@ -98,4 +98,5 @@
 .dropdown-content a:hover{ background-color: #ddd;}
 .dropdown:hover .dropdown-content {display: block;}
 .dropdown:hover .dropbutton{background-color: white;}
-
+.cell-home:hover{ background-color: white;}
+.notif-button:hover{background-color: white;}
