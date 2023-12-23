@@ -8,7 +8,7 @@ import Login from "./Login_Page/Login"
 import MainPage from "./Main_Page/Main_Page";
 import Scorecard from "./Scorecard/Scorecard";
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Profile from "./Profile/Profile";
+import ProfileStud from "./ProfileStud/ProfileStud";
 // import firebaseApp from "./Firebase/firebase"
 // import { getFirestore } from 'firebase/firestore'
 //import Test from "./Test_Page/Test";
@@ -19,6 +19,7 @@ export default function App(){
 
   return (
     <>
+    <Header/>
     {/* <Router>
       
       <Header/>
@@ -33,7 +34,7 @@ export default function App(){
         <Route path="/Login" element={<Login/>}/> 
       </Routes>
     </Router> */}
-    <Profile/>
+    <ProfileStud/>
     </>
   );
 

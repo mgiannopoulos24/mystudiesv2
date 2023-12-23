@@ -1,0 +1,9 @@
+.row-header{
+    display: flex;
+    align-items: flex-start;
+}
+
+
+.row-header h2 {
+    margin-left: 10px;
+}
