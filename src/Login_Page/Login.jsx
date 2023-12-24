@@ -5,7 +5,9 @@ import { faLock } from "@fortawesome/free-solid-svg-icons";
 import {Link} from "react-router-dom";
 import ekpa_logo from "./assets/ekpa-logo.png"
 import Button from '@mui/material/Button';
-
+import digi_conv from "./assets/digital-convergence_111x30.jpg"
+import espa_img from "./assets/espa52x30.jpg"
+import eu_img from "./assets/eu-erdf_113x30.jpg"
 
 const Login =() => {
 
@@ -64,6 +66,21 @@ const Login =() => {
                         <li>Συμπλήρωση εντύπων που αιτούνται οι φοιτητές/τριες</li>
                     </ul>
                 </div>
+            </div>
+        </div>
+        <div className="footer">
+            <div className="column-3">
+                <p>Το έργο «Προηγμένες Tηλεματικές Yπηρεσίες στο Πανεπιστήμιο Αθηνών <br></br> 
+                ΑΘΗΝΑ ΝΕΤ- ΙΙ» έχει ενταχθεί στο Ε.Π. Κοινωνία της Πληροφορίας,<br></br> 
+                συγχρηματοδοτείται κατά 75% από το Ευρωπαϊκό Κοινωνικό Ταμείο (EKT)<br></br>
+                και κατά 25% από το Ελληνικό Δημόσιο.</p>
+            </div>
+            <div className="column-4">
+                <div><img src={espa_img} alt="espa"/></div>
+                <div><img src={digi_conv} alt="digi-conv"/></div>
+                <div><img src={eu_img} alt="european-union"/></div>
+                <div></div>
+
             </div>
         </div>
         </>
