@@ -1,80 +1,39 @@
-/* Login.css */
-.row-intro{
+.nav-bar{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 150px;
-  margin-bottom: 30px;
+  justify-content: flex-end;
+  padding-bottom: 50px;
 }
-.text{
+
+.row-1{
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  
 }
-.container{
-  display: flex;
+
+
+.column-1{
+  flex:50%;
+  justify-content: center; 
+  text-align: center;
+
+}
+
+.column-2{
+  flex:50%;
   justify-content: center;
+  align-self: center;
 }
 
-.container-login {
-    width: 450px;
-    height: 450px;
-    
-    background: white;
-    padding-bottom: 15px;
-    filter: drop-shadow(2px 2px 2px gray);
-    border-radius: 5px;
-  }
-  
-.header {
-    display: flex;
-    justify-content: center;
-    gap: 9px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-  
-  
-.text{
-    color: blue;
-    font-size: 24px;
-    font-weight: 100px;
-  }
-
-
-.inputs{
-  display: flex;
-  padding-bottom: 20%;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: center;
-}
-
-.input-user{
-  display: flex;
-}
-
-
-.input-psw{
-  display:flex;
-}
-
-.support-container{
-  display: flex;
-  flex-direction: row;
-  padding-left: 200px;
-  font-size: xx-small; 
-}
-
-.submit-container{
+.row-2{
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-top: 10px;
 }
 
-.submit{
-  display: flex;
-  flex-direction: column;
-}  
+.column-2 hr{
+  width: 450px;
+  justify-content: flex-start;
+}
+
+.column-1 hr{
+  width: 450px;
+}

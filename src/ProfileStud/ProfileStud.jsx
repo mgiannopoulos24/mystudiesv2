@@ -2,10 +2,12 @@ import React from 'react';
 import "./ProfileStud.css"
 import user_img from "./assets/user.png"
 import Grid from '@mui/material/Grid';
+import Header from '../Header_Page/Header';
 
 export const ProfileStud =()=>{
     return(
         <>
+        <Header/>
         <div className='row-header'>
             <h2>Το προφίλ μου</h2>
         </div>

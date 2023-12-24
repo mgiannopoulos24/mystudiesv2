@@ -1,6 +1,5 @@
 import "./App.css"
 import React from "react";
-import Header from "./Header_Page/Header";
 import Login from "./Login_Page/Login"
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import ProfileStud from "./ProfileStud/ProfileStud";
@@ -15,8 +14,6 @@ export default function App(){
   return (
     <>
     <Router>
-      
-      <Header/>
       <Routes>
         <Route path="/*" element={<Login/>} />           
         {/* <Route path="/Main" element={<MainPage/>} /> */}
