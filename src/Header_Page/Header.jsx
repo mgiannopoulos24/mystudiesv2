@@ -44,6 +44,10 @@ const Header=()=>{
                     </div>
                     <div className='cell-notif'>
                         <button className='notif-button'><NotificationsIcon style={{fontSize: '30px'}}/></button>
+                        <div className="dropdown-content">
+                            <a href=''></a>
+                            <a href=''>Όλα τα μηνύματα</a>
+                        </div>
                     </div>
                     <div className='cell-user'>
                         <div className='dropdown'>

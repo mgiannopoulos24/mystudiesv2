@@ -104,5 +104,5 @@
 .dropdown:hover .dropdown-content {display: block;}
 .dropdown:hover .dropbutton{background-color: white;}
 .cell-home:hover{ background-color: white;}
-.notif-button:hover{background-color: white;}
+.notif-button:hover {background-color: white;}
 .dropdown-content option:hover{background-color: #ddd;}
