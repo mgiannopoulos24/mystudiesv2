@@ -27,6 +27,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: white;
 }
 
 .column-2 hr{
@@ -41,14 +42,14 @@
 .footer{
   display: flex;
   background-color: #ddd;
+  margin-top: 50px;
 }
 
 .column-3{
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
   flex:50%;
+  font-size: x-small;
 
 }
 
@@ -64,4 +65,10 @@
 
 .row-2 ul{
   width: 400px;
+}
+
+.Page{
+  background-image: url('./assets/DIT3.jpg');
+  background-size: cover;
+  background-position: center;
 }
