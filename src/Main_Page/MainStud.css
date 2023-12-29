@@ -1,0 +1,110 @@
+.row-header{
+    display: flex;
+    align-items: flex-start;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+
+.row-header h2 {
+    margin-left: 10px;
+}
+
+.row-header img{
+    height: 60px;
+    width: 60px;
+}
+
+
+.track-progress {
+    margin: 0;
+    padding: 10px 10px 0 10px;
+    background: white;
+    height: 80px;
+    border-radius: 10px;
+    margin-top: 30px;
+  }
+  
+.track-progress li {
+    list-style-type: none;
+    display: inline-block;
+    position: relative;
+    font: 14px/14px Helvetica, sans-serif;
+    text-transform: none;
+    text-align: center;
+    color: rgb(137, 137, 226) !important;
+    border-bottom: 4px #bbb solid;
+    line-height: 3em;
+    width: 12.5%;
+
+}
+  
+.track-progress li:after {
+    content: "\00a0\00a0";
+}
+
+.track-progress li:before {
+    position: relative;
+    bottom: -2.5em;
+    float: left;
+    left: 50%;
+    line-height: 1em;
+}
+
+.track-progress li span {
+    position: absolute;
+    top: 100%; 
+    left: 50%;
+    transform: translateX(-50%); 
+    display: inline-block; 
+    white-space: nowrap;
+}
+  
+.track-progress li.done {
+    color: #bbb;
+    font-weight: bold;
+    border-bottom: 4px  #052ee4 solid;
+}
+
+.track-progress li.done:before {
+    content: "";
+    background: #052ee4;
+    height: 1.2em;
+    width: 1.2em;
+    line-height: 1.2em;
+    border: none;
+    border-radius: 1.2em;
+}
+
+.track-progress li.todo:before {
+    content: "";
+    background: white;
+    border: 0.25em solid #bbb;
+    height: 0.8em;
+    width: 0.8em;
+    border-radius: 0.8em;
+}
+
+.two-columns{
+    display: flex;
+    margin-top: 40px;
+}
+
+.column-subjects{
+    flex:60%;
+    margin-left: 30px;
+}
+
+.row-subjects{
+    justify-content: flex-start;
+
+}
+.column-grades{
+    flex:40%;
+    margin-left: 30px;
+}
+
+strong{
+    color: green;
+}
