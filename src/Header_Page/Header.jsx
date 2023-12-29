@@ -3,6 +3,7 @@ import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 
+
 const Header=()=>{
   return(
     <div className='three-columns-pheader'>
@@ -14,7 +15,7 @@ const Header=()=>{
             </div>
             <div className='column-3-header'>
                 <div className='row-icons'>
-                    <div className='cell-home'><HomeRoundedIcon style={{ fontSize: '30px' }}/></div>
+                    <div className='cell-home'><a href="/MainStud" style={{ textDecoration: 'none', color: 'inherit' }}><HomeRoundedIcon style={{ fontSize: '30px' }}/></a></div>
                     <div className='cell-declaration'>
                         <div className='dropdown'>
                             <button className='dropbutton'>Δηλώσεις<span><ExpandMoreRoundedIcon style={{fontSize: '15px'}}/></span></button>
