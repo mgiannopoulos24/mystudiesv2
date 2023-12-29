@@ -3,6 +3,7 @@ import React from "react";
 import Login from "./Login_Page/Login"
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import ProfileStud from "./ProfileStud/ProfileStud";
+import MainStud from "./Main_Page/MainStud";
 // import firebaseApp from "./Firebase/firebase"
 // import { getFirestore } from 'firebase/firestore'
 //import Test from "./Test_Page/Test";
@@ -16,7 +17,7 @@ export default function App(){
     <Router>
       <Routes>
         <Route path="/*" element={<Login/>} />           
-        {/* <Route path="/Main" element={<MainPage/>} /> */}
+        <Route path="/MainStud" element={<MainStud/>} />
         <Route path="/ProfileStud" element={<ProfileStud/>}/>
       </Routes>
     </Router>

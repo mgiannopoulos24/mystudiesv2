@@ -25,11 +25,23 @@ export const ProfileStud =()=>{
             <li className='done'>
                 Εξάμηνο 1
             </li>
-            <li className='todo'>
+            <li className='done'>
                 Εξάμηνο 2
             </li>
-            <li className='todo'>
+            <li className='done'>
                 Εξάμηνο 3
+            </li>
+            <li className='todo'>
+                Εξάμηνο 4
+            </li>
+            <li className='todo'>
+                Εξάμηνο 5
+            </li>
+            <li className='todo'>
+                Εξάμηνο 6
+            </li>
+            <li className='todo'>
+                Εξάμηνο 7
             </li>
         </div>
         <div className='empty-space'></div>
