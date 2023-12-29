@@ -29,12 +29,12 @@ const Login =() => {
                 <hr></hr>
                 <div className="row-uni-login">
                     <h3>Σύνδεση με:</h3>
-                    <a href="/ProfileStud"><Button variant="contained" style={{textTransform:"none"}}>Ιδρυματικό Λογαριασμό</Button></a>
+                    <a href="/MainStud"><Button variant="contained" style={{textTransform:"none"}}>Ιδρυματικό Λογαριασμό</Button></a>
                 </div>
                 <hr></hr>
                 <div className="row-alt-login">
                     <h4>Αν δεν έχετε ιδρυματικό λογαριασμό:</h4>
-                    <a href="/ProfileStud"><Button variant="outlined" style={{textTransform:"none"}}>Σύνδεση με κωδικό Πανελληνίων</Button></a>
+                    <a href="/MainStud"><Button variant="outlined" style={{textTransform:"none"}}>Σύνδεση με κωδικό Πανελληνίων</Button></a>
                 </div>
             </div>
             <div className="column-2">
