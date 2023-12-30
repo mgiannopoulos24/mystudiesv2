@@ -31,7 +31,7 @@ const Header=()=>{
                             <button className='dropbutton'>Βαθμολογία<span><ExpandMoreRoundedIcon style={{fontSize: '15px'}}/></span></button>
                             <div className='dropdown-content'>
                                 <a href=''>Πρόσφατη Βαθμολογία</a>
-                                <a href=''>Αναλυτική Βαθμολογία</a>
+                                <a href='/MainStud/Detailed'style={{ textDecoration: 'none', color: 'inherit' }}>Αναλυτική Βαθμολογία</a>
                             </div>
                         </div>
                     </div>
