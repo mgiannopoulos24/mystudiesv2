@@ -1,8 +1,8 @@
 import "./Login.css"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { faLock } from "@fortawesome/free-solid-svg-icons";
-import {Link} from "react-router-dom";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faUser } from "@fortawesome/free-solid-svg-icons";
+// import { faLock } from "@fortawesome/free-solid-svg-icons";
+// import {Link} from "react-router-dom";
 import ekpa_logo from "./assets/ekpa-logo.png"
 import Button from '@mui/material/Button';
 import digi_conv from "./assets/digital-convergence_111x30.jpg"
