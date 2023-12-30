@@ -1,0 +1,39 @@
+.two-columns-dgrade{
+    display: flex;
+}
+
+.column-1-dgrade{
+    display: flex;
+    flex:75%;    
+    flex-direction: column;
+}
+
+.column-2-dgrade{
+    display: flex;
+    flex:25%;
+    margin-top: 80px;
+}
+
+.row-sem-1,.row-sem-2,.row-sem-3,.row-sem-4{
+    margin-left: 10px;
+}
+
+.row-grade{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+.row-grade h2{
+    align-self: flex-start;
+}
+
+.row-grade span{
+    display: flex;
+    align-self: flex-end;
+}
+
+
+.declared-sub,.passed-sub,.dpoints-sub,.ppoints-sub{
+    display: flex;
+    margin-bottom: 30px;
+}
