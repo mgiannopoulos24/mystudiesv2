@@ -8,6 +8,12 @@
     flex-direction: column;
 }
 
+.row-sort{
+    display: flex;
+    height: 50px;
+    margin-left: 10px;
+}
+
 .column-2-dgrade{
     display: flex;
     flex:25%;
@@ -18,7 +24,7 @@
     margin-left: 10px;
 }
 
-.row-grade{
+.row-dgrade{
     display: flex;
     justify-content: space-between;
     margin-left: 10px;

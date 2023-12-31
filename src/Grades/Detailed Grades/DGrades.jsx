@@ -48,11 +48,18 @@ const DGrades =()=> {
         <Header/>
         <div className="two-columns-dgrade">
             <div className="column-1-dgrade">
-                <div className="row-grade">
+                <div className="row-dgrade">
                     <h2>Αναλυτική Βαθμολογία</h2><span><Button variant="outlined" sx={{textTransform:"none"}}>Εκτύπωση Αναλυτικής</Button></span>
                 </div>
                 <div className="row-sort">
-
+                <Card sx={{width:'100%',display:'flex',background:""}}>
+                    <div className="sort-column-1" style={{display:'flex',flex:"40%",alignItems:"center"}}>
+                        Ταξινόμηση κατά 
+                    </div>
+                    <div className="sort-column-2" style={{display:'flex',flex:"60%",alignItems:"center"}}>
+                        Αναζήτηση με:
+                    </div>
+                </Card>
                 </div>
                 <div className="row-filter">
 
@@ -158,7 +165,12 @@ const DGrades =()=> {
                         <div style={{ width: '150px', height: '150px' }}>
                             <CircularProgressbar 
                             value={75} 
-                            text={"3/9"}
+                            text={
+                                <tspan>
+                                    <tspan x="50" dy="-0.4em" fontSize="18" fontWeight="bold">3/9</tspan>                                    
+                                    <tspan x="50" dy="1.2em" fontSize="13" fontWeight="normal">Περασμένα</tspan>
+                                </tspan>
+                            }
                             styles={buildStyles({rotation:1,textSize: '16px', fontWeight: 'bold',pathTransitionDuration: 0.5})}
                             strokeWidth={8} 
                             trailWidth={8} 
