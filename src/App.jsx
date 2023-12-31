@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import ProfileStud from "./ProfileStud/ProfileStud";
 import MainStud from "./Main_Page/MainStud";
 import DGrades from "./Grades/Detailed Grades/DGrades";
+import RGrades from "./Grades/Recent Grades/RGrades";
 // import firebaseApp from "./Firebase/firebase"
 // import { getFirestore } from 'firebase/firestore'
 //import Test from "./Test_Page/Test";
@@ -21,6 +22,7 @@ export default function App(){
         <Route path="/MainStud" element={<MainStud/>} />
         <Route path="/ProfileStud" element={<ProfileStud/>}/>
         <Route path="/MainStud/Detailed" element={<DGrades/>}/>
+        <Route path="/MainStud/Recent" element={<RGrades/>}/>
       </Routes>
     </Router>
     </>
