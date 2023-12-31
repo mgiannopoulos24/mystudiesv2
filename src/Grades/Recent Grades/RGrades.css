@@ -1,0 +1,26 @@
+.two-columns-rgrade{
+    display: flex;
+}
+
+.column-1-rgrade{
+    display: flex;
+    flex:75%;    
+    flex-direction: column;
+    margin-left: 30px;
+}
+
+.column-2-rgrade{
+    display: flex;
+    flex:25%;
+    margin-top: 80px;
+}
+
+
+.row-rgrade,.row-period{
+    margin-left: 10px;
+}
+
+.exam-sub,.passed-sub,.gpa{
+    display: flex;
+    margin-bottom: 30px;
+}
