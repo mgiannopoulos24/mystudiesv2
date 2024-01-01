@@ -9,8 +9,10 @@ import Paper from '@mui/material/Paper';
 import Button  from "@mui/material/Button";
 import Header from "../../Header_Page/Header";
 import  Card  from "@mui/material/Card";
+
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import React,{ useState } from "react";
 
 function createData(subject, id, professor, period, type,points,grade) {
     return {subject, id, professor, period, type,points,grade};
@@ -18,31 +20,41 @@ function createData(subject, id, professor, period, type,points,grade) {
 
 const rowsSem1 = [
     createData('ΕΙΣΑΓΩΓΗ ΣΤΟΝ ΠΡΟΓΡΑΜΜΑΤΙΣΜΟ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
-    createData('ΕΙΣΑΓΩΓΗ ΣΤΟΝ ΠΡΟΓΡΑΜΜΑΤΙΣΜΟ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
-    createData('ΕΙΣΑΓΩΓΗ ΣΤΟΝ ΠΡΟΓΡΑΜΜΑΤΙΣΜΟ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
-    createData('ΕΙΣΑΓΩΓΗ ΣΤΟΝ ΠΡΟΓΡΑΜΜΑΤΙΣΜΟ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
-    createData('ΕΙΣΑΓΩΓΗ ΣΤΟΝ ΠΡΟΓΡΑΜΜΑΤΙΣΜΟ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
+    createData('ΓΡΑΜΜΙΚΗ ΑΛΓΕΒΡΑ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
+    createData('ΛΟΓΙΚΗ ΣΧΕΔΙΑΣΗ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
+    createData('ΔΙΑΚΡΙΤΑ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
+    createData('ΤΗΛΕΠΙΚΟΙΝΩΝΙΕΣ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
 ];
 
 const rowsSem2 = [
-    createData('ΕΙΣΑΓΩΓΗ ΣΤΟΝ ΠΡΟΓΡΑΜΜΑΤΙΣΜΟ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
-    createData('ΑΝΑΛΥΣΗ 2', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
-    createData('ΕΙΣΑΓΩΓΗ ΣΤΟΝ ΠΡΟΓΡΑΜΜΑΤΙΣΜΟ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
-    createData('ΕΙΣΑΓΩΓΗ ΣΤΟΝ ΠΡΟΓΡΑΜΜΑΤΙΣΜΟ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
-    createData('ΕΙΣΑΓΩΓΗ ΣΤΟΝ ΠΡΟΓΡΑΜΜΑΤΙΣΜΟ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
+    createData('ΦΥΣΙΚΗ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
+    createData('ΑΝΑΛΥΣΗ Ι', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
+    createData('ΑΡΧΙΤΕΚΤΟΝΙΚΗ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
+    createData('ΕΦΑΡΜΟΣΜΕΝΑ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
+    createData('ΔΟΜΕΣ', 'Κ09', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
 ];
 
 const rowsSem3 = [
-    createData('ΕΙΣΑΓΩΓΗ ΣΤΟΝ ΠΡΟΓΡΑΜΜΑΤΙΣΜΟ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
-    createData('ΑΝΤΙΚΕΙΜΕΝΟΣΤΡΑΦΗΣ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
-    createData('ΕΙΣΑΓΩΓΗ ΣΤΟΝ ΠΡΟΓΡΑΜΜΑΤΙΣΜΟ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
-    createData('ΕΙΣΑΓΩΓΗ ΣΤΟΝ ΠΡΟΓΡΑΜΜΑΤΙΣΜΟ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
-    createData('ΕΙΣΑΓΩΓΗ ΣΤΟΝ ΠΡΟΓΡΑΜΜΑΤΙΣΜΟ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
+    createData('ΠΙΘΑΝΟΤΗΤΕΣ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
+    createData('ΑΝΤΙΚΕΙΜΕΝΟΣΤΡΑΦΗΣ ΠΡΟΓΡΑΜΜΑΤΙΣΜΟΣ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
+    createData('ΑΝΑΛΥΣΗ ΙΙ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
+    createData('ΣΗΜΑΤΑ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
+    createData('ΘΕΩΡΙΑ ΑΡΙΘΜΩΝ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'ΣΕΠΤΕΜΒΡΙΟΣ 2023-24', 'Υ', 6, 6),
 ];
+
+
 
 const DGrades =()=> {
 
+    const [selectedOption, setSelectedOption] = useState(null);
+    
 
+    const handleDropdownChange = (event) => {
+        setSelectedOption(event.target.value);
+    };
+
+
+      
     return(
         <>
         <Header/>
@@ -53,11 +65,23 @@ const DGrades =()=> {
                 </div>
                 <div className="row-sort">
                 <Card sx={{width:'100%',display:'flex',background:""}}>
-                    <div className="sort-column-1" style={{display:'flex',flex:"40%",alignItems:"center"}}>
-                        Ταξινόμηση κατά 
+                    <div className="sort-column-1" style={{display:'flex',flex:"40%",alignItems:"center",justifyContent:"center"}}>
+                        Ταξινόμηση κατά
+                        <span>
+                            <div className="filter-select">
+                                <select value={selectedOption} onChange={handleDropdownChange}>
+                                    <option value="Semester">Εξάμηνο</option>
+                                    <option value="Type">Τύπος Μαθήματος</option>
+                                    <option value="Points">Διδακτικές Μονάδες</option>
+                                </select>
+                            </div>
+                        </span>
                     </div>
                     <div className="sort-column-2" style={{display:'flex',flex:"60%",alignItems:"center"}}>
                         Αναζήτηση με:
+                        <span>
+                            
+                        </span>
                     </div>
                 </Card>
                 </div>
