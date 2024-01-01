@@ -1,0 +1,10 @@
+.row-coursesdec-title{
+    margin-left: 10px;
+}
+
+.row-coursesdec-1,.row-coursesdec-2,.row-coursesdec-3{
+    margin-right: 10px;
+    margin-left: 10px;
+    justify-content: center;
+}
+
