@@ -36,20 +36,28 @@
 }
 
 .cell-grades{
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: center;
 }
 .cell-support{
-    display: flex;
+    display: block;
     align-items: center;
 }
 
 .cell-notif{
-    height:50px;
-    display: flex;
-    align-items: center;
     justify-content: center;
+    
+}
+
+.cell-user{
+    display: block;
+    align-items: center;
+}
+
+.cell-lang{
+    display: block;
+    align-items: center;
 }
 
 

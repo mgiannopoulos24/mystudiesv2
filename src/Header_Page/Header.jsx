@@ -20,7 +20,7 @@ const Header=()=>{
                         <div className='dropdown'>
                             <button className='dropbutton'>Δηλώσεις<span><ExpandMoreRoundedIcon style={{fontSize: '15px'}}/></span></button>
                             <div className='dropdown-content'>
-                                <a href='/QuickAccessStud/CoursesDec'>Δήλωση Μαθημάτων</a>
+                                <a href='/MainStud/CoursesDec'>Δήλωση Μαθημάτων</a>
                                 <a href=''>Προηγούμενες Δηλώσεις</a>
                                 <a href=''>Συγγράματα</a>
                             </div>
@@ -31,13 +31,13 @@ const Header=()=>{
                             <button className='dropbutton'>Βαθμολογία<span><ExpandMoreRoundedIcon style={{fontSize: '15px'}}/></span></button>
                             <div className='dropdown-content'>
                                 <a href='/MainStud/Recent'>Πρόσφατη Βαθμολογία</a>
-                                <a href='/MainStud/Detailed'style={{ textDecoration: 'none', color: 'inherit' }}>Αναλυτική Βαθμολογία</a>
+                                <a href='/MainStud/Detailed'>Αναλυτική Βαθμολογία</a>
                             </div>
                         </div>
                     </div>
                     <div className='cell-support'>
                         <div className='dropdown'>
-                            <button className='dropbutton'>Εξυπηρέτηση<span><ExpandMoreRoundedIcon style={{fontSize: '15px'}}/></span></button>
+                            <button className='dropbutton'>Εξυπηρέτηση<span ><ExpandMoreRoundedIcon style={{fontSize: '15px'}}/></span></button>
                             <div className='dropdown-content'>
                                 <a href=''>Αιτήσεις</a>
                             </div>
@@ -45,7 +45,7 @@ const Header=()=>{
                     </div>
                     <div className='cell-notif'>
                         <div className='dropdown'>
-                            <button className='dropbutton'><NotificationsIcon style={{fontSize: '30px'}}/></button>
+                            <button className='dropbutton' style={{padding:'8px',justifyContent:'center',alignItems:"center"}}><NotificationsIcon style={{fontSize: '30px'}}/></button>
                             <div className="dropdown-content">
                                 <a href=''></a>
                                 <a href=''>Όλα τα μηνύματα</a>
