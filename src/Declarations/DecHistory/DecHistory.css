@@ -1,0 +1,25 @@
+.row-dhis-title, .row-dhis-desc{
+    margin-left: 10px;
+}
+
+.two-col-dhis{
+    display: flex;
+}
+
+.col-dhis-1{
+    display: flex;
+    flex: 20%;
+    justify-content: center;
+    text-align: center;
+    font-size: larger;
+}
+
+.col-dhis-2{
+    display: flex;
+    flex: 80%;
+}
+
+.row-table-dhis-1,.row-table-dhis-2,.row-table-dhis-3{
+    justify-content: center;
+    width: 96.5%;
+}
