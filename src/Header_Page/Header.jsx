@@ -21,7 +21,7 @@ const Header=()=>{
                             <button className='dropbutton'>Δηλώσεις<span><ExpandMoreRoundedIcon style={{fontSize: '15px'}}/></span></button>
                             <div className='dropdown-content'>
                                 <a href='/MainStud/CoursesDec'>Δήλωση Μαθημάτων</a>
-                                <a href=''>Προηγούμενες Δηλώσεις</a>
+                                <a href='/MainStud/DecHistory'>Προηγούμενες Δηλώσεις</a>
                                 <a href=''>Συγγράματα</a>
                             </div>
                         </div>
@@ -54,7 +54,7 @@ const Header=()=>{
                     </div>
                     <div className='cell-user'>
                         <div className='dropdown'>
-                            <button className='dropbutton'>User<span><ExpandMoreRoundedIcon style={{fontSize: '15px'}}/></span></button>
+                            <button className='dropbutton'>lakisla<span><ExpandMoreRoundedIcon style={{fontSize: '15px'}}/></span></button>
                             <div className='dropdown-content'>
                                 <a href='/ProfileStud'>Το προφίλ μου</a>
                                 <a href='/Login'>Αποσύνδεση</a>
