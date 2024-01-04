@@ -8,6 +8,7 @@ import DGrades from "./Grades/Detailed Grades/DGrades";
 import RGrades from "./Grades/Recent Grades/RGrades";
 import CoursesDec from "./Declarations/CoursesDec/CoursesDec";
 import DecHistory from "./Declarations/DecHistory/DecHistory";
+import { UserProvider } from './UserContext';
 // import firebaseApp from "./Firebase/firebase"
 // import { getFirestore } from 'firebase/firestore'
 //import Test from "./Test_Page/Test";
