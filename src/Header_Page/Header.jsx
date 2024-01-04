@@ -5,7 +5,8 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 
 
 const Header=()=>{
-  return(
+    
+    return(
     <div className='three-columns-pheader'>
             <div className='column-1-header'>
                 <h2>My Studies</h2>
