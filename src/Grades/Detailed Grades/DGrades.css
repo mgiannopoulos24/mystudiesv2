@@ -18,24 +18,22 @@
     display: flex;
     flex:25%;
     margin-top: 80px;
+    height:30%;
 }
 
-.row-sem-1,.row-sem-2,.row-sem-3,.row-sem-4{
+.row-semesters{
     margin-left: 10px;
 }
 
 .row-dgrade{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-left: 10px;
 }
-.row-grade h2{
-    align-self: flex-start;
-}
 
-.row-grade span{
+.row-dgrade span{
     display: flex;
-    align-self: flex-end;
 }
 
 
