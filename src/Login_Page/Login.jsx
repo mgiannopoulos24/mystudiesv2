@@ -1,20 +1,31 @@
 import "./Login.css"
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faUser } from "@fortawesome/free-solid-svg-icons";
-// import { faLock } from "@fortawesome/free-solid-svg-icons";
-// import {Link} from "react-router-dom";
 import ekpa_logo from "./assets/ekpa-logo.png"
 import Button from '@mui/material/Button';
 import digi_conv from "./assets/digital-convergence_111x30.jpg"
 import espa_img from "./assets/espa52x30.jpg"
 import eu_img from "./assets/eu-erdf_113x30.jpg"
+import Login_Form from "./Login_Form/Login_Form";
+import { useState} from "react";
+import Signup_Form from "./Signup_Form/Signup_Form";
 
 const Login =() => {
 
+
+    const [showLoginForm, setShowLoginForm] = useState(false);
     
+    const handleLoginButtonClick = () => {
+        setShowLoginForm(!showLoginForm);
+    };
+    
+    const [showSignupForm, setShowSignupForm] = useState(false);
+
+    const handleSignupButtonClick = () => {
+        setShowSignupForm(!showSignupForm);
+    };
+
     return (
         <>
-        <div className="Page">
+        <div className={`Page ${showLoginForm ? 'form-visible' : ''}`}>
         <div className="nav-bar">
             <a href=""><h2>en</h2></a>
         </div>
@@ -29,12 +40,18 @@ const Login =() => {
                 <hr></hr>
                 <div className="row-uni-login">
                     <h3>Σύνδεση με:</h3>
-                    <a href="/MainStud"><Button variant="contained" style={{textTransform:"none"}}>Ιδρυματικό Λογαριασμό</Button></a>
+                    <Button variant="contained" style={{textTransform:"none"}} onClick={handleLoginButtonClick}>Ιδρυματικό Λογαριασμό</Button>
+                </div>
+                <div className={`login-form-container ${showLoginForm ? 'slide-in' : ''}`}>
+                    {showLoginForm && <Login_Form onLoginSuccess={() => setShowLoginForm(false)}/>} 
                 </div>
                 <hr></hr>
                 <div className="row-alt-login">
                     <h4>Αν δεν έχετε ιδρυματικό λογαριασμό:</h4>
-                    <a href="/MainStud"><Button variant="outlined" style={{textTransform:"none"}}>Σύνδεση με κωδικό Πανελληνίων</Button></a>
+                    <Button variant="outlined" style={{textTransform:"none"}} onClick={handleSignupButtonClick}>Δημιουργία λογαριασμού</Button>
+                </div>
+                <div className={`signup-form-container ${showSignupForm ? 'slide-in' : ''}`}>
+                    {showSignupForm && <Signup_Form />} 
                 </div>
             </div>
             <div className="column-2">
