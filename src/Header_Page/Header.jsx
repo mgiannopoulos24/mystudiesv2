@@ -2,10 +2,26 @@ import "./Header.css"
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import { auth } from "../Firebase/firebase";
+import React, { useState, useEffect } from "react";
 
 
 const Header=()=>{
     
+    const [userEmail, setUserEmail] = useState(null);
+
+    useEffect(() => {
+      const unsubscribe = auth.onAuthStateChanged((user) => {
+        if (user) {
+          setUserEmail(user.email);
+        } else {
+          setUserEmail(null);
+        }
+      });
+  
+      return () => unsubscribe();
+    }, []);
+
     return(
     <div className='three-columns-pheader'>
             <div className='column-1-header'>
@@ -23,7 +39,7 @@ const Header=()=>{
                             <div className='dropdown-content'>
                                 <a href='/MainStud/CoursesDec'>Δήλωση Μαθημάτων</a>
                                 <a href='/MainStud/DecHistory'>Προηγούμενες Δηλώσεις</a>
-                                <a href=''>Συγγράματα</a>
+                                <a href='/MainStud/Books'>Συγγράματα</a>
                             </div>
                         </div>
                     </div>
@@ -55,7 +71,7 @@ const Header=()=>{
                     </div>
                     <div className='cell-user'>
                         <div className='dropdown'>
-                            <button className='dropbutton'>lakisla<span><ExpandMoreRoundedIcon style={{fontSize: '15px'}}/></span></button>
+                            <button className='dropbutton'>{userEmail}<span><ExpandMoreRoundedIcon style={{fontSize: '15px'}}/></span></button>
                             <div className='dropdown-content'>
                                 <a href='/ProfileStud'>Το προφίλ μου</a>
                                 <a href='/Login'>Αποσύνδεση</a>
