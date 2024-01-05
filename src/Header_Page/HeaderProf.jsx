@@ -23,47 +23,47 @@ const HeaderProf=()=>{
     }, []);
 
     return(
-    <div className='three-columns-pheader'>
-            <div className='column-1-header'>
+    <div className='three-columns-pheader-1'>
+            <div className='column-1-header-1'>
                 <h2>My Studies</h2>
             </div>
-            <div className='column-2-header'>
+            <div className='column-2-header-1'>
                         
             </div>
-            <div className='column-3-header'>
-                <div className='row-icons'>
-                    <div className='cell-home'><a href="/MainProf" style={{ textDecoration: 'none', color: 'inherit' }}><HomeRoundedIcon style={{ fontSize: '30px' }}/></a></div>
-                    <div className='cell-grades'>
-                        <div className='dropdown'>
-                            <button className='dropbutton'>Βαθμολογία<span><ExpandMoreRoundedIcon style={{fontSize: '15px'}}/></span></button>
-                            <div className='dropdown-content'>
+            <div className='column-3-header-1'>
+                <div className='row-icons-1'>
+                    <div className='cell-home-1'><a href="/MainProf" style={{ textDecoration: 'none', color: 'inherit' }}><HomeRoundedIcon style={{ fontSize: '30px' }}/></a></div>
+                    <div className='cell-grades-1'>
+                        <div className='dropdown-1'>
+                            <button className='dropbutton-1'>Βαθμολογία<span><ExpandMoreRoundedIcon style={{fontSize: '15px'}}/></span></button>
+                            <div className='dropdown-content-1'>
                                 <a href=''>Πρόσφατη Βαθμολογία</a>
                                 <a href=''>Αναλυτική Βαθμολογία</a>
                             </div>
                         </div>
                     </div>                    
-                    <div className='cell-notif'>
-                        <div className='dropdown'>
-                            <button className='dropbutton' style={{padding:'8px',justifyContent:'center',alignItems:"center"}}><NotificationsIcon style={{fontSize: '30px'}}/></button>
-                            <div className="dropdown-content">
+                    <div className='cell-notif-1'>
+                        <div className='dropdown-1'>
+                            <button className='dropbutton-1' style={{padding:'8px',justifyContent:'center',alignItems:"center"}}><NotificationsIcon style={{fontSize: '30px'}}/></button>
+                            <div className="dropdown-content-1">
                                 <a href=''></a>
                                 <a href=''>Όλα τα μηνύματα</a>
                             </div>
                     </div>    
                     </div>
-                    <div className='cell-user'>
-                        <div className='dropdown'>
-                            <button className='dropbutton'>{userEmail}<span><ExpandMoreRoundedIcon style={{fontSize: '15px'}}/></span></button>
-                            <div className='dropdown-content'>
+                    <div className='cell-user-1'>
+                        <div className='dropdown-1'>
+                            <button className='dropbutton-1'>{userEmail}<span><ExpandMoreRoundedIcon style={{fontSize: '15px'}}/></span></button>
+                            <div className='dropdown-content-1'>
                                 <a href=''>Το προφίλ μου</a>
                                 <a href='/Login'>Αποσύνδεση</a>
                             </div>
                         </div>
                     </div>
-                    <div className='cell-lang'>
-                        <div className='dropdown'>
-                            <button className='dropbutton'>Ελληνικά<span><ExpandMoreRoundedIcon style={{fontSize: '15px'}}/></span></button>
-                            <div className='dropdown-content'>
+                    <div className='cell-lang-1'>
+                        <div className='dropdown-1'>
+                            <button className='dropbutton-1'>Ελληνικά<span><ExpandMoreRoundedIcon style={{fontSize: '15px'}}/></span></button>
+                            <div className='dropdown-content-1'>
                                 <option>Αγγλικά</option>
                             </div>
                         </div>

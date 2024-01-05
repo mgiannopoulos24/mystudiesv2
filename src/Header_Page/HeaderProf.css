@@ -1,33 +1,33 @@
-.three-columns-pheader{
+.three-columns-pheader-1{
     display: flex;
     height: 50px;
     background-color: lightblue;
 }
 
-.column-1-header{
+.column-1-header-1{
     display: flex;
     flex:15%;
     align-items: center;
     justify-content: flex-start;
 }
 
-.column-1-header h2{
+.column-1-header-1 h2{
     margin-left: 10px;
 }
 
-.column-2-header{
+.column-2-header-1{
     flex:70%;
 }
 
-.column-3-header{
+.column-3-header-1{
     flex:30%;
 }
 
-.row-icons{
+.row-icons-1{
     display:flex;
 }
 
-.cell-home{
+.cell-home-1{
     width:50px;
     height:50px;
     display: flex;
@@ -35,30 +35,30 @@
     justify-content: center;
 }
 
-.cell-grades{
+.cell-grades-1{
     display: block;
     align-items: center;
     justify-content: center;
 }
 
 
-.cell-notif{
+.cell-notif-1{
     justify-content: center;
     
 }
 
-.cell-user{
+.cell-user-1{
     display: block;
     align-items: center;
 }
 
-.cell-lang{
+.cell-lang-1{
     display: block;
     align-items: center;
 }
 
 
-.dropbutton{
+.dropbutton-1{
     background-color: lightblue;
     color:black;
     padding: 16px;
@@ -66,17 +66,17 @@
     border: black;
 }
 
-.dropbutton span {
+.dropbutton-1 span {
 
     margin-top: 3px; 
 }
 
-.dropdown{
+.dropdown-1{
     position: relative;
     display: inline-block;
 }
 
-.dropdown-content {
+.dropdown-content-1 {
     display: none;
     position: absolute;
     background-color: white;
@@ -84,23 +84,23 @@
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
-.dropdown-content a{
+.dropdown-content-1 a{
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
-.dropdown-content option{
+.dropdown-content-1 option{
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
-.dropdown-content a:hover{ background-color: #ddd;}
-.dropdown:hover .dropdown-content {display: block;}
-.dropdown:hover .dropbutton{background-color: white;}
-.cell-home:hover{ background-color: white;}
-.notif-button:hover {background-color: white;}
-.dropdown-content option:hover{background-color: #ddd;}
+.dropdown-1-content a:hover{ background-color: #ddd;}
+.dropdown-1:hover .dropdown-content-1 {display: block;}
+.dropdown-1:hover .dropbutton-1{background-color: white;}
+.cell-home-1:hover{ background-color: white;}
+.notif-1-button:hover {background-color: white;}
+.dropdown-content-1 option:hover{background-color: #ddd;}
