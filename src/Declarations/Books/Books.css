@@ -1,0 +1,7 @@
+.row-books-title, .row-books-desc{
+    margin-left: 10px;
+}
+
+.main-row-books{
+    display: flex;
+}
