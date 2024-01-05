@@ -8,7 +8,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-
+import Button from '@mui/material/Button'
+import { useState } from 'react';
 
 
 function createData(subject, id, professor, period, type,points,declare) {
@@ -40,11 +41,38 @@ const rowsSem3 = [
 ];
 
 const CoursesDec=()=>{
+    const [checkedCourses, setCheckedCourses] = useState([]);
+
+    const handleCheckboxChange = (row) => {
+        const isChecked = checkedCourses.includes(row);
+        setCheckedCourses((prevCheckedCourses) => {
+        if (isChecked) {
+            return prevCheckedCourses.filter((course) => course !== row);
+        } else {
+            return [...prevCheckedCourses, row];
+        }
+        });
+    };
+
+    const isCheckboxDisabled = (row) => checkedCourses.length >= 8 && !checkedCourses.includes(row);
+    const isLimitReached = checkedCourses.length >= 8;
     return(
         <>
             <Header/>
             <div className="row-coursesdec-title">
-                <h2>Δήλωση Μαθημάτων</h2>
+                <div className='row-coursesdec-title-col1' style={{flex:'33%'}}>
+                <h2>Δήλωση Μαθημάτων</h2>    
+                </div>
+                <div className='row-coursesdec-title-col2' style={{flex:'33%'}}>
+                {isLimitReached && (
+                    <div style={{ color: "red", marginTop: "10px" }}>
+                        Το όριο δηλωμένων μαθημάτων σας είναι τα 8 μαθήματα
+                    </div>
+                )}
+                </div>
+                <div className='row-coursesdec-title-col3' style={{display:'flex',flex:'33%',justifyContent:'flex-end',alignItems:'center',marginRight:'10px'}}>
+                <Button variant='outlined' color="success" sx={{textTransform:"none", marginRight:'10px'}}>Προσωρινή Αποθήκευση</Button><Button variant="contained" color="success" sx={{textTransform:"none"}}>Οριστική Αποθήκευση</Button>
+                </div>
             </div>
             <div className="row-coursesdec-1">
                 <h3>1ο Εξάμηνο</h3>
@@ -70,7 +98,11 @@ const CoursesDec=()=>{
                                     <TableCell>{row.period}</TableCell>
                                     <TableCell>{row.type}</TableCell>
                                     <TableCell>{row.points}</TableCell>
-                                    <TableCell><Checkbox/></TableCell>
+                                    <TableCell><Checkbox 
+                                    checked={checkedCourses.includes(row)}
+                                    onChange={() => handleCheckboxChange(row)}
+                                    disabled={isCheckboxDisabled(row)}/>
+                                    </TableCell>
                                 </TableRow>))}
                             </TableBody>
                         </Table>
@@ -100,7 +132,11 @@ const CoursesDec=()=>{
                                     <TableCell>{row.period}</TableCell>
                                     <TableCell>{row.type}</TableCell>
                                     <TableCell>{row.points}</TableCell>
-                                    <TableCell><Checkbox/></TableCell>
+                                    <TableCell><Checkbox
+                                    checked={checkedCourses.includes(row)}
+                                    onChange={() => handleCheckboxChange(row)}
+                                    disabled={isCheckboxDisabled(row)}/>
+                                    </TableCell>
                                 </TableRow>))}
                             </TableBody>
                         </Table>
@@ -130,12 +166,16 @@ const CoursesDec=()=>{
                                     <TableCell>{row.period}</TableCell>
                                     <TableCell>{row.type}</TableCell>
                                     <TableCell>{row.points}</TableCell>
-                                    <TableCell><Checkbox/></TableCell>
+                                    <TableCell><Checkbox
+                                    checked={checkedCourses.includes(row)}
+                                    onChange={() => handleCheckboxChange(row)}
+                                    disabled={isCheckboxDisabled(row)}/>
+                                    </TableCell>
                                 </TableRow>))}
                             </TableBody>
                         </Table>
                     </TableContainer>
-
+                                
 
                 
             </div>
