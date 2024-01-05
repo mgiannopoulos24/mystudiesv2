@@ -62,9 +62,9 @@ const DecHistory=()=>{
             </div><br></br>
             <div className="two-col-dhis">
                 <div className="col-dhis-1">
-                    <ul style={{listStyle:"none"}}>
-                        <li onClick={() => handleYearChange('2023-24')}>2023-24</li>
-                        <li onClick={() => handleYearChange('2022-23')}>2022-23</li>
+                    <ul style={{listStyle:"none",fontSize:18}}>
+                        <li style={{ cursor: "pointer" }} onClick={() => handleYearChange('2023-24')}>2023-24</li>
+                        <li style={{ cursor: "pointer" }} onClick={() => handleYearChange('2022-23')}>2022-23</li>
                     </ul>
                 </div>
                 <div className="col-dhis-2">

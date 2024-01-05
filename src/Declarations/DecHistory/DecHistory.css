@@ -8,15 +8,13 @@
 
 .col-dhis-1{
     display: flex;
-    flex: 20%;
-    justify-content: center;
-    text-align: center;
-    font-size: larger;
+    flex: 10%;
+    justify-content: flex-start;
 }
 
 .col-dhis-2{
     display: flex;
-    flex: 80%;
+    flex: 90%;
 }
 
 .row-table-dhis-1,.row-table-dhis-2,.row-table-dhis-3{
