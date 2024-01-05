@@ -8,7 +8,8 @@ import DGrades from "./Grades/Detailed Grades/DGrades";
 import RGrades from "./Grades/Recent Grades/RGrades";
 import CoursesDec from "./Declarations/CoursesDec/CoursesDec";
 import DecHistory from "./Declarations/DecHistory/DecHistory";
-import { UserProvider } from './UserContext';
+import MainProf from "./Main_Page/MainProf";
+import Books from "./Declarations/Books/Books";
 // import firebaseApp from "./Firebase/firebase"
 // import { getFirestore } from 'firebase/firestore'
 //import Test from "./Test_Page/Test";
@@ -28,6 +29,8 @@ export default function App(){
         <Route path="/MainStud/Recent" element={<RGrades/>}/>
         <Route path="/MainStud/CoursesDec" element={<CoursesDec/>}/>
         <Route path="/MainStud/DecHistory" element={<DecHistory/>}/>
+        <Route path="/MainStud/Books" element={<Books/>}/>
+        <Route path="/MainProf" element={<MainProf/>} />
       </Routes>
     </Router>
     </>
