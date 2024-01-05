@@ -1,17 +1,26 @@
 import React,{useState} from "react"
 import {auth} from "../../Firebase/firebase"
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { Link } from "react-router-dom";
 import TextField from "@mui/material/TextField";
+import { useNavigate } from 'react-router-dom';
 
 const Login_Form=({onLoginSuccess})=>{
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
+    const navigate = useNavigate();
+
     const Login_In=(e)=>{
         e.preventDefault();
         signInWithEmailAndPassword(auth,email,password)
         .then((userCredential)=>{
-            console.log(userCredential);
+            const userEmail = userCredential.user.email;;
+            if (userEmail === 'lakisla@di.uoa.gr') {
+                navigate('/MainStud');
+            } else if (userEmail === 'prof1@di.uoa.gr') {
+                navigate('/MainProf');
+            } else if (userEmail === 'reg1@di.uoa.gr') {
+                navigate('/MainReg');
+            }
             onLoginSuccess();
         }).catch((error)=> {
             console.log(error);
@@ -48,7 +57,7 @@ const Login_Form=({onLoginSuccess})=>{
                 </div>
                 <br></br>
                 <div className="row-submit" style={{marginTop:"30px"}}>
-                    <Link to="/MainStud"><button type="submit">Είσοδος</button></Link>
+                    <button type="submit">Είσοδος</button>
                 </div>
                 </form>
             </div>
