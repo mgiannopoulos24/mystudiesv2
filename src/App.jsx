@@ -10,6 +10,7 @@ import CoursesDec from "./Declarations/CoursesDec/CoursesDec";
 import DecHistory from "./Declarations/DecHistory/DecHistory";
 import MainProf from "./Main_Page/MainProf";
 import Books from "./Declarations/Books/Books";
+import Requests from "./Support/Requests";
 // import firebaseApp from "./Firebase/firebase"
 // import { getFirestore } from 'firebase/firestore'
 //import Test from "./Test_Page/Test";
@@ -24,12 +25,13 @@ export default function App(){
       <Routes>
         <Route path="/*" element={<Login/>} />           
         <Route path="/MainStud" element={<MainStud/>} />
-        <Route path="/ProfileStud" element={<ProfileStud/>}/>
+        <Route path="/MainStud/ProfileStud" element={<ProfileStud/>}/>
         <Route path="/MainStud/Detailed" element={<DGrades/>}/>
         <Route path="/MainStud/Recent" element={<RGrades/>}/>
         <Route path="/MainStud/CoursesDec" element={<CoursesDec/>}/>
         <Route path="/MainStud/DecHistory" element={<DecHistory/>}/>
         <Route path="/MainStud/Books" element={<Books/>}/>
+        <Route path="/MainStud/Requests" element={<Requests/>}/>
         <Route path="/MainProf" element={<MainProf/>} />
       </Routes>
     </Router>
