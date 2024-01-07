@@ -46,7 +46,7 @@ const Requests=()=>{
                 <span>
                     <TextField 
                     type="text" 
-                    label="Τύπο αίτησης" 
+                    label="Τύπο αίτησης, ημερομηνία αίτησης" 
                     variant="outlined" 
                     size="small" 
                     sx={{width:'600px', margin:'0 15px'}}
@@ -70,41 +70,49 @@ const Requests=()=>{
         </div>
         <br></br>
         <div className="row-req-list">
-        <Card sx={{width:1860,display:'flex',justifyContent:"center"}}>
-            <div style={{flex:'50%'}}>
-                <CardContent sx={{fontSize:18,fontWeight:"bold"}}>
-                    Βεβαίωση Σπουδών
-                </CardContent>
-                <p style={{marginLeft:"20px", fontSize:18}}>10/10/2022</p>
+        {[
+          {
+            title: "Βεβαίωση Σπουδών",
+            date: "10/10/2022",
+            status: "Εγκρίθηκε",
+          },
+          {
+            title: "Πιστοποιητικό Στρατολογικής Χρήσης",
+            date: "12/10/2022",
+            status: "Σε εκκρεμότητα",
+          },
+          {
+            title: "Πιστοποιητικό Φοιτητικής Ιδιότητας",
+            date: "15/10/2022",
+            status: "Εγκρίθηκε",
+          },
+        ].map((request, index) => {
+          // Check if the request should be displayed based on the selected option
+          const shouldDisplay =
+            ((selectedOption === "Approved" && request.status === "Εγκρίθηκε") ||
+            (selectedOption === "In progress" && request.status === "Σε εκκρεμότητα") ||
+            selectedOption === "All") &&
+            (filterText === "" ||
+              request.title.toLowerCase().includes(filterText.toLowerCase()) ||
+              request.date.includes(filterText));
+
+          // Render the card only if it should be displayed
+          return shouldDisplay ? (
+            <div key={index} className="individual-card">
+              <Card sx={{ width: 1860, display: 'flex', justifyContent: 'center', marginBottom: '10px' }}>
+                <div style={{ flex: '50%' }}>
+                  <CardContent sx={{ fontSize: 18, fontWeight: 'bold' }}>
+                    {request.title}
+                  </CardContent>
+                  <p style={{ marginLeft: '20px', fontSize: 18 }}>{request.date}</p>
+                </div>
+                <div style={{ display: 'flex', flex: '50%', justifyContent: 'flex-end', alignItems: 'center', marginRight: '60px' }}>
+                  <p style={{ color: request.status === 'Εγκρίθηκε' ? 'green' : 'orange', fontSize: 20 }}>{request.status}</p>
+                </div>
+              </Card>
             </div>
-            <div style={{display:'flex',flex:'50%',justifyContent:"flex-end",alignItems:"center",marginRight:"60px"}}>
-                <p style={{color:"green",fontSize:20}}>Εγκρίθηκε</p>
-            </div>
-        </Card>
-        <br></br>
-        <Card sx={{width:1860,display:'flex',justifyContent:"center"}}>
-            <div style={{flex:'50%'}}>
-                <CardContent sx={{fontSize:18,fontWeight:"bold"}}>
-                    Πιστοποιητικό Στρατολογικής Χρήσης
-                </CardContent>
-                <p style={{marginLeft:"20px", fontSize:18}}>12/10/2022</p>
-            </div>
-            <div style={{display:'flex',flex:'50%',justifyContent:"flex-end",alignItems:"center",marginRight:"30px"}}>
-                <p style={{color:"orange",fontSize:20}}>Σε εκκρεμότητα</p>
-            </div>
-        </Card>
-        <br></br>
-        <Card sx={{width:1860,display:'flex',justifyContent:"center"}}>
-            <div style={{flex:'50%'}}>
-                <CardContent sx={{fontSize:18,fontWeight:"bold"}}>
-                    Πιστοποιητικό Φοιτητικής Ιδιότητας
-                </CardContent>
-                <p style={{marginLeft:"20px", fontSize:18}}>15/10/2022</p>
-            </div>
-            <div style={{display:'flex',flex:'50%',justifyContent:"flex-end",alignItems:"center",marginRight:"60px"}}>
-                <p style={{color:"green",fontSize:20}}>Εγκρίθηκε</p>
-            </div>
-        </Card>
+          ) : null;
+        })}
         </div>
             
         
