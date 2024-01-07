@@ -266,12 +266,7 @@ function Row(props) {
     );
 }
 
-const title = [
-    createData("Εξάμηνο 1"),
-    createData("Εξάμηνο 2"),
-    createData("Εξάμηνο 3"),
-  ];
- 
+
 
 
 
@@ -288,7 +283,9 @@ const DGrades =()=> {
         setFilterText(event.target.value);
       };
     
-    const filteredRows = rows.filter((row) =>
+
+
+    const filteredRows = rows.filter((row)  =>
       row.Sem1.some(
         (subject) =>
           subject.subject.toLowerCase().includes(filterText.toLowerCase()) ||
