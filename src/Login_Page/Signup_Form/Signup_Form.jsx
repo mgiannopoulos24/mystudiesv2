@@ -2,6 +2,7 @@ import React,{useState} from "react"
 import {auth} from "../../Firebase/firebase"
 import { createUserWithEmailAndPassword} from "firebase/auth";
 import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 
 const Signup_Form=()=>{
     const [email,setEmail]=useState('');
@@ -25,6 +26,7 @@ const Signup_Form=()=>{
                     <TextField
                         label="Email"
                         type="email"
+                        size="small"
                         variant="outlined"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -37,6 +39,7 @@ const Signup_Form=()=>{
                     <TextField
                         label="Password"
                         type="password"
+                        size="small"
                         variant="outlined"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
@@ -46,7 +49,7 @@ const Signup_Form=()=>{
                 </div>
                 <br></br>
                 <div className="row-submit" style={{marginTop:"30px"}}>
-                    <button type="submit">Εγγραφή</button>
+                <Button variant= "contained" color="success" type="submit" sx={{textTransform:"none"}}>Εγγραφή</Button>
                 </div>                    
                 </form>
             </div>

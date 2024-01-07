@@ -3,6 +3,7 @@ import {auth} from "../../Firebase/firebase"
 import { signInWithEmailAndPassword } from "firebase/auth";
 import TextField from "@mui/material/TextField";
 import { useNavigate } from 'react-router-dom';
+import Button from "@mui/material/Button";
 
 const Login_Form=({onLoginSuccess})=>{
     const [email,setEmail]=useState('');
@@ -37,6 +38,7 @@ const Login_Form=({onLoginSuccess})=>{
                         label="Email"
                         type="email"
                         variant="outlined"
+                        size="small"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         margin="normal"
@@ -49,6 +51,7 @@ const Login_Form=({onLoginSuccess})=>{
                         label="Password"
                         type="password"
                         variant="outlined"
+                        size="small"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         margin="normal"
@@ -57,7 +60,7 @@ const Login_Form=({onLoginSuccess})=>{
                 </div>
                 <br></br>
                 <div className="row-submit" style={{marginTop:"30px"}}>
-                    <button type="submit">Είσοδος</button>
+                    <Button variant= "contained" color="success" type="submit" sx={{textTransform:"none"}}>Είσοδος</Button>
                 </div>
                 </form>
             </div>
