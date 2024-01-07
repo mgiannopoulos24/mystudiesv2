@@ -56,7 +56,7 @@ const Header=()=>{
                         <div className='dropdown'>
                             <button className='dropbutton'>Εξυπηρέτηση<span ><ExpandMoreRoundedIcon style={{fontSize: '15px'}}/></span></button>
                             <div className='dropdown-content'>
-                                <a href=''>Αιτήσεις</a>
+                                <a href='/MainStud/Requests'>Αιτήσεις</a>
                             </div>
                         </div>
                     </div>
