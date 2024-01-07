@@ -73,7 +73,7 @@ const Header=()=>{
                         <div className='dropdown'>
                             <button className='dropbutton'>{userEmail}<span><ExpandMoreRoundedIcon style={{fontSize: '15px'}}/></span></button>
                             <div className='dropdown-content'>
-                                <a href='/ProfileStud'>Το προφίλ μου</a>
+                                <a href='/MainStud/ProfileStud'>Το προφίλ μου</a>
                                 <a href='/Login'>Αποσύνδεση</a>
                             </div>
                         </div>
