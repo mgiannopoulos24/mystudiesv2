@@ -7,9 +7,10 @@ import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
 import { useState } from "react";
 import { CardContent } from "@mui/material";
+import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 
 const Requests=()=>{
-    const [selectedOption, setSelectedOption] = useState(null);
+    const [selectedOption, setSelectedOption] = useState("All");
     const [filterText, setFilterText] = useState("");
     
     const handleDropdownChange = (event) => {
@@ -19,11 +20,39 @@ const Requests=()=>{
     const handleFilterChange = (event) => {
         setFilterText(event.target.value);
       };
-
+    
+      const visibleResultsCount = [
+        {
+          title: "Βεβαίωση Σπουδών",
+          date: "10/10/2022",
+          status: "Εγκρίθηκε",
+        },
+        {
+          title: "Πιστοποιητικό Στρατολογικής Χρήσης",
+          date: "12/10/2022",
+          status: "Σε εκκρεμότητα",
+        },
+        {
+          title: "Πιστοποιητικό Φοιτητικής Ιδιότητας",
+          date: "15/10/2022",
+          status: "Εγκρίθηκε",
+        },
+      ].reduce((count, request) => {
+        const shouldDisplay =
+          ((selectedOption === "Approved" && request.status === "Εγκρίθηκε") ||
+            (selectedOption === "In progress" && request.status === "Σε εκκρεμότητα") ||
+            selectedOption === "All") &&
+          (filterText === "" ||
+            request.title.toLowerCase().includes(filterText.toLowerCase()) ||
+            request.date.includes(filterText));
+    
+        return shouldDisplay ? count + 1 : count;
+      }, 0);
     return(
 
         <>
         <Header/>
+        <Breadcrumbs/>
         <div className="row-requests">
             <h2>Αιτήσεις προς την Γραμματεία</h2><span style={{marginRight:"30px",marginTop:"5px"}}><Button variant="contained" color="success" sx={{textTransform:"none",fontSize:16}}>Νέα αίτηση</Button></span>
         </div>
@@ -66,7 +95,7 @@ const Requests=()=>{
         </Card>
         </div>
         <div className="req-results">
-            <h2 style={{marginLeft:'10px'}}>3 Αποτελέσματα</h2>
+            <h2 style={{marginLeft:'10px'}}>{visibleResultsCount} {visibleResultsCount === 1 ? 'Αποτέλεσμα' : 'Αποτελέσματα'}</h2>
         </div>
         <br></br>
         <div className="row-req-list">
@@ -114,12 +143,7 @@ const Requests=()=>{
           ) : null;
         })}
         </div>
-            
-        
-         
-        
-
-        
+ 
         </>
     )
 }
