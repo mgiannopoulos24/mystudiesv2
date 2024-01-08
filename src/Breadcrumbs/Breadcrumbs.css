@@ -1,0 +1,20 @@
+.row-breadcrumbs{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 10px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.breadcrumb-link {
+    text-decoration: none;
+    color: #000; /* Set your preferred color for the links */
+  }
+  
+  .breadcrumb-link:hover {
+    text-decoration: underline;
+  }
+  
+  .breadcrumb-separator {
+    margin: 0 0.5em; 
+  }
