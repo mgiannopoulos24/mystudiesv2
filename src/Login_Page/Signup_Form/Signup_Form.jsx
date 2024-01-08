@@ -3,20 +3,27 @@ import {auth} from "../../Firebase/firebase"
 import { createUserWithEmailAndPassword} from "firebase/auth";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import "./Signup.css"
 
 const Signup_Form=()=>{
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
-
+    const [showSignupNotification, setShowSignupNotification] = useState(false);
     const Sign_Up=(e)=>{
         e.preventDefault();
         createUserWithEmailAndPassword(auth,email,password)
         .then((userCredential)=>{
             console.log(userCredential);
+            setShowSignupNotification(true);
         }).catch((error)=> {
             console.log(error);
         })
     };
+    const handleSignupNotificationClose = () => {
+        // Close the signup notification and reset the state
+        setShowSignupNotification(false);
+    };
+    
     
     return(
         <>
@@ -53,6 +60,12 @@ const Signup_Form=()=>{
                 </div>                    
                 </form>
             </div>
+            {showSignupNotification && (
+                <div className="signup-notification">
+                    <p style={{ color: "white" }}>Ο λογαριασμός δημιουργήθηκε με επιτυχία!</p>
+                    <button onClick={handleSignupNotificationClose}>Κλείσιμο</button>
+                </div>
+            )}
         
         </>
     )
