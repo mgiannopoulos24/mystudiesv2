@@ -1,4 +1,36 @@
-.App{
+/* Default styles for larger screens (1440x810) */
+.App {
   display: flex;
 }
 
+/* Media query for screens with a maximum width of 1440px */
+@media (max-width: 1440px) {
+  /* Adjust styles for screens up to 1440px wide */
+  .App {
+    display: flex;
+  }
+}
+
+/* Media query for screens with a maximum width of 1024px */
+@media (max-width: 1024px) {
+  /* Adjust styles for screens up to 1024px wide */
+  .App {
+    display: flex;
+  }
+}
+
+/* Media query for screens with a maximum width of 768px */
+@media (max-width: 768px) {
+  /* Adjust styles for screens up to 768px wide */
+  .App {
+    display: flex;
+  }
+}
+
+/* Media query for screens with a maximum width of 425px */
+@media (max-width: 425px) {
+  /* Adjust styles for screens up to 425px wide */
+  .App {
+    display: flex;
+  }
+}
