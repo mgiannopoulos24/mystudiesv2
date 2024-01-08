@@ -1,3 +1,4 @@
+import Breadcrumbs from "../../Breadcrumbs/Breadcrumbs";
 import Header from "../../Header_Page/Header";
 import "./Books.css"
 
@@ -9,6 +10,7 @@ const Books=()=>{
     return(
         <>
         <Header/>
+        <Breadcrumbs/>
         <div className="row-books-title">
             <h2>Συγγράμματα</h2>
         </div>

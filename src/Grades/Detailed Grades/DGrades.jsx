@@ -21,6 +21,7 @@ import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import Collapse from "@mui/material/Collapse";
 import IconButton from "@mui/material/IconButton";
+import Breadcrumbs from "../../Breadcrumbs/Breadcrumbs";
 
 function createData(title, sem1Data, sem2Data) {
     return {
@@ -300,6 +301,7 @@ const DGrades =()=> {
     return(
         <>
         <Header/>
+        <Breadcrumbs/>
         <div className="two-columns-dgrade">
             <div className="column-1-dgrade">
                     <div className="row-dgrade">

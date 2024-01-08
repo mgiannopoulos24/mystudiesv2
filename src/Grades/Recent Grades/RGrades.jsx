@@ -6,11 +6,13 @@ import  Card  from "@mui/material/Card";
 import { CardContent } from "@mui/material";
 import SchoolIcon from '@mui/icons-material/School';
 import FlagOutlinedIcon from '@mui/icons-material/FlagOutlined';
+import Breadcrumbs from "../../Breadcrumbs/Breadcrumbs";
 
 const RGrades=()=>{
     return(
         <>
         <Header/>
+        <Breadcrumbs/>
         <div className="two-columns-rgrade">
             <div className="column-1-rgrade">
                 <div className="row-rgrade">

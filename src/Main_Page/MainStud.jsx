@@ -8,11 +8,13 @@ import SchoolIcon from '@mui/icons-material/School';
 import FlagOutlinedIcon from '@mui/icons-material/FlagOutlined';
 import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
+import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 
 const MainStud = () =>{
     return(
         <>
         <Header/>
+        <Breadcrumbs/>
         <div className="row-header">
             <img src={user_img} alt="user"/><span><h2>Αρχική Σελίδα</h2></span>
         </div>

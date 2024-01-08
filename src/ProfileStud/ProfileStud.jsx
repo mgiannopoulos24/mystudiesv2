@@ -3,11 +3,13 @@ import "./ProfileStud.css"
 import user_img from "./assets/user.png"
 import Grid from '@mui/material/Grid';
 import Header from '../Header_Page/Header';
+import Breadcrumbs from '../Breadcrumbs/Breadcrumbs';
 
 export const ProfileStud =()=>{
     return(
         <>
         <Header/>
+        <Breadcrumbs/>
         <div className='row-header'>
             <h2>Το προφίλ μου</h2>
         </div>

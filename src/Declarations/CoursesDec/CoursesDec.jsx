@@ -10,7 +10,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button'
 import { useState } from 'react';
-
+import Breadcrumbs from '../../Breadcrumbs/Breadcrumbs';
 
 function createData(subject, id, professor, period, type,points,declare) {
     return {subject, id, professor, period, type,points,declare};
@@ -59,6 +59,7 @@ const CoursesDec=()=>{
     return(
         <>
             <Header/>
+            <Breadcrumbs/>
             <div className="row-coursesdec-title">
                 <div className='row-coursesdec-title-col1' style={{flex:'33%'}}>
                 <h2>Δήλωση Μαθημάτων</h2>    
