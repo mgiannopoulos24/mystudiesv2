@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh; /* 100% of the viewport height */
-  width: 100vw; /* 100% of the viewport width */
+  width: auto; /* 100% of the viewport width */
 }
 
 
