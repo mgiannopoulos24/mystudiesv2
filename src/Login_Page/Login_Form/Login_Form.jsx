@@ -4,11 +4,13 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import TextField from "@mui/material/TextField";
 import { useNavigate } from 'react-router-dom';
 import Button from "@mui/material/Button";
+import "./LoginForm.css"
 
 const Login_Form=({onLoginSuccess})=>{
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
     const navigate = useNavigate();
+    const [errorMessage, setErrorMessage] = useState(null);
 
     const Login_In=(e)=>{
         e.preventDefault();
@@ -22,11 +24,12 @@ const Login_Form=({onLoginSuccess})=>{
             } else if (userEmail === 'reg1@di.uoa.gr') {
                 navigate('/MainReg');
             }
+            setErrorMessage(null);
             onLoginSuccess();
         }).catch((error)=> {
             console.log(error);
-        })
-        onLoginSuccess();
+            setErrorMessage("Λάθος κωδικός. Παρακαλούμε δοκιμάστε ξανά.");
+        });
     };
     
     return(
@@ -64,9 +67,14 @@ const Login_Form=({onLoginSuccess})=>{
                 </div>
                 </form>
             </div>
+            {errorMessage && (
+                <div className="error-message">
+                    <p>{errorMessage}</p>
+                </div>
+      )}
         
         </>
-    )
-}
+    );
+};
 
 export default Login_Form;

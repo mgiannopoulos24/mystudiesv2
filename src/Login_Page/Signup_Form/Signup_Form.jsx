@@ -62,7 +62,7 @@ const Signup_Form=()=>{
             </div>
             {showSignupNotification && (
                 <div className="signup-notification">
-                    <p style={{ color: "white" }}>Ο λογαριασμός δημιουργήθηκε με επιτυχία!</p>
+                    <p style={{ color: "green" }}>Ο λογαριασμός δημιουργήθηκε με επιτυχία! Συνδεθείτε με τα στοιχεία σας.</p>
                     <button onClick={handleSignupNotificationClose}>Κλείσιμο</button>
                 </div>
             )}
