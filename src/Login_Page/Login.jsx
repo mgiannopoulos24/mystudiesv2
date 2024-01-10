@@ -53,7 +53,7 @@ const Login =() => {
                     <Button variant="outlined" style={{textTransform:"none"}} onClick={handleSignupButtonClick}>Δημιουργία λογαριασμού</Button>
                 </div>
                 <div className={`signup-form-container ${showSignupForm ? 'slide-in' : ''}`}>
-                    {showSignupForm && <Signup_Form />} 
+                    {showSignupForm && <Signup_Form onSignupSuccess={() => setShowLoginForm(true)} />} 
                 </div>
             </div>
             <div className="column-2">
