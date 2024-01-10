@@ -98,7 +98,7 @@
     display: block;
 }
 
-.dropdown-1-content a:hover{ background-color: #ddd;}
+.dropdown-content-1 a:hover{ background-color: #ddd;}
 .dropdown-1:hover .dropdown-content-1 {display: block;}
 .dropdown-1:hover .dropbutton-1{background-color: white;}
 .cell-home-1:hover{ background-color: white;}

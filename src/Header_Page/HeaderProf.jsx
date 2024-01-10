@@ -1,10 +1,10 @@
-import "./HeaderProf.css"
+
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { auth } from "../Firebase/firebase";
 import React, { useState, useEffect } from "react";
-
+import "./HeaderProf.css"
 
 const HeaderProf=()=>{
     
