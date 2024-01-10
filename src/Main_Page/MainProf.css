@@ -1,0 +1,24 @@
+.row-prof{
+    margin-left: 10px;
+}
+
+.two-col-prof{
+    display: flex;
+}
+
+
+.col-subject-prof{
+    flex:55%;
+    margin-left: 30px;
+}
+
+
+
+.col-grades-prof{
+    flex:45%;
+    
+}
+
+.prof-prog{
+    color: purple;
+}
