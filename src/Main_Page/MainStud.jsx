@@ -51,7 +51,7 @@ const MainStud = () =>{
                 <div className="row-subject">
                     <h3>Τα μαθήματα μου</h3><br></br>
                     ΧΕΙΜΕΡΙΝΟ ΕΞΑΜΗΝΟ 2023-24<br></br>
-                    <strong>Σε εκκρεμότητα</strong>
+                    <strong className="stud-prog">Σε εκκρεμότητα</strong>
                 </div>
                 <Card sx={{width:750,display: 'flex'}}>
                     <div style={{ flex: '80%', display: 'flex', flexDirection: 'column'}}>
