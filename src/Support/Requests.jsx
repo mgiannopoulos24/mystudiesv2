@@ -60,14 +60,16 @@ const Requests=()=>{
 
       const [openDialog, setOpenDialog] = useState(false);
 
-      const handleNewRequestClick = () => {
+
+      const handleNewRequestClick = (event) => {
         setOpenDialog(true);
       };
-    
+
+
       const handleCloseDialog = () => {
         setOpenDialog(false);
       };
-    
+      
       const newRequestMenu = (
         <Dialog open={openDialog} onClose={handleCloseDialog} maxWidth="xl" fullWidth>
           <DialogTitle sx={{fontWeight:"bold"}}>Νέα Αίτηση προς την Γραμματεία</DialogTitle>
