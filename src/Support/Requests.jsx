@@ -7,7 +7,16 @@ import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
 import { useState } from "react";
 import { CardContent } from "@mui/material";
+import CardActions from "@mui/material/CardActions";
+import Typography from "@mui/material/Typography";
+import Dialog from "@mui/material/Dialog";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContent from "@mui/material/DialogContent";
+import DialogActions from "@mui/material/DialogActions";
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
+
+
+
 
 const Requests=()=>{
     const [selectedOption, setSelectedOption] = useState("All");
@@ -48,13 +57,95 @@ const Requests=()=>{
     
         return shouldDisplay ? count + 1 : count;
       }, 0);
+
+      const [openDialog, setOpenDialog] = useState(false);
+
+      const handleNewRequestClick = () => {
+        setOpenDialog(true);
+      };
+    
+      const handleCloseDialog = () => {
+        setOpenDialog(false);
+      };
+    
+      const newRequestMenu = (
+        <Dialog open={openDialog} onClose={handleCloseDialog} maxWidth="xl" fullWidth>
+          <DialogTitle sx={{fontWeight:"bold"}}>Νέα Αίτηση προς την Γραμματεία</DialogTitle>
+          <DialogContent className="new-request-menu">
+          <Card sx={{ display: 'flex', width: '100%', marginBottom: 2 }}>
+            <div style={{ flex: '70%', padding: '16px' }}>
+              <CardContent>
+                  <Typography variant="h6">Βεβαίωση Σπουδών</Typography>
+              </CardContent>
+            </div>
+            <div style={{ flex: '30%', padding: '16px', display:"flex",justifyContent:"flex-end" }}>
+              <CardActions>
+                <Button sx={{textTransform:"none"}}variant="contained">Επιλογή</Button>
+              </CardActions>
+            </div>
+          </Card>
+          <Card sx={{ display: 'flex', width: '100%', marginBottom: 2 }}>
+            <div style={{ flex: '70%', padding: '16px' }}>
+              <CardContent>
+                  <Typography variant="h6">Φορολογικής Χρήσης</Typography>
+              </CardContent>
+            </div>
+            <div style={{ flex: '30%', padding: '16px', display:"flex",justifyContent:"flex-end" }}>
+              <CardActions>
+                <Button sx={{textTransform:"none"}}variant="contained">Επιλογή</Button>
+              </CardActions>
+            </div>
+          </Card>
+          <Card sx={{ display: 'flex', width: '100%', marginBottom: 2 }}>
+            <div style={{ flex: '70%', padding: '16px' }}>
+              <CardContent>
+                  <Typography variant="h6">Στρατολογικής Χρήσης (Αναλυτική)</Typography>
+              </CardContent>
+            </div>
+            <div style={{ flex: '30%', padding: '16px', display:"flex",justifyContent:"flex-end" }}>
+              <CardActions>
+                <Button sx={{textTransform:"none"}}variant="contained">Επιλογή</Button>
+              </CardActions>
+            </div>
+          </Card>
+          <Card sx={{ display: 'flex', width: '100%', marginBottom: 2 }}>
+            <div style={{ flex: '70%', padding: '16px' }}>
+              <CardContent>
+                  <Typography variant="h6">Στρατολογικής Χρήσης (Συνοπτική)</Typography>
+              </CardContent>
+            </div>
+            <div style={{ flex: '30%', padding: '16px', display:"flex",justifyContent:"flex-end" }}>
+              <CardActions>
+                <Button sx={{textTransform:"none"}}variant="contained">Επιλογή</Button>
+              </CardActions>
+            </div>
+          </Card>
+          <Card sx={{ display: 'flex', width: '100%', marginBottom: 2 }}>
+            <div style={{ flex: '70%', padding: '16px' }}>
+              <CardContent>
+                  <Typography variant="h6">Αναλυτικής Βαθμολογίας με προβιβάσιμους βαθμούς</Typography>
+              </CardContent>
+            </div>
+            <div style={{ flex: '30%', padding: '16px', display:"flex",justifyContent:"flex-end" }}>
+              <CardActions>
+                <Button sx={{textTransform:"none"}}variant="contained">Επιλογή</Button>
+              </CardActions>
+            </div>
+          </Card>
+          </DialogContent>
+          <DialogActions>
+            <Button variant="outlined" onClick={handleCloseDialog} sx={{textTransform:"none"}}>Ακύρωση</Button>
+          </DialogActions>
+        </Dialog>
+      );
+
     return(
 
         <>
         <Header/>
         <Breadcrumbs/>
         <div className="row-requests">
-            <h2>Αιτήσεις προς την Γραμματεία</h2><span style={{marginRight:"30px",marginTop:"5px"}}><Button variant="contained" color="success" sx={{textTransform:"none",fontSize:16}}>Νέα αίτηση</Button></span>
+            <h2>Αιτήσεις προς την Γραμματεία</h2><span style={{marginRight:"30px",marginTop:"5px"}}><Button variant="contained" color="success" sx={{textTransform:"none",fontSize:16}} onClick={handleNewRequestClick}>Νέα αίτηση</Button></span>
         </div>
         <div className="row-filter-req">
         <Card sx={{width:'97%',display:'flex'}}>
@@ -143,7 +234,7 @@ const Requests=()=>{
           ) : null;
         })}
         </div>
- 
+        {newRequestMenu}
         </>
     )
 }
