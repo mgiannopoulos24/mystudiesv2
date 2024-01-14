@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 
 const MainStud = () =>{
+    const AllCourses = 'https://www.di.uoa.gr/studies/undergraduate/courses';
     return(
         <>
         <Header/>
@@ -42,7 +43,7 @@ const MainStud = () =>{
                     <span>Εξάμηνο 7</span>
                 </li>
                 <li className='todo'>
-                    <span>Αποφοίτηση</span>
+                    <span>Εξάμηνο 8</span>
                 </li>
             </div>
         </div>
@@ -51,7 +52,7 @@ const MainStud = () =>{
                 <div className="row-subject">
                     <h3>Τα μαθήματα μου</h3><br></br>
                     ΧΕΙΜΕΡΙΝΟ ΕΞΑΜΗΝΟ 2023-24<br></br>
-                    <strong className="stud-prog">Σε εκκρεμότητα</strong>
+                    <strong className="stud-prog">Τρέχων Εξάμηνο</strong><Link to={AllCourses}><Button variant="contained" sx={{marginLeft:'477px',textTransform:"none",marginBottom:"20px"}}>'Ολα τα μαθήματα</Button></Link>
                 </div>
                 <Card sx={{width:750,display: 'flex'}}>
                     <div style={{ flex: '80%', display: 'flex', flexDirection: 'column'}}>
