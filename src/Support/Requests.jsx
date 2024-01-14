@@ -13,6 +13,8 @@ import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 
 
@@ -155,11 +157,11 @@ const Requests=()=>{
                 Ταξινόμηση κατά:
                 <span>
                     <div className="filter-select-req">
-                        <select value={selectedOption} onChange={handleDropdownChange}>
-                            <option value="All">Όλες</option>
-                            <option value="Approved">Εγκεκριμένες</option>
-                            <option value="In progress">Σε εκκρεμότητα</option>
-                        </select>
+                      <Select value={selectedOption} onChange={handleDropdownChange} sx={{width:'300px', margin:'0 15px',size:"xsmall",height:"40px"}}>
+                        <MenuItem value="All">Όλες</MenuItem>
+                        <MenuItem value="Approved">Εγκεκριμένες</MenuItem>
+                        <MenuItem value="In progress">Σε εκκρεμότητα</MenuItem>
+                      </Select>
                     </div>
                 </span>
             </div>
@@ -168,7 +170,7 @@ const Requests=()=>{
                 <span>
                     <TextField 
                     type="text" 
-                    label="Τύπο αίτησης, ημερομηνία αίτησης" 
+                    label="Τύπο αίτησης ή ημερομηνία αίτησης" 
                     variant="outlined" 
                     size="small" 
                     sx={{width:'600px', margin:'0 15px'}}
