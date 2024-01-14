@@ -86,9 +86,9 @@ const RGrades=()=>{
             </div>
             <div className="column-2-rgrade">
                 <Card sx={{width:"90%",height:"60%"}}>
-                    <div className="row-card-title"style={{display: 'flex',alignItems: 'center',justifyContent:"center"}}>
+                    <div className="row-card-title"style={{display: 'flex',alignItems: 'center',justifyContent:"center",fontSize:18}}>
                         ΑΠΟΤΕΛΕΣΜΑΤΑ<br></br>
-                        Σεπτέμβριος 2023-24
+                        Σεπτέμβριος 2023-24 
                     </div><br></br>
                     <div className="row-round-progress" style={{display: 'flex',alignItems: 'center',justifyContent:"center"}}>
                         <div style={{ width: '150px', height: '150px' }}>
