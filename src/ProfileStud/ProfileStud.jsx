@@ -22,7 +22,7 @@ export const ProfileStud =()=>{
         </div>
         <div className='track-progress'>
             <li className='done'>
-                Οκτώβριος 2023            
+                Οκτώβριος 2022            
             </li> 
             <li className='done'>
                 Εξάμηνο 1
