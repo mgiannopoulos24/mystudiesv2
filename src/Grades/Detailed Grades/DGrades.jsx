@@ -1,11 +1,4 @@
 import "./DGrades.css"
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import Button  from "@mui/material/Button";
 import Header from "../../Header_Page/Header";
 import  Card  from "@mui/material/Card";
@@ -15,258 +8,10 @@ import React,{ useState} from "react";
 import TextField from "@mui/material/TextField";
 import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
-import Box from '@mui/material/Box'
-import  Typography from "@mui/material/Typography";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import Collapse from "@mui/material/Collapse";
-import IconButton from "@mui/material/IconButton";
 import Breadcrumbs from "../../Breadcrumbs/Breadcrumbs";
-
-function createData(title, sem1Data, sem2Data) {
-    return {
-      title,
-      Sem1: sem1Data,
-      Sem2: sem2Data,
-    };
-  }
-
-const rows = [
-  createData("Εξάμηνο 1", [
-    {
-        subject: "Γραμμική Άλγεβρα",
-        id: "Κ03",
-        professor: "Νάκος",
-        period: "Εξεταστική 1",
-        type: "Υποχρεωτικό",
-        points: 6,
-        grade: 7,
-    },
-    {
-        subject: "Διακριτά Μαθηματικά",
-        id: "Κ09",
-        professor: "Τζάμος",
-        period: "Εξεταστική 2",
-        type: "Υποχρεωτικό",
-        points: 6,
-        grade: 8,
-    },
-    {
-        subject: "Εισαγωγή στην πληροφορική και τις τηλεπικοινωνίες",
-        id: "ΓΠ",
-        professor: "Ρούσσου",
-        period: "Εξεταστική 2",
-        type: "Γενικής Παιδείας",
-        points: 6,
-        grade: 8,
-    },
-    {
-        subject: "Εισαγωγή στον Προγραμματισμό",
-        id: "Κ06",
-        professor: "Αυγερινός",
-        period: "Εξεταστική 2",
-        type: "Υποχρεωτικό",
-        points: 6,
-        grade: 8,
-    },
-    {
-        subject: "Εργαστήριο Λογικής Σχεδίασης",
-        id: "Κ02Ε",
-        professor: "Βασιλόπουλος",
-        period: "Εξεταστική 2",
-        type: "Αυτοτελές Προαιρετικό Εργαστήριο",
-        points: 6,
-        grade: 8,
-    },
-    {
-        subject: "Λογική Σχεδίαση",
-        id: "Κ02",
-        professor: "Καρακώστας",
-        period: "Εξεταστική 2",
-        type: "Υποχρεωτικό",
-        points: 6,
-        grade: 8,
-    },
-    
-  ]),
-  createData("Εξάμηνο 2", [
-    {
-      subject: "Ανάλυση Ι",
-      id: "Κ01",
-      professor: "Δόδος",
-      period: "Εξεταστική 3",
-      type: "Υποχρεωτικό",
-      points: 6,
-      grade: 3,
-    },
-    {
-      subject: "Αρχιτεκτονική Υπολογιστών Ι",
-      id: "Κ14",
-      professor: "Γκιζόπουλος",
-      period: "Εξεταστική 4",
-      type: "Υποχρεωτικό",
-      points: 6,
-      grade: 10,
-    },
-    {
-        subject: "Δομές Δεδομένων και Τεχνικές Προγραμματισμού",
-        id: "Κ08",
-        professor: "Κουμπαράκης/Χατζηκοκολάκης",
-        period: "Εξεταστική 4",
-        type: "Υποχρεωτικό",
-        points: 6,
-        grade: 10,
-    },
-    {
-        subject: "Εφαρμοσμένα Μαθηματικά",
-        id: "Κ20β",
-        professor: "Λουκά",
-        period: "Εξεταστική 4",
-        type: "Προαιρετικό",
-        points: 6,
-        grade: 10,
-    },
-    {
-        subject: "Ηλεκτρομαγνητισμός",
-        id: "Κ12",
-        professor: "Τσίπουρας",
-        period: "Εξεταστική 4",
-        type: "Υποχρεωτικό",
-        points: 6,
-        grade: 10,
-    },
-  ]),
-  createData("Εξάμηνο 3", [
-    {
-      subject: "Ανάλυση ΙΙ",
-      id: "Κ06",
-      professor: "Χαλικιάς",
-      period: "Εξεταστική 5",
-      type: "Υποχρεωτικό",
-      points: 6,
-      grade: 9,
-    },
-    {
-        subject: "Αντικειμενοστραφής Προγραμματισμός",
-        id: "Κ10",
-        professor: "Λυγίζου",
-        period: "Εξεταστική 5",
-        type: "Υποχρεωτικό",
-        points: 6,
-        grade: 9,
-    },
-    {
-        subject: "Εργαστήριο Κυκλωμάτων και Συστήματων",
-        id: "Κ11ε",
-        professor: "Πίνο",
-        period: "Εξεταστική 5",
-        type: "Αυτοτελές Προαιρετικό Εργαστήριο",
-        points: 6,
-        grade: 9,
-    },
-    {
-        subject: "Πιθανότητες και Στατιστική",
-        id: "Κ13",
-        professor: "Αχλιόπτας",
-        period: "Εξεταστική 5",
-        type: "Υποχρεωτικό",
-        points: 6,
-        grade: 9,
-    },
-    {
-        subject: "Σήματα και Συστήματα",
-        id: "Κ11",
-        professor: "Παναγάκης",
-        period: "Εξεταστική 5",
-        type: "Υποχρεωτικό",
-        points: 6,
-        grade: 9,
-    },
-  ]),
-];
-
-
-function Row(props) {
-    const { row } = props;
-    const [open, setOpen] = React.useState(false);
-    
-
-    
-    return (
-      <React.Fragment>
-        <TableRow sx={{ display: "flex" }}>
-          <TableCell sx={{ display: "flex", flex: "10%",paddingRight:'0' }}>
-            <IconButton
-              aria-label="expand row"
-              size="small"
-              onClick={() => setOpen(!open)}
-            >
-              {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-            </IconButton>
-          </TableCell>
-          <TableCell sx={{ display: "flex", flex: "150%", alignItems: "center",fontSize: 18,fontWeight: 'bold'}}>
-            {row.title}
-          </TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
-            <Collapse in={open} timeout="auto" unmountOnExit>
-              <Box sx={{ margin: 1 }}>
-                <Typography variant="h6" gutterBottom component="div">
-                  Μαθήματα
-                </Typography>
-                <Table size="small">
-                  <TableHead>
-                    <TableRow>
-                      <TableCell style={{ width: "15%", fontWeight: "bold" }}>
-                        Μάθημα
-                      </TableCell>
-                      <TableCell style={{ width: "5%", fontWeight: "bold" }}>
-                        Κωδικός
-                      </TableCell>
-                      <TableCell style={{ width: "10%", fontWeight: "bold" }}>
-                        Διδάσκων
-                      </TableCell>
-                      <TableCell style={{ width: "10%", fontWeight: "bold" }}>
-                        Εξεταστική
-                      </TableCell>
-                      <TableCell style={{ width: "10%", fontWeight: "bold" }}>
-                        Τύπος
-                      </TableCell>
-                      <TableCell style={{ width: "10%", fontWeight: "bold" }}>
-                        ΔΜ
-                      </TableCell>
-                      <TableCell style={{ width: "10%", fontWeight: "bold" }}>
-                        Βαθμός
-                      </TableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    {row.Sem1.map((Sem1, index) => (
-                      <TableRow key={index}>
-                        <TableCell>{Sem1.subject}</TableCell>
-                        <TableCell>{Sem1.id}</TableCell>
-                        <TableCell>{Sem1.professor}</TableCell>
-                        <TableCell>{Sem1.period}</TableCell>
-                        <TableCell>{Sem1.type}</TableCell>
-                        <TableCell>{Sem1.points}</TableCell>
-                        <TableCell>
-                            <Typography variant="h6" style={{ color: Sem1.grade > 5 ? 'green' : 'red' }}>
-                                {Sem1.grade}
-                            </Typography>
-                        </TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </Box>
-            </Collapse>
-          </TableCell>
-        </TableRow>
-      </React.Fragment>
-    );
-}
-
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
+import SubjectCard from "../../SubjectCard/SubjectCard";
 
 
 
@@ -274,7 +19,7 @@ function Row(props) {
 
 const DGrades =()=> {
 
-    const [selectedOption, setSelectedOption] = useState(null);
+    const [selectedOption, setSelectedOption] = useState("All");
     const [filterText, setFilterText] = useState("");
     const handleDropdownChange = (event) => {
         setSelectedOption(event.target.value);
@@ -283,20 +28,6 @@ const DGrades =()=> {
     const handleFilterChange = (event) => {
         setFilterText(event.target.value);
       };
-    
-
-
-    const filteredRows = rows.filter((row)  =>
-      row.Sem1.some(
-        (subject) =>
-          subject.subject.toLowerCase().includes(filterText.toLowerCase()) ||
-          subject.professor.toLowerCase().includes(filterText.toLowerCase()) ||
-          subject.id.toLowerCase().includes(filterText.toLowerCase())
-      )
-    );  
-
-
-    
     
     return(
         <>
@@ -313,10 +44,11 @@ const DGrades =()=> {
                             Ταξινόμηση κατά:
                             <span>
                                 <div className="filter-select">
-                                    <select value={selectedOption} onChange={handleDropdownChange}>
-                                        <option value="Semester">Εξάμηνο</option>
-                                        <option value="Points">Διδακτικές Μονάδες</option>
-                                    </select>
+                                  <Select value={selectedOption} onChange={handleDropdownChange} sx={{width:'250px', margin:'0 15px',size:"xsmall",height:"40px"}}>
+                                    <MenuItem value="All">Όλη η Βαθμολογία</MenuItem>
+                                    <MenuItem value="Passed">Περασμένα μόνο</MenuItem>
+                                    <MenuItem value="Not passed">Χρωστούμενα</MenuItem>
+                                  </Select>
                                 </div>
                             </span>
                         </div>
@@ -344,24 +76,18 @@ const DGrades =()=> {
                         </div>
                     </Card>
                     </div>
-                    <div className="row-filter">
-
-                    </div>
                     <br></br>
                     <div className="row-semesters">
-                        <TableContainer component={Paper}>
-                            <Table sx={{width: '100%'}}>
-                                <TableHead>
-                                </TableHead>
-                                <TableBody>
-                                {filteredRows.map((row, index) => (
-                                    <Row key={index} row={row} />
-                                ))}
-                                </TableBody>
-                            </Table>
-                        </TableContainer>
-                        <br></br>
+                        <SubjectCard title={"Εισαγωγή στον προγραμματισμό"} id={"Κ04"} professor={"Παναγιώτης Σταματόπουλος"} period={"Φεβρουάριος 2023"} points={"7"} type={"Yποχρεωτικό"} grade={"8"}/>
+                        <SubjectCard title={"Γραμμική Άλγεβρα"} id={"Κ03"} professor={"Αρχοντία Γιαννοπούλου"} period={"Σεπτέμβριος 2023"} points={"6"} type={"Yποχρεωτικό"} grade={"4"}/>
+                        <SubjectCard title={"Διακριτά Μαθηματικά"} id={"Κ09"} professor={"Χρήστος Τζάμος"} period={"Φεβρουάριος 2023"} points={"7"} type={"Yποχρεωτικό"} grade={"7"}/>
+                        <SubjectCard title={"Λογική Σχεδίαση"} id={"Κ02"} professor={"Αντώνιος Πασχάλης"} period={"Σεπτέμβριος 2023"} points={"6"} type={"Yποχρεωτικό"} grade={"10"}/>
+                        <SubjectCard title={"Ανάλυση Ι"} id={"Κ01"} professor={"Παντελεήμων Δοδός"} period={"Σεπτέμβριος 2023"} points={"8"} type={"Yποχρεωτικό"} grade={"3"}/>
+                        <SubjectCard title={"Αρχιτεκτονική Υπολογιστών Ι"} id={"Κ14"} professor={"Δημήτριος Γκιζόπουλος"} period={"Ιούνιος 2023"} points={"7"} type={"Yποχρεωτικό"} grade={"5"}/>
+                        <SubjectCard title={"Δομές Δεδομένων και Τεχνικές Προγραμματισμού"} id={"Κ08"} professor={"Μανόλης Κουμπαράκης"} period={"Ιούνιος 2023"} points={"7"} type={"Yποχρεωτικό"} grade={"9"}/>
+                        <SubjectCard title={"Ηλεκτρομαγνητισμός, Οπτική και Σύγχρονη φυσική"} id={"Κ12"} professor={"Αριστείδης Τσίπουρας"} period={"Ιούνιος 2023"} points={"8"} type={"Yποχρεωτικό"} grade={"10"}/>
                     </div>
+                    <br></br>
             </div>    
             <div className="column-2-dgrade">
                 <Card sx={{width:"90%", marginLeft:"25px"}}>
