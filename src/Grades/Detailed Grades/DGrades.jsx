@@ -12,6 +12,7 @@ import Breadcrumbs from "../../Breadcrumbs/Breadcrumbs";
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import SubjectCard from "../../SubjectCard/SubjectCard";
+import BackToTop from "../../BackToTop/BackToTop";
 
 
 
@@ -63,6 +64,7 @@ const DGrades =()=> {
         <>
         <Header/>
         <Breadcrumbs/>
+        <BackToTop/>
         <div className="two-columns-dgrade">
             <div className="column-1-dgrade">
                     <div className="row-dgrade">

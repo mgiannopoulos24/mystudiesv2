@@ -6,8 +6,8 @@ import { useState } from "react";
 import CustomCard from "../../CustomCard/CustomCard";
 import  book1 from "./assets/book1.jpg"
 import book2 from "./assets/book2.jpg"
-import book3 from "./assets/book3.jpg"
 import "./Books.css"
+import BackToTop from "../../BackToTop/BackToTop";
 
 
 
@@ -24,6 +24,7 @@ const Books=()=>{
         <>
         <Header/>
         <Breadcrumbs/>
+        <BackToTop/>
         <div className="row-books-title">
             <h2>Συγγράμματα</h2>
         </div>

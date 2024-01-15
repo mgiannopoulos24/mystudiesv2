@@ -10,6 +10,7 @@ import TableRow from '@mui/material/TableRow';
 import { useState } from "react";
 import "./DecHistory.css"
 import Breadcrumbs from "../../Breadcrumbs/Breadcrumbs";
+import BackToTop from "../../BackToTop/BackToTop";
 
 
 
@@ -56,6 +57,7 @@ const DecHistory=()=>{
         <>
             <Header/>
             <Breadcrumbs/>
+            <BackToTop/>
             <div className="row-dhis-title">
                 <h2>Ιστορικό Δηλώσεων</h2>
             </div>

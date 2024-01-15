@@ -7,12 +7,14 @@ import { CardContent } from "@mui/material";
 import SchoolIcon from '@mui/icons-material/School';
 import FlagOutlinedIcon from '@mui/icons-material/FlagOutlined';
 import Breadcrumbs from "../../Breadcrumbs/Breadcrumbs";
+import BackToTop from "../../BackToTop/BackToTop";
 
 const RGrades=()=>{
     return(
         <>
         <Header/>
         <Breadcrumbs/>
+        <BackToTop/>
         <div className="two-columns-rgrade">
             <div className="column-1-rgrade">
                 <div className="row-rgrade">
