@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import "./BackToTop.css"; // Include your CSS for styling
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import "./BackToTop.css"; 
 
 const BackToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,8 +30,8 @@ const BackToTop = () => {
 
   return (
     <div className={`back-to-top ${isVisible ? "visible" : "hidden"}`}>
-      <Button onClick={scrollToTop} color="primary" variant="contained" sx={{ borderRadius: "100%", fontSize: "small", width: "50px", height: "50px", backgroundColor: 'rgba(33, 150, 243, 0.8)' }}>
-        <KeyboardArrowUpIcon/>
+      <Button onClick={scrollToTop} color="primary" variant="contained" sx={{ borderRadius: "100%", width: "10px", height: "60px", backgroundColor: 'rgba(33, 150, 243, 0.8)' }}>
+        <ArrowUpwardIcon sx={{fontSize:"small"}}/>
       </Button>
     </div>
   );
