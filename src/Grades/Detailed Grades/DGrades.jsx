@@ -28,7 +28,37 @@ const DGrades =()=> {
     const handleFilterChange = (event) => {
         setFilterText(event.target.value);
       };
+
+    const subjects = [
+    { title: "Εισαγωγή στον προγραμματισμό", id: "Κ04", professor: "Παναγιώτης Σταματόπουλος", period: "Φεβρουάριος 2023", points: "7", type: "Yποχρεωτικό", grade: "8" },
+    { title:"Διακριτά Μαθηματικά", id:"Κ09", professor:"Χρήστος Τζάμος", period:"Φεβρουάριος 2023",points:"7",type:"Yποχρεωτικό",grade:"7"},
+    { title:"Γραμμική Άλγεβρα", id:"Κ03", professor:"Αρχοντία Γιαννοπούλου", period:"Σεπτέμβριος 2023",points:"6" ,type:"Yποχρεωτικό", grade:"4"},
+    {title:"Λογική Σχεδίαση", id:"Κ02", professor:"Αντώνιος Πασχάλης",period:"Σεπτέμβριος 2023", points:"6", type:"Yποχρεωτικό", grade:"10"},
+    {title:"Ανάλυση Ι", id:"Κ01", professor:"Παντελεήμων Δοδός", period:"Σεπτέμβριος 2023", points:"8", type:"Yποχρεωτικό", grade:"3"},
+    {title:"Αρχιτεκτονική Υπολογιστών Ι", id:"Κ14", professor:"Δημήτριος Γκιζόπουλος", period:"Ιούνιος 2023", points:"7", type:"Yποχρεωτικό", grade:"5"},
+    {title:"Δομές Δεδομένων και Τεχνικές Προγραμματισμού", id:"Κ08", professor:"Μανόλης Κουμπαράκης/Κωνσταντίνος Χατζηκοκολάκης",period:"Ιούνιος 2023", points:"7", type:"Yποχρεωτικό", grade:"9"},
+    {title:"Ηλεκτρομαγνητισμός, Οπτική και Σύγχρονη φυσική", id:"Κ12", professor:"Αριστείδης Τσίπουρας", period:"Ιούνιος 2023", points:"8", type:"Yποχρεωτικό",grade:"10"}
+    ];
     
+    const filteredSubjects = subjects.filter((subject) => {
+        const lowercaseFilterText = filterText.toLowerCase();
+        const includesFilterText = (
+            subject.title.toLowerCase().includes(lowercaseFilterText) ||
+            subject.id.toLowerCase().includes(lowercaseFilterText) ||
+            subject.professor.toLowerCase().includes(lowercaseFilterText) ||
+            subject.period.toLowerCase().includes(lowercaseFilterText)
+          );
+    
+        switch (selectedOption) {
+          case "Passed":
+            return includesFilterText && parseInt(subject.grade) >= 5;
+          case "Not passed":
+            return includesFilterText && parseInt(subject.grade) < 5;
+          default:
+            return includesFilterText;
+        }
+    });
+
     return(
         <>
         <Header/>
@@ -78,14 +108,9 @@ const DGrades =()=> {
                     </div>
                     <br></br>
                     <div className="row-semesters">
-                        <SubjectCard title={"Εισαγωγή στον προγραμματισμό"} id={"Κ04"} professor={"Παναγιώτης Σταματόπουλος"} period={"Φεβρουάριος 2023"} points={"7"} type={"Yποχρεωτικό"} grade={"8"}/>
-                        <SubjectCard title={"Γραμμική Άλγεβρα"} id={"Κ03"} professor={"Αρχοντία Γιαννοπούλου"} period={"Σεπτέμβριος 2023"} points={"6"} type={"Yποχρεωτικό"} grade={"4"}/>
-                        <SubjectCard title={"Διακριτά Μαθηματικά"} id={"Κ09"} professor={"Χρήστος Τζάμος"} period={"Φεβρουάριος 2023"} points={"7"} type={"Yποχρεωτικό"} grade={"7"}/>
-                        <SubjectCard title={"Λογική Σχεδίαση"} id={"Κ02"} professor={"Αντώνιος Πασχάλης"} period={"Σεπτέμβριος 2023"} points={"6"} type={"Yποχρεωτικό"} grade={"10"}/>
-                        <SubjectCard title={"Ανάλυση Ι"} id={"Κ01"} professor={"Παντελεήμων Δοδός"} period={"Σεπτέμβριος 2023"} points={"8"} type={"Yποχρεωτικό"} grade={"3"}/>
-                        <SubjectCard title={"Αρχιτεκτονική Υπολογιστών Ι"} id={"Κ14"} professor={"Δημήτριος Γκιζόπουλος"} period={"Ιούνιος 2023"} points={"7"} type={"Yποχρεωτικό"} grade={"5"}/>
-                        <SubjectCard title={"Δομές Δεδομένων και Τεχνικές Προγραμματισμού"} id={"Κ08"} professor={"Μανόλης Κουμπαράκης"} period={"Ιούνιος 2023"} points={"7"} type={"Yποχρεωτικό"} grade={"9"}/>
-                        <SubjectCard title={"Ηλεκτρομαγνητισμός, Οπτική και Σύγχρονη φυσική"} id={"Κ12"} professor={"Αριστείδης Τσίπουρας"} period={"Ιούνιος 2023"} points={"8"} type={"Yποχρεωτικό"} grade={"10"}/>
+                        {filteredSubjects.map((subject, index) => (
+                            <SubjectCard key={index} {...subject} />
+                         ))}
                     </div>
                     <br></br>
             </div>    
@@ -100,7 +125,7 @@ const DGrades =()=> {
                             value={75} 
                             text={
                                 <tspan>
-                                    <tspan x="50" dy="-0.4em" fontSize="18" fontWeight="bold">3/9</tspan>                                    
+                                    <tspan x="50" dy="-0.4em" fontSize="18" fontWeight="bold">6/8</tspan>                                    
                                     <tspan x="50" dy="1.2em" fontSize="13" fontWeight="normal">Περασμένα</tspan>
                                 </tspan>
                             }
