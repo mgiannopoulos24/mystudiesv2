@@ -56,7 +56,7 @@ export const ProfileStud =()=>{
                 <Grid item xs={3}></Grid>
                 <Grid item xs={3}></Grid>
                 <Grid item xs={3}>Πρόγραμμα Σπουδών</Grid>
-                <Grid item xs={3}><a href='#'>Πρόγραμμα Σπουδών 2023-24</a></Grid>
+                <Grid item xs={3}><a href='https://www.di.uoa.gr/sites/default/files/documents/ODIGOS_SPOYDWN_DIT_EKPA_2023-24.pdf'>Πρόγραμμα Σπουδών 2023-24</a></Grid>
             </Grid>
         </div>
         </>
