@@ -11,9 +11,7 @@ import DecHistory from "./Declarations/DecHistory/DecHistory";
 import MainProf from "./Main_Page/MainProf";
 import Books from "./Declarations/Books/Books";
 import Requests from "./Support/Requests";
-// import firebaseApp from "./Firebase/firebase"
 // import { getFirestore } from 'firebase/firestore'
-//import Test from "./Test_Page/Test";
 //const db = getFirestore(firebaseApp);
 
 
