@@ -51,5 +51,13 @@
     font-size: 14px;
 }
 
+@media print {
+    .MuiCardContent-root {
+      page-break-inside: avoid;
+      overflow: visible !important;
+    }
+  }
 
-
+.hide-print {
+    display: none !important;
+}

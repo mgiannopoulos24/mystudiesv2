@@ -13,6 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import SubjectCard from "../../SubjectCard/SubjectCard";
 import BackToTop from "../../BackToTop/BackToTop";
+import PrintIcon from '@mui/icons-material/Print';
 
 
 
@@ -22,6 +23,40 @@ const DGrades =()=> {
 
     const [selectedOption, setSelectedOption] = useState("All");
     const [filterText, setFilterText] = useState("");
+    
+    
+    const handlePrintClick = () => {
+
+        
+        document.body.style.margin = "0";
+        document.body.style.padding = "0";
+        document.querySelector(".row-sort").style.display = "none";
+        document.querySelector(".column-2-dgrade").style.display = "none";
+        document.querySelector(".printbutton").style.display = "none";
+        document.querySelectorAll(".MuiCardContent-root").forEach((card) => {
+            card.style.transform = "scale(0.6)";
+        });
+        document.querySelector(".header-and-breadcrumbs").classList.add("hide-print");
+    
+        
+
+        window.print();
+
+        // Revert styles after printing
+        document.body.style.margin = "";
+        document.body.style.padding = "";
+        document.querySelector(".row-sort").style.display = "";
+        document.querySelector(".column-2-dgrade").style.display = "";
+        document.querySelector(".printbutton").style.display = "";
+        document.querySelectorAll(".MuiCardContent-root").forEach((card) => {
+            card.style.transform = "";
+        });
+        document.querySelector(".header-and-breadcrumbs").classList.remove("hide-print");
+
+       
+        
+      };
+
     const handleDropdownChange = (event) => {
         setSelectedOption(event.target.value);
     };
@@ -62,13 +97,15 @@ const DGrades =()=> {
 
     return(
         <>
-        <Header/>
-        <Breadcrumbs/>
+        <div className="header-and-breadcrumbs">
+        <Header />
+        <Breadcrumbs />
+        </div>
         <BackToTop/>
         <div className="two-columns-dgrade">
             <div className="column-1-dgrade">
                     <div className="row-dgrade">
-                        <h2>Αναλυτική Βαθμολογία</h2><span><Button variant="outlined" sx={{textTransform:"none",}}>Εκτύπωση Αναλυτικής</Button></span>
+                        <h2>Αναλυτική Βαθμολογία</h2><span><Button className="printbutton" variant="outlined" sx={{textTransform:"none"}} onClick={handlePrintClick}><PrintIcon/>&nbsp; Εκτύπωση Αναλυτικής</Button></span>
                     </div>
                     <div className="row-sort">
                     <Card sx={{width:'100%',display:'flex',background:""}}>
