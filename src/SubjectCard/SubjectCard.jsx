@@ -8,7 +8,7 @@ const SubjectCard = ({title,id,professor,period,type,points,grade}) => {
     return (
         <>
         <Card sx={{ display: 'flex', width: '100%', alignItems:"center",fontSize:18}}>
-            <CardContent sx={{display:"flex",width:"30%"}}>
+            <CardContent sx={{display:"flex",width:"25%"}}>
                 <div><strong>{title}</strong></div>
             </CardContent>
             <CardContent sx={{display:"flex",width:"5%"}}>
@@ -26,7 +26,7 @@ const SubjectCard = ({title,id,professor,period,type,points,grade}) => {
             <CardContent sx={{display:"flex",width:"5%"}}>
                 <div>{points}</div>
             </CardContent>
-            <CardContent sx={{display:"flex",width:"5%"}}>
+            <CardContent sx={{display:"flex",width:"10%"}}>
                 <h2 style={{ color: gradeColor }}>{grade}</h2>
             </CardContent>
             
