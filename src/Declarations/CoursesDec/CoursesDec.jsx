@@ -54,14 +54,21 @@ const CoursesDec=()=>{
     const [showNotification, setShowNotification] = useState(true);
     const handleNotificationResponse = (autoSelect) => {
         setShowNotification(false);
-    
+
         if (autoSelect) {
-          // Auto-select the checkbox for the specified course (e.g., "Ανάλυση Ι")
-          const courseToAutoSelect = rowsSem1.find((row) => row.subject === 'Ανάλυση Ι');
-          if (courseToAutoSelect) {
-            handleCheckboxChange(courseToAutoSelect);
+            // Auto-select the checkbox for the specified course (e.g., "Ανάλυση Ι")
+            const courseToAutoSelect = rowsSem2.find((row) => row.subject === 'Ανάλυση Ι');
+            if (courseToAutoSelect) {
+              // Update the state to check the checkbox
+              setCheckedCourses((prevCheckedCourses) => {
+                if (!prevCheckedCourses.some((course) => course.subject === courseToAutoSelect.subject)) {
+                  return [...prevCheckedCourses, courseToAutoSelect];
+                }
+                return prevCheckedCourses;
+              });
+            }
           }
-        }
+        
       };
 
     const handleCheckboxChange = (row) => {
