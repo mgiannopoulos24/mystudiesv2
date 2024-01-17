@@ -18,6 +18,7 @@ import Alert from '@mui/material/Alert';
 import Breadcrumbs from '../../Breadcrumbs/Breadcrumbs';
 import BackToTop from '../../BackToTop/BackToTop';
 
+
 function createData(subject, id, professor,  type,points,declare) {
     return {subject, id, professor,  type,points,declare};
 }
@@ -50,6 +51,19 @@ const CoursesDec=()=>{
     const [checkedCourses, setCheckedCourses] = useState([]);
     const [temporarySaveMessage, setTemporarySaveMessage] = useState(null);
     const [submissionSuccessMessage, setSubmissionSuccessMessage] = useState('');
+    const [showNotification, setShowNotification] = useState(true);
+    const handleNotificationResponse = (autoSelect) => {
+        setShowNotification(false);
+    
+        if (autoSelect) {
+          // Auto-select the checkbox for the specified course (e.g., "Ανάλυση Ι")
+          const courseToAutoSelect = rowsSem1.find((row) => row.subject === 'Ανάλυση Ι');
+          if (courseToAutoSelect) {
+            handleCheckboxChange(courseToAutoSelect);
+          }
+        }
+      };
+
     const handleCheckboxChange = (row) => {
         // Check if the checkbox should be disabled
         if (isCheckboxDisabled(row)) {
@@ -157,6 +171,26 @@ const CoursesDec=()=>{
                     </DialogActions>
                 </Dialog>
             </div>
+            {showNotification && (
+                <Alert severity="warning" sx={{
+                    position: 'absolute',
+                    top: 10,
+                    left: 30,
+                    zIndex: 1000,
+                    width: '20%',
+                    opacity:"0.9",
+                    
+                  }} onClose={() => handleNotificationResponse(false)}>
+                <p>
+                    Δεν έχετε περάσει τα μαθήματα Ανάλυση Ι. Θα θέλατε να δηλωθεί αυτόματα;
+                </p>
+                <div className="notification-buttons" style={{display:"flex",justifyContent:"center"}}>
+                    <Button sx={{textTransform:"none"}}variant="contained" color="success" onClick={() => handleNotificationResponse(true)}>
+                        Εντάξει
+                    </Button>
+                </div>
+                </Alert>
+            )}
             <div className="row-coursesdec-1">
                 <h3>1ο Εξάμηνο</h3>
                 <TableContainer component={Paper}>
