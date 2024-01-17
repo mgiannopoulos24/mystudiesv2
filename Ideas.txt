@@ -2,7 +2,6 @@ Students:
 
 Header: Logo δίπλα στο mystudies h1
 Αίτηση Πιστοποιητικών: AutoComplete, Εμφάνιση Notif στο προφίλ, Κατέβασμα pdf (από το Ιστορικό του)
-Περιορισμοί: Suggestion να δηλώσει τα χρωστούμενα
 
 Professors:
 
