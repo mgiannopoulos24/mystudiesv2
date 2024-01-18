@@ -138,26 +138,11 @@ const MainStud = () =>{
                     <div style={{ flex: '80%', display: 'flex', flexDirection: 'column'}}>
                         <div style={{ flex: '50%',display: 'flex',alignItems: 'center'}}>
                         <CardContent sx={{fontSize:14}}>
-                        <h3 style={{ margin: 0 }}>Εισαγωγή στον Προγραμματισμό</h3>
-                        </CardContent>
-                        </div>
-                        <div style={{ flex: '50%',display: 'flex',alignItems: 'center' }}>
-                            <span style={{ marginLeft: '20px' }}/><PersonIcon style={{fontSize: '15px'}}/>111<span style={{ marginLeft: '5px' }}/><SchoolIcon style={{fontSize:'15px'}}/><span style={{ marginLeft: '5px' }}/>ΠΑΝΑΓΙΩΤΗΣ ΣΤΑΜΑΤΟΠΟΥΛΟΣ
-                        </div><br></br>
-                    </div>
-                    <div style={{ flex: '20%', display: 'flex',alignItems: 'center', justifyContent: 'center', color: 'green' }}>
-                        <h1>10</h1>
-                    </div>
-                </Card><br></br>
-                <Card sx={{width:800,display: 'flex'}}>
-                    <div style={{ flex: '80%', display: 'flex', flexDirection: 'column'}}>
-                        <div style={{ flex: '50%',display: 'flex',alignItems: 'center'}}>
-                        <CardContent sx={{fontSize:14}}>
                         <h3 style={{ margin: 0 }}>Γραμμική Άλγεβρα</h3>
                         </CardContent>
                         </div>
                         <div style={{ flex: '50%',display: 'flex',alignItems: 'center' }}>
-                            <span style={{ marginLeft: '20px' }}/><PersonIcon style={{fontSize: '15px'}}/>250<span style={{ marginLeft: '5px' }}/><SchoolIcon style={{fontSize:'15px'}}/><span style={{ marginLeft: '5px' }}/>ΝΑΚΟΣ
+                            <span style={{ marginLeft: '20px' }}/><PersonIcon style={{fontSize: '15px'}}/>111<span style={{ marginLeft: '5px' }}/><SchoolIcon style={{fontSize:'15px'}}/><span style={{ marginLeft: '5px' }}/>ΑΡΧΟΝΤΙΑ ΓΙΑΝΝΟΠΟΥΛΟΥ
                         </div><br></br>
                     </div>
                     <div style={{ flex: '20%', display: 'flex',alignItems: 'center', justifyContent: 'center', color: 'green' }}>
@@ -168,15 +153,15 @@ const MainStud = () =>{
                     <div style={{ flex: '80%', display: 'flex', flexDirection: 'column'}}>
                         <div style={{ flex: '50%',display: 'flex',alignItems: 'center'}}>
                         <CardContent sx={{fontSize:14}}>
-                        <h3 style={{ margin: 0 }}>Εισαγωγή στις Τηλεπικοινωνίες</h3>
+                        <h3 style={{ margin: 0 }}>Ανάλυση Ι</h3>
                         </CardContent>
                         </div>
                         <div style={{ flex: '50%',display: 'flex',alignItems: 'center' }}>
-                            <span style={{ marginLeft: '20px' }}/><PersonIcon style={{fontSize: '15px'}}/>124<span style={{ marginLeft: '5px' }}/><SchoolIcon style={{fontSize:'15px'}}/><span style={{ marginLeft: '5px' }}/>ΜΑΡΙΑ ΡΟΥΣΣΟΥ
+                            <span style={{ marginLeft: '20px' }}/><PersonIcon style={{fontSize: '15px'}}/>250<span style={{ marginLeft: '5px' }}/><SchoolIcon style={{fontSize:'15px'}}/><span style={{ marginLeft: '5px' }}/>ΠΑΝΤΕΛΕΗΜΩΝ ΔΟΔΟΣ
                         </div><br></br>
                     </div>
-                    <div style={{ flex: '20%', display: 'flex',alignItems: 'center', justifyContent: 'center', color: 'green' }}>
-                        <h1>7</h1>
+                    <div style={{ flex: '20%', display: 'flex',alignItems: 'center', justifyContent: 'center', color: 'red' }}>
+                        <h1>3</h1>
                     </div>
                 </Card><br></br>
                 <Card sx={{width:800,display: 'flex'}}>
@@ -187,11 +172,11 @@ const MainStud = () =>{
                         </CardContent>
                         </div>
                         <div style={{ flex: '50%',display: 'flex',alignItems: 'center' }}>
-                            <span style={{ marginLeft: '20px' }}/><PersonIcon style={{fontSize: '15px'}}/>67<span style={{ marginLeft: '5px' }}/><SchoolIcon style={{fontSize:'15px'}}/><span style={{ marginLeft: '5px' }}/>ΒΑΣΙΛΕΙΟΣ ΚΑΡΑΚΩΣΤΑΣ
+                            <span style={{ marginLeft: '20px' }}/><PersonIcon style={{fontSize: '15px'}}/>67<span style={{ marginLeft: '5px' }}/><SchoolIcon style={{fontSize:'15px'}}/><span style={{ marginLeft: '5px' }}/>ΑΝΤΩΝΙΟΣ ΠΑΣΧΑΛΗΣ
                         </div><br></br>
                     </div>
-                    <div style={{ flex: '20%', display: 'flex',alignItems: 'center', justifyContent: 'center', color: 'red' }}>
-                        <h1>4</h1>
+                    <div style={{ flex: '20%', display: 'flex',alignItems: 'center', justifyContent: 'center', color: 'green' }}>
+                        <h1>10</h1>
                     </div>
                 </Card>
 
