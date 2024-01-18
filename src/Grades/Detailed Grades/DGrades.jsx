@@ -69,11 +69,13 @@ const DGrades =()=> {
     { title: "Εισαγωγή στον προγραμματισμό", id: "Κ04", professor: "Παναγιώτης Σταματόπουλος", period: "Φεβρουάριος 2023", points: "7", type: "Yποχρεωτικό", grade: "8" },
     { title:"Διακριτά Μαθηματικά", id:"Κ09", professor:"Χρήστος Τζάμος", period:"Φεβρουάριος 2023",points:"7",type:"Yποχρεωτικό",grade:"7"},
     { title:"Γραμμική Άλγεβρα", id:"Κ03", professor:"Αρχοντία Γιαννοπούλου", period:"Σεπτέμβριος 2023",points:"6" ,type:"Yποχρεωτικό", grade:"4"},
-    {title:"Λογική Σχεδίαση", id:"Κ02", professor:"Αντώνιος Πασχάλης",period:"Σεπτέμβριος 2023", points:"6", type:"Yποχρεωτικό", grade:"10"},
-    {title:"Ανάλυση Ι", id:"Κ01", professor:"Παντελεήμων Δοδός", period:"Σεπτέμβριος 2023", points:"8", type:"Yποχρεωτικό", grade:"3"},
-    {title:"Αρχιτεκτονική Υπολογιστών Ι", id:"Κ14", professor:"Δημήτριος Γκιζόπουλος", period:"Ιούνιος 2023", points:"7", type:"Yποχρεωτικό", grade:"5"},
-    {title:"Δομές Δεδομένων και Τεχνικές Προγραμματισμού", id:"Κ08", professor:"Μανόλης Κουμπαράκης/Κωνσταντίνος Χατζηκοκολάκης",period:"Ιούνιος 2023", points:"7", type:"Yποχρεωτικό", grade:"9"},
-    {title:"Ηλεκτρομαγνητισμός, Οπτική και Σύγχρονη φυσική", id:"Κ12", professor:"Αριστείδης Τσίπουρας", period:"Ιούνιος 2023", points:"8", type:"Yποχρεωτικό",grade:"10"}
+    { title:"Λογική Σχεδίαση", id:"Κ02", professor:"Αντώνιος Πασχάλης",period:"Σεπτέμβριος 2023", points:"6", type:"Yποχρεωτικό", grade:"10"},
+    { title:"Ανάλυση Ι", id:"Κ01", professor:"Παντελεήμων Δοδός", period:"Σεπτέμβριος 2023", points:"8", type:"Yποχρεωτικό", grade:"3"},
+    { title:"Εισαγωγή στην Πληροφορική και τις Τηλεπικοινωνίες", id:"ΓΠ07", professor:"Μαρία Ρούσσου", period:"Φεβρουάριος 2023", points:"2", type:"Γενικής Παιδείας", grade:"7"},
+    { title:"Αρχιτεκτονική Υπολογιστών Ι", id:"Κ14", professor:"Δημήτριος Γκιζόπουλος", period:"Ιούνιος 2023", points:"7", type:"Yποχρεωτικό", grade:"5"},
+    { title:"Δομές Δεδομένων και Τεχνικές Προγραμματισμού", id:"Κ08", professor:"Μανόλης Κουμπαράκης/Κωνσταντίνος Χατζηκοκολάκης",period:"Ιούνιος 2023", points:"7", type:"Yποχρεωτικό", grade:"9"},
+    { title:"Ηλεκτρομαγνητισμός, Οπτική και Σύγχρονη φυσική", id:"Κ12", professor:"Αριστείδης Τσίπουρας", period:"Ιούνιος 2023", points:"8", type:"Yποχρεωτικό",grade:"10"},
+    { title:"Εφαρμοσμένα Μαθηματικά", id:"Κ20β", professor:"Μαρία Λουκά", period:"Ιούνιος 2023", points:"6", type:"Προαιρετικό",grade:"9"},
     ];
     
     const filteredSubjects = subjects.filter((subject) => {
@@ -161,10 +163,10 @@ const DGrades =()=> {
                     <div className="row-round-progress" style={{display: 'flex',alignItems: 'center',justifyContent:"center"}}>
                         <div style={{ width: '150px', height: '150px' }}>
                             <CircularProgressbar 
-                            value={75} 
+                            value={77.778} 
                             text={
                                 <tspan>
-                                    <tspan x="50" dy="-0.4em" fontSize="18" fontWeight="bold">6/8</tspan>                                    
+                                    <tspan x="50" dy="-0.4em" fontSize="18" fontWeight="bold">7/9</tspan>                                    
                                     <tspan x="50" dy="1.2em" fontSize="13" fontWeight="normal">Περασμένα</tspan>
                                 </tspan>
                             }
@@ -180,15 +182,15 @@ const DGrades =()=> {
                     </div>
                     <div className="passed-sub">
                         <div className="p-cell-1"style={{flex:"90%",marginLeft:"20px"}}>Περασμένα μαθήματα</div>
-                        <div className="p-cell-2" style={{flex:"10%"}}>3</div>
+                        <div className="p-cell-2" style={{flex:"10%"}}>7</div>
                     </div>
                     <div className="dpoints-sub">
                         <div className="dp-cell-1"style={{flex:"90%",marginLeft:"20px"}}>ΕCTS δηλωμένων μαθημάτων</div>
-                        <div className="dp-cell-2" style={{flex:"10%"}}>240</div>
+                        <div className="dp-cell-2" style={{flex:"10%"}}>62</div>
                     </div>
                     <div className="ppoints-sub">
                         <div className="pp-cell-1"style={{flex:"90%",marginLeft:"20px"}}>ΕCTS περασμένων μαθημάτων</div>
-                        <div className="pp-cell-2" style={{flex:"10%"}}>210</div>
+                        <div className="pp-cell-2" style={{flex:"10%"}}>48</div>
                     </div>
                 </Card>
             </div>
