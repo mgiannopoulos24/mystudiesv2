@@ -11,6 +11,7 @@ import { useState } from "react";
 import "./DecHistory.css"
 import Breadcrumbs from "../../Breadcrumbs/Breadcrumbs";
 import BackToTop from "../../BackToTop/BackToTop";
+import  Button from "@mui/material/Button";
 
 
 
@@ -67,8 +68,8 @@ const DecHistory=()=>{
             <div className="two-col-dhis">
                 <div className="col-dhis-1">
                     <ul style={{listStyle:"none",fontSize:18,marginLeft:"20px"}}>
-                        <li style={{ cursor: "pointer" }} onClick={() => handleYearChange('2023-24')}>2023-24</li>
-                        <li style={{ cursor: "pointer" }} onClick={() => handleYearChange('2022-23')}>2022-23</li>
+                        <Button variant="outlined" sx={{marginBottom:"10px"}}><li style={{ cursor: "pointer"}} onClick={() => handleYearChange('2023-24')}>2023-24</li></Button>
+                        <Button variant="outlined"><li style={{ cursor: "pointer" }} onClick={() => handleYearChange('2022-23')}>2022-23</li></Button>
                     </ul>
                 </div>
                 <div className="col-dhis-2">
@@ -98,7 +99,7 @@ const DecHistory=()=>{
                                 </TableBody>
                             </Table>
                         </TableContainer>
-                        </div><br></br>
+                        </div>
                         <div className="row-table-dhis-2" style={{ display: selectedYear === '2022-23' ? 'block' : 'none' }}>
                         <TableContainer sx={{margin: "0 25px"}}>
                             <Table sx={{width:"100%"}}>
@@ -125,9 +126,9 @@ const DecHistory=()=>{
                         </TableContainer>
                         </div><br></br>
                         <h4 style={{marginLeft:"10px"}}>{selectedYear === '2023-24' ? 'ΕΑΡΙΝΟ ΕΞΑΜΗΝΟ 2023-24' : 'ΕΑΡΙΝΟ ΕΞΑΜΗΝΟ 2022-23'}</h4>
-                        <div className="row-table-dhis-3" style={{ display: selectedYear === '2022-23' ? 'block' : 'none'  }}>
-                        
-                        </div><br></br>
+                        <div className="row-table-dhis-3" style={{ display: selectedYear === '2023-24' ? 'block' : 'none'  }}>
+                        <p style={{marginLeft:"20px",fontStyle:"italic"}}>Δεν υπάρχουν δεδομένα δηλώσεων</p>
+                        </div>
                         <div className="row-table-dhis-4" style={{ display: selectedYear === '2022-23' ? 'block' : 'none' }}>
                         <TableContainer sx={{margin: "0 25px"}}>
                             <Table sx={{width:"100%"}}>
