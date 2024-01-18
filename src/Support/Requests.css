@@ -22,7 +22,29 @@
 
 .row-req-list{
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center; 
+}
+
+.individual-card {
+    width: 97%;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 1440px) {
+    .individual-card {
+        width: 95%; 
+    }
+}
+
+@media (max-width: 1280px) {
+    .individual-card {
+        width: 95%; 
+    }
+}
+
+@media (max-width: 600px) {
+    .individual-card {
+        width: 95%; 
+    }
 }

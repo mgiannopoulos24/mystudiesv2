@@ -6,7 +6,7 @@ import TextField from "@mui/material/TextField";
 import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
 import { useState } from "react";
-import { CardContent } from "@mui/material";
+import { CardContent} from "@mui/material";
 import CardActions from "@mui/material/CardActions";
 import Typography from "@mui/material/Typography";
 import Dialog from "@mui/material/Dialog";
@@ -16,14 +16,36 @@ import DialogActions from "@mui/material/DialogActions";
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
-
-
+import FileDownloadIcon from '@mui/icons-material/FileDownload';
+import FileDownloadOffIcon from '@mui/icons-material/FileDownloadOff';
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
+import IconButton from '@mui/material/IconButton';
 
 
 const Requests=()=>{
     const [selectedOption, setSelectedOption] = useState("All");
     const [filterText, setFilterText] = useState("");
-    
+    const handleIconClick = (request, fileType) => {
+      if (fileType === 'jpg') {
+        // Download JPG file logic
+        const imgUrl = "/assets/cert_student.jpg"; // Update with your actual image URL
+        downloadFile(imgUrl, 'cert_student.jpg');
+      } else if (fileType === 'pdf') {
+        // Download PDF file logic
+        const pdfUrl = "/assets/cert_student.pdf"; // Update with your actual PDF URL
+        downloadFile(pdfUrl, 'cert_student.pdf');
+      }
+    };
+
+    const downloadFile = (url, fileName) => {
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = fileName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    };
+
     const handleDropdownChange = (event) => {
         setSelectedOption(event.target.value);
     };
@@ -223,15 +245,28 @@ const Requests=()=>{
           // Render the card only if it should be displayed
           return shouldDisplay ? (
             <div key={index} className="individual-card">
-              <Card sx={{ width: 1860, display: 'flex', justifyContent: 'center', marginBottom: '10px' }}>
+              <Card sx={{display: 'flex', justifyContent: 'center', marginBottom: '10px' }}>
                 <div style={{ flex: '50%' }}>
                   <CardContent sx={{ fontSize: 18, fontWeight: 'bold' }}>
                     {request.title}
                   </CardContent>
                   <p style={{ marginLeft: '20px', fontSize: 18 }}>{request.date}</p>
                 </div>
-                <div style={{ display: 'flex', flex: '50%', justifyContent: 'flex-end', alignItems: 'center', marginRight: '60px' }}>
+                <div style={{ display: 'flex', flex: '45%', justifyContent: 'flex-end', alignItems: 'center'}}>
                   <p style={{ color: request.status === 'Εγκρίθηκε' ? 'green' : 'orange', fontSize: 20 }}>{request.status}</p>
+                </div>
+                <div style={{ display: 'flex', flex: '5%', justifyContent: 'flex-end', alignItems: 'center',marginRight:"20px"}}>
+                {request.status === 'Εγκρίθηκε' ? (
+                    <>
+                    <IconButton onClick={() => handleIconClick(request, 'jpg')} sx={{ padding: 0, color: 'black',marginRight:"5px" }}><FileDownloadIcon style={{fontSize:"30px",cursor: "pointer"}}/></IconButton>
+                    <IconButton onClick={() => handleIconClick(request, 'pdf')} sx={{ padding: 0, color: 'black' }}><PictureAsPdfIcon style={{fontSize:"30px"}}/></IconButton>
+                    </>
+                  ) : (
+                    <>
+                    <FileDownloadOffIcon style={{fontSize:"30px",color:"gray",marginRight:"5px"}}/>
+                    <PictureAsPdfIcon style={{fontSize:"30px",color:"gray"}}/>
+                    </>
+                  )}
                 </div>
               </Card>
             </div>
