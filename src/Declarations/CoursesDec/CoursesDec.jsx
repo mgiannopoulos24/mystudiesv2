@@ -9,7 +9,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
@@ -51,7 +51,12 @@ const CoursesDec=()=>{
     const [checkedCourses, setCheckedCourses] = useState([]);
     const [temporarySaveMessage, setTemporarySaveMessage] = useState(null);
     const [submissionSuccessMessage, setSubmissionSuccessMessage] = useState('');
+    const [limitReachedMessage, setLimitReachedMessage] = useState('');
     const [showNotification, setShowNotification] = useState(true);
+    const [submitted, setSubmitted] = useState(false);
+    
+    
+
     const handleNotificationResponse = (autoSelect) => {
         setShowNotification(false);
 
@@ -91,6 +96,20 @@ const CoursesDec=()=>{
     const isCheckboxDisabled = (row) => checkedCourses.length >= 8 && !checkedCourses.includes(row);
     const isLimitReached = checkedCourses.length >= 8;
 
+
+    const handleLimitReachedMessage = () => {
+        setLimitReachedMessage("Tο όριο μαθημάτων που μπορείτε να δηλώσετε είναι 8.");
+    };
+
+    useEffect(() => {
+        if (isLimitReached) {
+            handleLimitReachedMessage();
+            setTimeout(() => {
+                setLimitReachedMessage(null);
+              }, 3000);
+        }
+    }, [isLimitReached]);
+
     const handleTemporarySave = () => {
         setTemporarySaveMessage('Η προσωρινή αποθήκευση έγινε με επιτυχία');
         setTimeout(() => {
@@ -112,22 +131,23 @@ const CoursesDec=()=>{
         handleOpenDialog(); // Open the dialog after submission
       };
     
-
       const handleSubmission = () => {
+        setSubmitted(true); // Set submitted to true on submission
+
         
-      
         // Set the success message
         setSubmissionSuccessMessage('Η δήλωση σας έγινε με επιτυχία');
+        
         setTimeout(() => {
-            setSubmissionSuccessMessage(null);
-          }, 3000);
+          setSubmissionSuccessMessage(null);
+        }, 3000);
       
-        // Reset the checked courses or perform any other necessary actions
-        setCheckedCourses([]);
+
       
         // Close the dialog or perform any other necessary actions
         handleCloseDialog();
       };
+
       
     return(
         <>
@@ -139,9 +159,9 @@ const CoursesDec=()=>{
                 <h2>Δήλωση Μαθημάτων</h2>    
                 </div>
                 <div className='row-coursesdec-title-col2' style={{flex:'33%',textAlign:'center'}}>
-                {isLimitReached && (
-                    <Alert severity="error" style={{ marginTop: "10px" }}>
-                            Το όριο δηλωμένων μαθημάτων σας είναι τα 8 μαθήματα
+                {limitReachedMessage && (
+                    <Alert severity="warning" style={{ marginTop: "10px" }}>
+                        {limitReachedMessage}
                     </Alert>
                 )}
                 {temporarySaveMessage && (
@@ -161,7 +181,7 @@ const CoursesDec=()=>{
                 <Dialog open={openDialog} onClose={handleCloseDialog}>
                     <DialogTitle sx={{display:"flex",justifyContent:"center"}}>Οριστική Υποβολή</DialogTitle>
                         <DialogContent>
-                        <p>Είστε σίγουρος ότι θέλετε να υποβάλετε τις επιλογές σας;</p>
+                        <p>Είστε σίγουρος ότι θέλετε να δηλώσετε τα παρακάτω μαθήματα;</p>
                         <ul>
                             {checkedCourses.map((course) => (
                             <li key={course.id}>{course.subject}</li>
@@ -223,7 +243,7 @@ const CoursesDec=()=>{
                                     <TableCell><Checkbox 
                                     checked={checkedCourses.includes(row)}
                                     onChange={() => handleCheckboxChange(row)}
-                                    disabled={isCheckboxDisabled(row)}/>
+                                    disabled={submitted || isCheckboxDisabled(row)}/>
                                     </TableCell>
                                 </TableRow>))}
                             </TableBody>
@@ -255,7 +275,7 @@ const CoursesDec=()=>{
                                     <TableCell><Checkbox
                                     checked={checkedCourses.includes(row)}
                                     onChange={() => handleCheckboxChange(row)}
-                                    disabled={isCheckboxDisabled(row)}/>
+                                    disabled={submitted || isCheckboxDisabled(row)}/>
                                     </TableCell>
                                 </TableRow>))}
                             </TableBody>
@@ -287,7 +307,7 @@ const CoursesDec=()=>{
                                     <TableCell><Checkbox
                                     checked={checkedCourses.includes(row)}
                                     onChange={() => handleCheckboxChange(row)}
-                                    disabled={isCheckboxDisabled(row)}/>
+                                    disabled={submitted || isCheckboxDisabled(row)}/>
                                     </TableCell>
                                 </TableRow>))}
                             </TableBody>
