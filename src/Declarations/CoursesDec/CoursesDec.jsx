@@ -24,29 +24,34 @@ function createData(subject, id, professor,  type,points,declare) {
 }
 
 const rowsSem1 = [
-    createData('Εισαγωγή στον Προγραμματισμό', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ',   'Υ', 6, ),
-    createData('Γραμμική Άλγεβρα', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ',   'Υ', 6, ),
-    createData('Διακριτά Μαθηματικά', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ',  'Υ', 6, ),
-    createData('Εισαγωγή στην πληροφορική και τις τηλεπικοινωνίες', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ',  'Υ', 6, ),
-    createData('Λογική Σχεδίαση', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ',  'Υ', 6, ),
+    createData('Εισαγωγή στον Προγραμματισμό', 'Κ04', 'Αυγερινός','Υποχρεωτικό', 7,),
+    createData('Γραμμική Άλγεβρα', 'Κ03', 'Νάκος',   'Υποχρεωτικό', 6, ),
+    createData('Διακριτά Μαθηματικά', 'Κ09', 'Τζάμος',  'Υποχρεωτικό', 7, ),
+    createData('Εισαγωγή στην πληροφορική και τις τηλεπικοινωνίες', 'ΓΠ07', 'Ρούσσου',  'Γενικής Παιδείας',2, ),
+    createData('Λογική Σχεδίαση', 'Κ02', 'Καρακώστας',  'Υποχρεωτικό', 6, ),
 ];
 
 const rowsSem2 = [
-    createData('Ανάλυση Ι', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ',  'Υ', 6, ),
-    createData('Αρχιτεκτονική Υπολογιστών Ι', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ',  'Υ', 6, ),
-    createData('Δομές Δεδομένων και Τεχνικές Προγραμματισμού', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ',  'Υ', 6, ),
-    createData('Εφαρμοσμένα Μαθηματικά', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'Υ', 6, ),
-    createData('Ηλεκτρομαγνητισμός', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ',  'Υ', 6, ),
+    createData('Ανάλυση Ι', 'Κ01', 'Δοδός',  'Υποχρεωτικό', 8, ),
+    createData('Αρχιτεκτονική Υπολογιστών Ι', 'Κ14', 'Γκιζόπουλος',  'Υποχρεωτικό', 7, ),
+    createData('Δομές Δεδομένων και Τεχνικές Προγραμματισμού', 'Κ08', 'Κουμπαράκης/Χατζηκοκολάκης',  'Υποχρεωτικό', 7, ),
+    createData('Εφαρμοσμένα Μαθηματικά', 'Κ20β', 'Λουκά', 'Προαιρετικό', 6, ),
+    createData('Ηλεκτρομαγνητισμός', 'Κ12', 'Τσίπουρας',  'Υποχρεωτικό', 8, ),
 ];
 
 const rowsSem3 = [
-    createData('Ανάλυση ΙΙ', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'Υ', 6, ),
-    createData('Αντικειμενοστραφής Προγραμματισμός', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'Υ', 6,),
-    createData('Πιθανότητες και Στατιστική', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ',  'Υ', 6, ),
-    createData('Σήματα και Συστήματα', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'Υ', 6, ),
-    createData('Εργαστήριο Κυκλωμάτων και Συστήματων', 'Κ08', 'ΑΥΓΕΡΙΝΟΣ', 'Υ', 6,),
+    createData('Ανάλυση ΙΙ', 'Κ06', 'Χαλικιάς', 'Υποχρεωτικό', 8, ),
+    createData('Αντικειμενοστραφής Προγραμματισμός', 'Κ10', 'Λυγίζου', 'Υποχρεωτικό', 8,),
+    createData('Πιθανότητες και Στατιστική', 'Κ13', 'Αχλιόπτας',  'Υποχρεωτικό', 6, ),
+    createData('Σήματα και Συστήματα', 'Κ11', 'Παναγάκης', 'Υποχρεωτικό', 6, ),
+    createData('Εργαστήριο Κυκλωμάτων και Συστήματων', 'Κ11ε', 'Πίνο', 'Προαιρετικό Εργαστήριο', 2,),
 ];
 
+const rowsSem5=[
+    createData('Τεχνητή Νοημοσύνη','ΥΣ02', 'Κουμπαράκης','Προαιρετικό', 6,),
+    createData('Γραφικά Ι','ΘΠ02','Θεοχάρης','Προαιρετικό',6),
+    createData('Λειτουργικά Συστήματα','Κ22','Δελής/Χατζηευθυμιάδης','Υποχρεωτικό',8,),
+]
 const CoursesDec=()=>{
     const [checkedCourses, setCheckedCourses] = useState([]);
     const [temporarySaveMessage, setTemporarySaveMessage] = useState(null);
@@ -228,8 +233,8 @@ const CoursesDec=()=>{
                                     <TableCell style={{ width: '20%', fontWeight: 'bold' }}>Κωδικός</TableCell>
                                     <TableCell style={{ width: '20%', fontWeight: 'bold' }}>Διδάσκων</TableCell>
                                     <TableCell style={{ width: '20%' , fontWeight: 'bold'}}>Τύπος</TableCell>
-                                    <TableCell style={{ width: '15%' , fontWeight: 'bold'}}>ΔΜ</TableCell>
-                                    <TableCell style={{ width: '5%' , fontWeight: 'bold'}}>Δήλωση</TableCell>
+                                    <TableCell style={{ width: '10%' , fontWeight: 'bold'}}>ΔΜ</TableCell>
+                                    <TableCell style={{ width: '10%' , fontWeight: 'bold'}}>Δήλωση</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -240,10 +245,15 @@ const CoursesDec=()=>{
                                     <TableCell>{row.professor}</TableCell>
                                     <TableCell>{row.type}</TableCell>
                                     <TableCell>{row.points}</TableCell>
-                                    <TableCell><Checkbox 
-                                    checked={checkedCourses.includes(row)}
-                                    onChange={() => handleCheckboxChange(row)}
-                                    disabled={submitted || isCheckboxDisabled(row)}/>
+                                    <TableCell>{row.subject === 'Γραμμική Άλγεβρα' ? (
+                                        <Checkbox
+                                            checked={checkedCourses.includes(row)}
+                                            onChange={() => handleCheckboxChange(row)}
+                                            disabled={submitted || isCheckboxDisabled(row)}
+                                        />
+                                        ) : (
+                                        'Το έχετε περάσει'
+                                        )}
                                     </TableCell>
                                 </TableRow>))}
                             </TableBody>
@@ -260,8 +270,8 @@ const CoursesDec=()=>{
                                     <TableCell style={{ width: '20%', fontWeight: 'bold' }}>Κωδικός</TableCell>
                                     <TableCell style={{ width: '20%', fontWeight: 'bold' }}>Διδάσκων</TableCell>
                                     <TableCell style={{ width: '20%' , fontWeight: 'bold'}}>Τύπος</TableCell>
-                                    <TableCell style={{ width: '15%' , fontWeight: 'bold'}}>ΔΜ</TableCell>
-                                    <TableCell style={{ width: '5%' , fontWeight: 'bold'}}>Δήλωση</TableCell>
+                                    <TableCell style={{ width: '10%' , fontWeight: 'bold'}}>ΔΜ</TableCell>
+                                    <TableCell style={{ width: '10%' , fontWeight: 'bold'}}>Δήλωση</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -272,10 +282,15 @@ const CoursesDec=()=>{
                                     <TableCell>{row.professor}</TableCell>
                                     <TableCell>{row.type}</TableCell>
                                     <TableCell>{row.points}</TableCell>
-                                    <TableCell><Checkbox
-                                    checked={checkedCourses.includes(row)}
-                                    onChange={() => handleCheckboxChange(row)}
-                                    disabled={submitted || isCheckboxDisabled(row)}/>
+                                    <TableCell>{row.subject === 'Ανάλυση Ι' ? (
+                                        <Checkbox
+                                            checked={checkedCourses.includes(row)}
+                                            onChange={() => handleCheckboxChange(row)}
+                                            disabled={submitted || isCheckboxDisabled(row)}
+                                        />
+                                        ) : (
+                                        'Το έχετε περάσει'
+                                        )}
                                     </TableCell>
                                 </TableRow>))}
                             </TableBody>
@@ -292,8 +307,8 @@ const CoursesDec=()=>{
                                     <TableCell style={{ width: '20%', fontWeight: 'bold' }}>Κωδικός</TableCell>
                                     <TableCell style={{ width: '20%', fontWeight: 'bold' }}>Διδάσκων</TableCell>
                                     <TableCell style={{ width: '20%' , fontWeight: 'bold'}}>Τύπος</TableCell>
-                                    <TableCell style={{ width: '15%' , fontWeight: 'bold'}}>ΔΜ</TableCell>
-                                    <TableCell style={{ width: '5%' , fontWeight: 'bold'}}>Δήλωση</TableCell>
+                                    <TableCell style={{ width: '10%' , fontWeight: 'bold'}}>ΔΜ</TableCell>
+                                    <TableCell style={{ width: '10%' , fontWeight: 'bold'}}>Δήλωση</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -313,10 +328,39 @@ const CoursesDec=()=>{
                             </TableBody>
                         </Table>
                     </TableContainer>
-                                
-
-                
-            </div>
+                </div>
+                <div className='row-coursesdec-4'>
+                <h3>5ο Εξάμηνο</h3>
+                    <TableContainer component={Paper}>
+                    <Table sx={{width:"100%"}}>
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell style={{ width: '20%', fontWeight: 'bold'}}>Μάθημα</TableCell>
+                                    <TableCell style={{ width: '20%', fontWeight: 'bold' }}>Κωδικός</TableCell>
+                                    <TableCell style={{ width: '20%', fontWeight: 'bold' }}>Διδάσκων</TableCell>
+                                    <TableCell style={{ width: '20%' , fontWeight: 'bold'}}>Τύπος</TableCell>
+                                    <TableCell style={{ width: '10%' , fontWeight: 'bold'}}>ΔΜ</TableCell>
+                                    <TableCell style={{ width: '10%' , fontWeight: 'bold'}}>Δήλωση</TableCell>
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {rowsSem5.map((row)=>(
+                                <TableRow key={row.name}>
+                                    <TableCell>{row.subject}</TableCell>
+                                    <TableCell>{row.id}</TableCell>
+                                    <TableCell>{row.professor}</TableCell>
+                                    <TableCell>{row.type}</TableCell>
+                                    <TableCell>{row.points}</TableCell>
+                                    <TableCell><Checkbox
+                                    checked={checkedCourses.includes(row)}
+                                    onChange={() => handleCheckboxChange(row)}
+                                    disabled={submitted || isCheckboxDisabled(row)}/>
+                                    </TableCell>
+                                </TableRow>))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                </div><br></br>
         </>
     )
 }
