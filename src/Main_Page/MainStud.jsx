@@ -71,7 +71,7 @@ const MainStud = () =>{
                         </div><br></br>
                     </div>
                     <div style={{ flex: '20%', display: 'flex',alignItems: 'center', justifyContent: 'center'}}>
-                        <Button variant="outlined" component={Link} to="https://eclass.uoa.gr/courses/DI632/"sx={{ borderRadius: '25px', textTransform:'none'}}>E-Class</Button>
+                        <Button variant="outlined" component={Link} to="https://eclass.uoa.gr/courses/DI632/" target="_blank" sx={{ borderRadius: '25px', textTransform:'none'}}>E-Class</Button>
                     </div>
                 </Card><br></br>
                 <Card sx={{width:"95%",display: 'flex'}}>
@@ -89,7 +89,7 @@ const MainStud = () =>{
                         </div><br></br>
                     </div>
                     <div style={{ flex: '20%', display: 'flex',alignItems: 'center', justifyContent: 'center'}}>
-                        <Button variant="outlined" component={Link} to="https://eclass.uoa.gr/courses/D260/"sx={{ borderRadius: '25px', textTransform:'none'}}>E-Class</Button>
+                        <Button variant="outlined" component={Link} to="https://eclass.uoa.gr/courses/D260/" target="_blank" sx={{ borderRadius: '25px', textTransform:'none'}}>E-Class</Button>
                     </div>
                 </Card><br></br>
                 <Card sx={{width:"95%",display: 'flex'}}>
@@ -107,7 +107,7 @@ const MainStud = () =>{
                         </div><br></br>
                     </div>
                     <div style={{ flex: '20%', display: 'flex',alignItems: 'center', justifyContent: 'center'}}>
-                        <Button variant="outlined" component={Link} to="https://eclass.uoa.gr/courses/DI539/"sx={{ borderRadius: '25px', textTransform:'none'}}>E-Class</Button>
+                        <Button variant="outlined" component={Link} to="https://eclass.uoa.gr/courses/DI539/" target="_blank" sx={{ borderRadius: '25px', textTransform:'none'}}>E-Class</Button>
                     </div>
                 </Card><br></br>
                 <Card sx={{width:"95%",display: 'flex'}}>
@@ -125,7 +125,7 @@ const MainStud = () =>{
                         </div><br></br>
                     </div>
                     <div style={{ flex: '20%', display: 'flex',alignItems: 'center', justifyContent: 'center'}}>
-                        <Button variant="outlined" component={Link} to="https://eclass.uoa.gr/courses/DI617/"sx={{ borderRadius: '25px', textTransform:'none'}}>E-Class</Button>
+                        <Button variant="outlined" component={Link} to="https://eclass.uoa.gr/courses/DI617/" target="_blank" sx={{ borderRadius: '25px', textTransform:'none'}}>E-Class</Button>
                     </div>
                 </Card><br></br>
             </div>
