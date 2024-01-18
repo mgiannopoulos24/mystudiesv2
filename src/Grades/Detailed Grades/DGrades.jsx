@@ -163,10 +163,10 @@ const DGrades =()=> {
                     <div className="row-round-progress" style={{display: 'flex',alignItems: 'center',justifyContent:"center"}}>
                         <div style={{ width: '150px', height: '150px' }}>
                             <CircularProgressbar 
-                            value={77.778} 
+                            value={80} 
                             text={
                                 <tspan>
-                                    <tspan x="50" dy="-0.4em" fontSize="18" fontWeight="bold">7/9</tspan>                                    
+                                    <tspan x="50" dy="-0.4em" fontSize="18" fontWeight="bold">8/10</tspan>                                    
                                     <tspan x="50" dy="1.2em" fontSize="13" fontWeight="normal">Περασμένα</tspan>
                                 </tspan>
                             }
@@ -178,19 +178,19 @@ const DGrades =()=> {
                     </div><br></br>
                     <div className="declared-sub">
                         <div className="d-cell-1"style={{flex:"90%",marginLeft:"20px"}}>Δηλωμένα μαθήματα</div>
-                        <div className="d-cell-2" style={{flex:"10%"}}>9</div>
+                        <div className="d-cell-2" style={{flex:"10%"}}>10</div>
                     </div>
                     <div className="passed-sub">
                         <div className="p-cell-1"style={{flex:"90%",marginLeft:"20px"}}>Περασμένα μαθήματα</div>
-                        <div className="p-cell-2" style={{flex:"10%"}}>7</div>
+                        <div className="p-cell-2" style={{flex:"10%"}}>8</div>
                     </div>
                     <div className="dpoints-sub">
                         <div className="dp-cell-1"style={{flex:"90%",marginLeft:"20px"}}>ΕCTS δηλωμένων μαθημάτων</div>
-                        <div className="dp-cell-2" style={{flex:"10%"}}>62</div>
+                        <div className="dp-cell-2" style={{flex:"10%"}}>64</div>
                     </div>
                     <div className="ppoints-sub">
                         <div className="pp-cell-1"style={{flex:"90%",marginLeft:"20px"}}>ΕCTS περασμένων μαθημάτων</div>
-                        <div className="pp-cell-2" style={{flex:"10%"}}>48</div>
+                        <div className="pp-cell-2" style={{flex:"10%"}}>50</div>
                     </div>
                 </Card>
             </div>
