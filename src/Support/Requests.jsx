@@ -20,7 +20,7 @@ import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import FileDownloadOffIcon from '@mui/icons-material/FileDownloadOff';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import IconButton from '@mui/material/IconButton';
-
+import Alert from '@mui/material/Alert';
 
 const Requests=()=>{
     const [selectedOption, setSelectedOption] = useState("All");
@@ -83,12 +83,21 @@ const Requests=()=>{
       }, 0);
 
       const [openDialog, setOpenDialog] = useState(false);
-
+      const [openStudentDetailsDialog, setOpenStudentDetailsDialog] = useState(false);
+      const [isAlertOpen, setAlertOpen] = useState(false);
 
       const handleNewRequestClick = (event) => {
         setOpenDialog(true);
       };
 
+      const handleStudentDetailsContinue = () => {
+        setOpenStudentDetailsDialog(false);
+        setOpenDialog(false);
+        setAlertOpen(true);
+        setTimeout(() => {
+          setAlertOpen(false);
+        }, 3000);
+      };
 
       const handleCloseDialog = () => {
         setOpenDialog(false);
@@ -106,7 +115,7 @@ const Requests=()=>{
             </div>
             <div style={{ flex: '30%', padding: '16px', display:"flex",justifyContent:"flex-end" }}>
               <CardActions>
-                <Button sx={{textTransform:"none"}}variant="contained">Επιλογή</Button>
+                <Button sx={{textTransform:"none"}}variant="contained" onClick={setOpenStudentDetailsDialog}>Επιλογή</Button>
               </CardActions>
             </div>
           </Card>
@@ -118,7 +127,7 @@ const Requests=()=>{
             </div>
             <div style={{ flex: '30%', padding: '16px', display:"flex",justifyContent:"flex-end" }}>
               <CardActions>
-                <Button sx={{textTransform:"none"}}variant="contained">Επιλογή</Button>
+                <Button sx={{textTransform:"none"}}variant="contained" onClick={setOpenStudentDetailsDialog}>Επιλογή</Button>
               </CardActions>
             </div>
           </Card>
@@ -130,7 +139,7 @@ const Requests=()=>{
             </div>
             <div style={{ flex: '30%', padding: '16px', display:"flex",justifyContent:"flex-end" }}>
               <CardActions>
-                <Button sx={{textTransform:"none"}}variant="contained">Επιλογή</Button>
+                <Button sx={{textTransform:"none"}}variant="contained" onClick={setOpenStudentDetailsDialog}>Επιλογή</Button>
               </CardActions>
             </div>
           </Card>
@@ -142,7 +151,7 @@ const Requests=()=>{
             </div>
             <div style={{ flex: '30%', padding: '16px', display:"flex",justifyContent:"flex-end" }}>
               <CardActions>
-                <Button sx={{textTransform:"none"}}variant="contained">Επιλογή</Button>
+                <Button sx={{textTransform:"none"}}variant="contained" onClick={setOpenStudentDetailsDialog}>Επιλογή</Button>
               </CardActions>
             </div>
           </Card>
@@ -154,17 +163,69 @@ const Requests=()=>{
             </div>
             <div style={{ flex: '30%', padding: '16px', display:"flex",justifyContent:"flex-end" }}>
               <CardActions>
-                <Button sx={{textTransform:"none"}}variant="contained">Επιλογή</Button>
+                <Button sx={{textTransform:"none"}}variant="contained" onClick={setOpenStudentDetailsDialog}>Επιλογή</Button>
               </CardActions>
             </div>
           </Card>
           </DialogContent>
           <DialogActions>
-            <Button variant="outlined" onClick={handleCloseDialog} sx={{textTransform:"none"}}>Ακύρωση</Button>
+            <Button variant="outlined" color="error" onClick={handleCloseDialog} sx={{textTransform:"none"}}>Ακύρωση</Button>
           </DialogActions>
         </Dialog>
       );
 
+      const StudentDetailsDialog = ({ open, handleClose }) => {
+        return (
+          <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
+            <DialogTitle sx={{ fontWeight: "bold" }}>Στοιχεία Αιτούντος</DialogTitle>
+            <DialogContent>
+            <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
+        <div>
+          <h3>Όνομα</h3>
+          <TextField label="Απόστολος" variant="outlined" size="small" disabled />
+        </div>
+        <div>
+          <h3>Επώνυμο</h3>
+          <TextField label="Λαλάκης" variant="outlined" size="small" disabled />
+        </div>
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
+        <div>
+          <h3>ΑΜ</h3>
+          <TextField label="1115202200000" variant="outlined" size="small" disabled />
+        </div>
+        <div>
+          <h3>Ημ/νια γέννησης</h3>
+          <TextField label="14/11/2004" variant="outlined" size="small" disabled />
+        </div>
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
+        <div>
+          <h3>Όνομα πατρός</h3>
+          <TextField label="Ονούφριος" variant="outlined" size="small" disabled />
+        </div>
+        <div>
+          <h3>Όνομα μητρός</h3>
+          <TextField label="Ευτέρπη" variant="outlined" size="small" disabled />
+        </div>
+      </div>
+            
+            </DialogContent>
+            <DialogActions sx={{display:"flex",justifyContent:"center"}}>
+              <Button variant="outlined" color="error" onClick={handleClose} sx={{ textTransform: "none" }}>
+                Ακύρωση
+              </Button>
+              <Button variant="contained" color="success" sx={{ textTransform: "none" }} onClick={handleStudentDetailsContinue}>
+                Αποστολή
+              </Button>
+            </DialogActions>
+          </Dialog>
+        );
+      };
+      
+      const studDetailsDialog = (
+        <StudentDetailsDialog open={openStudentDetailsDialog} handleClose={() => setOpenStudentDetailsDialog(false)} />
+      );
     return(
 
         <>
@@ -274,6 +335,14 @@ const Requests=()=>{
         })}
         </div>
         {newRequestMenu}
+        {studDetailsDialog}
+        {isAlertOpen && (
+        <Alert
+          severity="success" sx={{ position: 'absolute', top: '50px',left:'40%', zIndex: 1000, width: '20%', textAlign: 'center', opacity:"0.9"}}>
+          Η αίτηση σας αποστάλλει στην Γραμματεία
+        </Alert>
+       )}
+      
         </>
     )
 }
