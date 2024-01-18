@@ -34,9 +34,8 @@
 }
 
 .cell-grades{
-    display: flex;
+    display: inline-block;
     align-items: center;
-    justify-content: center;
 }
 
 .button-text {
@@ -49,11 +48,13 @@
   }
 
 .cell-support{
-    display: block;
+    display: inline-block;
     align-items: center;
 }
 
 .cell-notif{
+    display: inline-block;
+    align-items: center;
     justify-content: center;
     width:50px;
     height: 50px;
@@ -61,12 +62,12 @@
 }
 
 .cell-user{
-    display: block;
+    display: inline-block;
     align-items: center;
 }
 
 .cell-lang{
-    display: block;
+    display: inline-block;
     align-items: center;
 }
 
