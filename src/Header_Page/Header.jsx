@@ -28,15 +28,12 @@ const Header=()=>{
             <div className='column-1-header'>
                 <h2>My Studies</h2>
             </div>
-            <div className='column-2-header'>
-                        
-            </div>
             <div className='column-3-header'>
                 <div className='row-icons'>
                     <div className='cell-home'><a href="/MainStud" style={{ textDecoration: 'none', color: 'inherit' }}><HomeRoundedIcon style={{ fontSize: '30px' }}/></a></div>
                     <div className='cell-declaration'>
                         <div className='dropdown'>
-                            <button className='dropbutton'>Δηλώσεις<span><ExpandMoreRoundedIcon style={{fontSize: '15px'}}/></span></button>
+                            <button className='dropbutton'><span className='button-text'>Δηλώσεις</span><ExpandMoreRoundedIcon style={{fontSize: '20px'}}/></button>
                             <div className='dropdown-content'>
                                 <a href='/MainStud/CoursesDec'>Δήλωση Μαθημάτων</a>
                                 <a href='/MainStud/DecHistory'>Προηγούμενες Δηλώσεις</a>
@@ -46,7 +43,7 @@ const Header=()=>{
                     </div>
                     <div className='cell-grades'>
                         <div className='dropdown'>
-                            <button className='dropbutton'>Βαθμολογία<span><ExpandMoreRoundedIcon style={{fontSize: '15px'}}/></span></button>
+                            <button className='dropbutton'><span className='button-text'>Βαθμολογία</span><ExpandMoreRoundedIcon style={{fontSize: '20px'}}/></button>
                             <div className='dropdown-content'>
                                 <a href='/MainStud/Recent'>Πρόσφατη Βαθμολογία</a>
                                 <a href='/MainStud/Detailed'>Αναλυτική Βαθμολογία</a>
@@ -55,7 +52,7 @@ const Header=()=>{
                     </div>
                     <div className='cell-support'>
                         <div className='dropdown'>
-                            <button className='dropbutton'>Εξυπηρέτηση<span ><ExpandMoreRoundedIcon style={{fontSize: '15px'}}/></span></button>
+                            <button className='dropbutton'><span className='button-text'>Εξυπηρέτηση</span><ExpandMoreRoundedIcon style={{fontSize: '20px'}}/></button>
                             <div className='dropdown-content'>
                                 <a href='/MainStud/Requests'>Αιτήσεις</a>
                             </div>
@@ -78,7 +75,7 @@ const Header=()=>{
                     </div>
                     <div className='cell-user'>
                         <div className='dropdown'>
-                            <button className='dropbutton'>{userEmail}<span><ExpandMoreRoundedIcon style={{fontSize: '15px'}}/></span></button>
+                            <button className='dropbutton'><span className='button-text'>{userEmail}</span><ExpandMoreRoundedIcon style={{fontSize: '20px'}}/></button>
                             <div className='dropdown-content'>
                                 <a href='/MainStud/ProfileStud'>Το προφίλ μου</a>
                                 <a href='/Login'>Αποσύνδεση</a>
@@ -87,7 +84,7 @@ const Header=()=>{
                     </div>
                     <div className='cell-lang'>
                         <div className='dropdown'>
-                            <button className='dropbutton'>Ελληνικά<span><ExpandMoreRoundedIcon style={{fontSize: '15px'}}/></span></button>
+                            <button className='dropbutton'><span className='button-text'>Ελληνικά</span><ExpandMoreRoundedIcon style={{fontSize: '20px'}}/></button>
                             <div className='dropdown-content'>
                                 <option>Αγγλικά</option>
                             </div>
