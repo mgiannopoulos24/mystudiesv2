@@ -25,14 +25,14 @@ import IconButton from '@mui/material/IconButton';
 const Requests=()=>{
     const [selectedOption, setSelectedOption] = useState("All");
     const [filterText, setFilterText] = useState("");
-    const handleIconClick = (request, fileType) => {
+    const handleIconClick = (request,fileType) => {
       if (fileType === 'jpg') {
-        // Download JPG file logic
-        const imgUrl = "/assets/cert_student.jpg"; // Update with your actual image URL
+        // Download JPG file 
+        const imgUrl = "/assets/cert_student.jpg"; 
         downloadFile(imgUrl, 'cert_student.jpg');
       } else if (fileType === 'pdf') {
-        // Download PDF file logic
-        const pdfUrl = "/assets/cert_student.pdf"; // Update with your actual PDF URL
+        // Download PDF file 
+        const pdfUrl = "/assets/cert_student.pdf"; 
         downloadFile(pdfUrl, 'cert_student.pdf');
       }
     };
