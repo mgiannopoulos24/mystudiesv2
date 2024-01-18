@@ -4,10 +4,11 @@ import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { auth } from "../Firebase/firebase";
 import React, { useState, useEffect } from "react";
+import Badge from '@mui/material/Badge';
 
 
 const Header=()=>{
-    
+    const notificationsCount = 3;
     const [userEmail, setUserEmail] = useState(null);
 
     useEffect(() => {
@@ -62,10 +63,16 @@ const Header=()=>{
                     </div>
                     <div className='cell-notif'>
                         <div className='dropdown'>
-                            <button className='dropbutton' style={{padding:'8px',justifyContent:'center',alignItems:"center"}}><NotificationsIcon style={{fontSize: '30px'}}/></button>
+                            <button className='dropbutton' style={{padding:'8px',justifyContent:'center',alignItems:"center"}}>
+                                <Badge badgeContent={notificationsCount} overlap="circular" color="error" >
+                                    <NotificationsIcon style={{fontSize: '30px'}}/>
+                                </Badge>
+                            </button>
+                            
                             <div className="dropdown-content">
-                                <a href=''></a>
-                                <a href=''>Όλα τα μηνύματα</a>
+                                <div>Η περίοδος δήλωσης μαθημάτων ξεκίνησε. Δηλώστε τα μαθημάτα σας.</div>
+                                <div>H βεβαίωση σπουδών που αιτηθήκατε εγκρίθηκε.</div>
+                                <div>Το πιστοποιητικό φοιτητικής ιδιότητας που αιτηθήκατε εγκρίθηκε.</div>
                             </div>
                     </div>    
                     </div>

@@ -94,6 +94,15 @@
     display: block;
 }
 
+.dropdown-content div{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: smaller;
+    min-width: 200px;
+}
+
 .dropdown-content option{
     color: black;
     padding: 12px 16px;
@@ -101,6 +110,7 @@
     display: block;
 }
 
+.dropdown-content div:hover{ background-color: #ddd;}
 .dropdown-content a:hover{ background-color: #ddd;}
 .dropdown:hover .dropdown-content {display: block;}
 .dropdown:hover .dropbutton{background-color: white;}
