@@ -54,7 +54,7 @@ const MainStud = () =>{
                 <div className="row-subject">
                     <h3>Τα μαθήματα μου</h3><br></br>
                     ΧΕΙΜΕΡΙΝΟ ΕΞΑΜΗΝΟ 2023-24<br></br>
-                    <strong className="stud-prog">Τρέχων Εξάμηνο</strong><Link to={AllCourses}><Button variant="contained" sx={{marginLeft:'707px',textTransform:"none",marginBottom:"20px"}}>'Ολα τα μαθήματα</Button></Link>
+                    <span style={{display:'flex',gap:"60%"}}><strong className="stud-prog">Τρέχων Εξάμηνο</strong><Link to={AllCourses}><Button variant="contained" sx={{textTransform:"none",marginBottom:"20px"}}>'Ολα τα μαθήματα</Button></Link></span>
                 </div>
                 <Card sx={{width:"95%",display: 'flex'}}>
                     <div style={{ flex: '80%', display: 'flex', flexDirection: 'column'}}>
@@ -134,7 +134,7 @@ const MainStud = () =>{
                     <h3>Οι πρόσφατοι βαθμοί μου</h3><br></br>
                     Σεπτέμβριος 2023-24
                 </div><br></br>
-                <Card sx={{width:800,display: 'flex'}}>
+                <Card sx={{width:"95%",display: 'flex'}}>
                     <div style={{ flex: '80%', display: 'flex', flexDirection: 'column'}}>
                         <div style={{ flex: '50%',display: 'flex',alignItems: 'center'}}>
                         <CardContent sx={{fontSize:14}}>
@@ -149,7 +149,7 @@ const MainStud = () =>{
                         <h1>6</h1>
                     </div>
                 </Card><br></br>
-                <Card sx={{width:800,display: 'flex'}}>
+                <Card sx={{width:"95%",display: 'flex'}}>
                     <div style={{ flex: '80%', display: 'flex', flexDirection: 'column'}}>
                         <div style={{ flex: '50%',display: 'flex',alignItems: 'center'}}>
                         <CardContent sx={{fontSize:14}}>
@@ -164,7 +164,7 @@ const MainStud = () =>{
                         <h1>3</h1>
                     </div>
                 </Card><br></br>
-                <Card sx={{width:800,display: 'flex'}}>
+                <Card sx={{width:"95%",display: 'flex'}}>
                     <div style={{ flex: '80%', display: 'flex', flexDirection: 'column'}}>
                         <div style={{ flex: '50%',display: 'flex',alignItems: 'center'}}>
                         <CardContent sx={{fontSize:14}}>
