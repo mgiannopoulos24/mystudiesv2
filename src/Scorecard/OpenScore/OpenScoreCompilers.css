@@ -1,0 +1,35 @@
+
+.tabs-compilers{
+    display: flex;
+    margin-left: 10px;
+}
+
+.row-compilers{
+    margin-left: 10px;
+}
+
+.row-compilers-grade{
+    margin-left: 10px;
+}
+
+.prof-pending{
+    color: orange;
+}
+
+.status-compilers{
+    display: flex;
+}
+
+
+.status-compilers-col-1{
+    flex:50;
+}
+
+
+.status-compilers-col-2{
+    display: flex;
+    flex:50%;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 10px;
+}

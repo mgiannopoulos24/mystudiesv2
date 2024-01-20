@@ -1,0 +1,35 @@
+
+.tabs-graphics{
+    display: flex;
+    margin-left: 10px;
+}
+
+.row-graphics{
+    margin-left: 10px;
+}
+
+.row-graphics-grade{
+    margin-left: 10px;
+}
+
+.prof-pending{
+    color: orange;
+}
+
+.status-graphics{
+    display: flex;
+}
+
+
+.status-graphics-col-1{
+    flex:50;
+}
+
+
+.status-graphics-col-2{
+    display: flex;
+    flex:50%;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 10px;
+}
