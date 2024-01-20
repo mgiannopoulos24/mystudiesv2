@@ -15,8 +15,12 @@ const Breadcrumbs = () => {
     Recent:'Πρόσφατη Βαθμολογία',
     Detailed:'Αναλυτική Βαθμολογία',
     Requests:'Αιτήσεις',
-    ProfileStud:'Το προφίλ μου'
-    
+    ProfileStud:'Το προφίλ μου',
+    MainProf: 'Αρχική σελίδα',
+    SubjectsOpenScore: 'Ανοικτές Βαθμολογίες',
+    SubjectsSubmittedScore:'Υποβληθείσες Βαθμολογίες',
+    Compilers:'Μεταγλωττιστές',   
+    Graphics: 'Γραφικά' 
   };
   return (
     <div className='row-breadcrumbs'>
