@@ -52,7 +52,7 @@ const MainStud = () =>{
         <div className="two-columns">
             <div className="column-subjects">
                 <div className="row-subject">
-                    <h3>Τα μαθήματα μου</h3><br></br>
+                    <h3>Τα μαθήματα μου</h3>
                     ΧΕΙΜΕΡΙΝΟ ΕΞΑΜΗΝΟ 2023-24<br></br>
                     <span style={{display:'flex',gap:"60%"}}><strong className="stud-prog">Τρέχων Εξάμηνο</strong><Link to={AllCourses}><Button variant="contained" sx={{textTransform:"none",marginBottom:"20px"}}>'Ολα τα μαθήματα</Button></Link></span>
                 </div>
@@ -131,7 +131,7 @@ const MainStud = () =>{
             </div>
             <div className="column-grades">
                 <div className="row-grades">
-                    <h3>Οι πρόσφατοι βαθμοί μου</h3><br></br>
+                    <h3>Οι πρόσφατοι βαθμοί μου</h3>
                     Σεπτέμβριος 2023-24
                 </div><br></br>
                 <Card sx={{width:"95%",display: 'flex'}}>
