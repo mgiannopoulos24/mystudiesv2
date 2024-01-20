@@ -8,6 +8,8 @@ import AccountBalanceOutlinedIcon from '@mui/icons-material/AccountBalanceOutlin
 import Button from "@mui/material/Button"
 import { purple } from '@mui/material/colors';
 import { styled } from '@mui/material/styles';
+import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
+import { Link } from "react-router-dom";
 
 const ColorButton = styled(Button)(({ theme }) => ({
     color: theme.palette.getContrastText(purple[500]),
@@ -23,17 +25,17 @@ const MainProf=()=>{
 
         <>
         <HeaderProf/>
-        
+        <Breadcrumbs/>
         <div className="row-prof">
             <h2>Αρχική Σελίδα</h2>
         </div>
         <div className="two-col-prof">
             <div className="col-subject-prof">
                 <div className="row-subject-prof">
-                    <h3>Τρέχοντα Μαθήματα</h3><br></br>
+                    <h3>Τρέχοντα Μαθήματα</h3>
                     Χειμερινό Εξάμηνο 2023-24
                 </div><br></br>
-                <Card sx={{width:950,display: 'flex'}}>
+                <Card sx={{width:"97%",display: 'flex'}}>
                 <div style={{ flex: '70%', display: 'flex', flexDirection: 'column'}}>
                     <div style={{ flex: '33%',display: 'flex',alignItems: 'center'}}>
                             <CardContent sx={{fontSize:14}}>
@@ -51,7 +53,7 @@ const MainProf=()=>{
                     <Button variant="outlined" style={{textTransform:"none",borderRadius: '25px'}}>Περισσότερα</Button>
                 </div>
                 </Card><br></br>
-                <Card sx={{width:950,display: 'flex'}}>
+                <Card sx={{width:"97%",display: 'flex'}}>
                 <div style={{ flex: '70%', display: 'flex', flexDirection: 'column'}}>
                     <div style={{ flex: '33%',display: 'flex',alignItems: 'center'}}>
                             <CardContent sx={{fontSize:14}}>
@@ -69,7 +71,7 @@ const MainProf=()=>{
                     <Button variant="outlined" style={{textTransform:"none",borderRadius: '25px'}}>Περισσότερα</Button>
                 </div>
                 </Card><br></br>
-                <Card sx={{width:950,display: 'flex'}}>
+                <Card sx={{width:"97%",display: 'flex'}}>
                 <div style={{ flex: '70%', display: 'flex', flexDirection: 'column'}}>
                     <div style={{ flex: '33%',display: 'flex',alignItems: 'center'}}>
                             <CardContent sx={{fontSize:14}}>
@@ -87,7 +89,7 @@ const MainProf=()=>{
                     <Button variant="outlined" style={{textTransform:"none",borderRadius: '25px'}}>Περισσότερα</Button>
                 </div>
                 </Card><br></br>
-                <Card sx={{width:950,display: 'flex'}}>
+                <Card sx={{width:"97%",display: 'flex'}}>
                 <div style={{ flex: '70%', display: 'flex', flexDirection: 'column'}}>
                     <div style={{ flex: '33%',display: 'flex',alignItems: 'center'}}>
                             <CardContent sx={{fontSize:14}}>
@@ -104,16 +106,16 @@ const MainProf=()=>{
                 <div style={{ flex: '30%', display: 'flex', flexDirection: 'column',alignItems:"center",justifyContent:'center'}}>
                     <Button variant="outlined" style={{textTransform:"none",borderRadius: '25px'}}>Περισσότερα</Button>
                 </div>
-                </Card>
+                </Card><br></br>
                 
             
             </div>
             <div className="col-grades-prof">
                 <div className="row-grades-prof">
-                    <h3>Ανοικτές Βαθμολογίες</h3><br></br>
+                    <h3>Ανοικτές Βαθμολογίες</h3>
                     <strong className="prof-prog">Σεπτέμβριος 2023-24</strong>
                 </div><br></br>
-                <Card sx={{width:800,display: 'flex'}}>
+                <Card sx={{width:"97%",display: 'flex'}}>
                     <div style={{ flex: '70%', display: 'flex', flexDirection: 'column'}}>
                         <div style={{ flex: '50%',display: 'flex',alignItems: 'center'}}>
                                 <CardContent sx={{fontSize:14}}>
@@ -125,10 +127,10 @@ const MainProf=()=>{
                         </div><br></br>
                     </div>
                     <div style={{ flex: '30%', display: 'flex', flexDirection: 'column',alignItems:"center",justifyContent:'center'}}>
-                        <ColorButton variant="contained" style={{textTransform:"none",borderRadius: '25px'}}>Βαθμολόγηση</ColorButton>
+                        <Link to="/MainProf/SubjectsOpenScore/Compilers"><ColorButton variant="contained" style={{textTransform:"none",borderRadius: '25px'}}>Βαθμολόγηση</ColorButton></Link>
                     </div>
                 </Card><br></br>
-                <Card sx={{width:800,display: 'flex'}}>
+                <Card sx={{width:"97%",display: 'flex'}}>
                     <div style={{ flex: '70%', display: 'flex', flexDirection: 'column'}}>
                         <div style={{ flex: '50%',display: 'flex',alignItems: 'center'}}>
                                 <CardContent sx={{fontSize:14}}>
@@ -143,7 +145,7 @@ const MainProf=()=>{
                         <ColorButton variant="contained" style={{textTransform:"none",borderRadius: '25px'}}>Βαθμολόγηση</ColorButton>
                     </div>
                 </Card><br></br>
-                <Card sx={{width:800,display: 'flex'}}>
+                <Card sx={{width:"97%",display: 'flex'}}>
                     <div style={{ flex: '70%', display: 'flex', flexDirection: 'column'}}>
                         <div style={{ flex: '50%',display: 'flex',alignItems: 'center'}}>
                                 <CardContent sx={{fontSize:14}}>
@@ -155,10 +157,10 @@ const MainProf=()=>{
                         </div><br></br>
                     </div>
                     <div style={{ flex: '30%', display: 'flex', flexDirection: 'column',alignItems:"center",justifyContent:'center'}}>
-                        <ColorButton variant="contained"  style={{textTransform:"none",borderRadius: '25px'}}>Βαθμολόγηση</ColorButton>
+                        <Link to="/MainProf/SubjectsOpenScore/Graphics"><ColorButton variant="contained"  style={{textTransform:"none",borderRadius: '25px'}}>Βαθμολόγηση</ColorButton></Link>
                     </div>
                 </Card><br></br>
-                <Card sx={{width:800,display: 'flex'}}>
+                <Card sx={{width:"97%",display: 'flex'}}>
                     <div style={{ flex: '70%', display: 'flex', flexDirection: 'column'}}>
                         <div style={{ flex: '50%',display: 'flex',alignItems: 'center'}}>
                                 <CardContent sx={{fontSize:14}}>
