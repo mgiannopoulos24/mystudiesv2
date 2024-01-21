@@ -1,0 +1,35 @@
+
+.tabs-syspro{
+    display: flex;
+    margin-left: 10px;
+}
+
+.row-syspro{
+    margin-left: 10px;
+}
+
+.row-syspro-grade{
+    margin-left: 10px;
+}
+
+.prof-pending{
+    color: orange;
+}
+
+.status-syspro{
+    display: flex;
+}
+
+
+.status-syspro-col-1{
+    flex:50;
+}
+
+
+.status-syspro-col-2{
+    display: flex;
+    flex:50%;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 10px;
+}
