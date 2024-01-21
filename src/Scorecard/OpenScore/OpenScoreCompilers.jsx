@@ -89,11 +89,11 @@ const OpenScoreCompilers=()=>{
                     <TableBody>
                     {rows.map((row) => (
                         <TableRow key={row.id}>
-                            <TableCell component="th" scope="row">{row.id}</TableCell>
-                            <TableCell>{row.name}</TableCell>
-                            <TableCell>{row.surname}</TableCell>
-                            <TableCell>{row.semester}</TableCell>
-                            <TableCell>{row.grade}</TableCell>
+                            <TableCell style={{fontSize:16}}component="th" scope="row">{row.id}</TableCell>
+                            <TableCell style={{fontSize:16}}>{row.name}</TableCell>
+                            <TableCell style={{fontSize:16}}>{row.surname}</TableCell>
+                            <TableCell style={{fontSize:16}}>{row.semester}</TableCell>
+                            <TableCell style={{fontSize:16}}>{row.grade}</TableCell>
                         </TableRow>
                     ))}
                     </TableBody>

@@ -23,7 +23,7 @@ const rows = [
     createData(111520230002, "Δανάη", "Μαυρομάτττη", 1, ),
     createData(111520230003, "Λάκης", "Λαλάκης", 24, 6.0),
     createData(111520230004, "Παναγιώτης", "Λυμπερόπουλος", 4 , 4.3),
-    createData(111520230005, "Mιράντα", "Mωβγατιτοπούλου", 8, ),
+    createData(111520230005, "Mιράντα", "Παπαδοπούλου", 8, ),
     createData(1115202369420, "Δημήτριος (Μαστερμαϊντ)", "Κοσμοναύτης", 8, ),
     createData(111520230006, "Κάγγελος", "Ajelman", 8, ),
 ];
@@ -55,7 +55,7 @@ const OpenScoreGraphics=()=>{
         <HeaderProf/>
         <Breadcrumbs/>
         <div className="row-graphics">
-            <h2>Μεταγλωττιστές</h2>
+            <h2>Γραφικά</h2>
         </div>
         <div className="tabs-graphics">
             <Tabs value={activeTab} onChange={handleTabChange}>
@@ -81,19 +81,19 @@ const OpenScoreGraphics=()=>{
                     <TableRow>
                         <StyledTableCell style={{ width: '20%', fontWeight: 'bold'}}>AM</StyledTableCell>
                         <StyledTableCell style={{ width: '20%', fontWeight: 'bold'}}>Όνομα</StyledTableCell>
-                        <StyledTableCell style={{ width: '20%', fontWeight: 'bold'}}>Επώνυμο</StyledTableCell>
+                        <StyledTableCell style={{ width: '20%', fontWeight: 'bold', fontSize:16}}>Επώνυμο</StyledTableCell>
                         <StyledTableCell style={{ width: '20%', fontWeight: 'bold'}}>Εξάμηνο</StyledTableCell>
                         <StyledTableCell style={{ width: '20%', fontWeight: 'bold'}}>Βαθμός</StyledTableCell>
                     </TableRow>
                     </TableHead>
                     <TableBody>
                     {rows.map((row) => (
-                        <TableRow key={row.id}>
-                            <TableCell component="th" scope="row">{row.id}</TableCell>
-                            <TableCell>{row.name}</TableCell>
-                            <TableCell>{row.surname}</TableCell>
-                            <TableCell>{row.semester}</TableCell>
-                            <TableCell>{row.grade}</TableCell>
+                        <TableRow style={{fontSize:16}} key={row.id}>
+                            <TableCell style={{fontSize:16}} component="th" scope="row">{row.id}</TableCell>
+                            <TableCell style={{fontSize:16}}>{row.name}</TableCell>
+                            <TableCell style={{fontSize:16}}>{row.surname}</TableCell>
+                            <TableCell style={{fontSize:16}}>{row.semester}</TableCell>
+                            <TableCell style={{fontSize:16}}>{row.grade}</TableCell>
                         </TableRow>
                     ))}
                     </TableBody>
