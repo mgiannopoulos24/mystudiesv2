@@ -20,8 +20,11 @@ const Breadcrumbs = () => {
     SubjectsOpenScore: 'Ανοικτές Βαθμολογίες',
     SubjectsSubmittedScore:'Υποβληθείσες Βαθμολογίες',
     Compilers:'Μεταγλωττιστές',   
-    Graphics: 'Γραφικά' 
+    Graphics: 'Γραφικά',
+    Syspro: 'Προγραμματισμός Συστήματος',
+    Arch: 'Αρχιτεκτονική ΙΙ',
   };
+  
   return (
     <div className='row-breadcrumbs'>
       {pathnames.map((name, index) => {
