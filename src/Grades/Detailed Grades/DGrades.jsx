@@ -128,7 +128,7 @@ const DGrades =()=> {
                             <span>
                                 <TextField 
                                 type="text" 
-                                label="Τίτλο μαθήματος, Διδάσκων, Κωδικό" 
+                                label="Τίτλο μαθήματος, Διδάσκων, Κωδικό,Εξεταστική" 
                                 variant="outlined" 
                                 size="small" 
                                 sx={{width:'600px', margin:'0 15px'}}
