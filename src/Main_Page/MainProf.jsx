@@ -142,7 +142,7 @@ const MainProf=()=>{
                         </div><br></br>
                     </div>
                     <div style={{ flex: '30%', display: 'flex', flexDirection: 'column',alignItems:"center",justifyContent:'center'}}>
-                        <ColorButton variant="contained" style={{textTransform:"none",borderRadius: '25px'}}>Βαθμολόγηση</ColorButton>
+                        <Link to="/MainProf/SubjectsSubmittedScore/Arch"><ColorButton variant="contained" style={{textTransform:"none",borderRadius: '25px'}}>Βαθμολόγηση</ColorButton></Link>
                     </div>
                 </Card><br></br>
                 <Card sx={{width:"97%",display: 'flex'}}>
@@ -172,7 +172,7 @@ const MainProf=()=>{
                         </div><br></br>
                     </div>
                     <div style={{ flex: '30%', display: 'flex', flexDirection: 'column',alignItems:"center",justifyContent:'center'}}>
-                        <ColorButton  variant="contained" style={{textTransform:"none",borderRadius: '25px'}}>Βαθμολόγηση</ColorButton>
+                        <Link to="/MainProf/SubjectsSubmittedScore/Syspro"><ColorButton  variant="contained" style={{textTransform:"none",borderRadius: '25px'}}>Βαθμολόγηση</ColorButton></Link>
                     </div>
                 </Card>
             </div>
