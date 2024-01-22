@@ -62,7 +62,7 @@ const SubmittedScoreSyspro=()=>{
             <div className="status-syspro">
                 <div className="status-syspro-col-1">
                     <h3>Κατάσταση Βαθμολογίας</h3>
-                    <strong className="prof-pending">Σε εκκρεμότητα</strong>
+                    <strong className="prof-subbed">Υποβληθείσα</strong>
                 </div>
                 <div className="status-syspro-col-2">
                     <Button variant='outlined' color="success" sx={{textTransform:"none", marginRight:'10px'}}>Προσωρινή Αποθήκευση</Button>
