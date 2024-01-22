@@ -5,7 +5,7 @@ import { CardContent } from "@mui/material";
 import SchoolIcon from '@mui/icons-material/School';
 import FlagOutlinedIcon from '@mui/icons-material/FlagOutlined';
 import AccountBalanceOutlinedIcon from '@mui/icons-material/AccountBalanceOutlined';
-import Button from "@mui/material/Button"
+import Button from "@mui/material/Button";
 import { purple } from '@mui/material/colors';
 import { styled } from '@mui/material/styles';
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
@@ -75,7 +75,7 @@ const MainProf=()=>{
                 <div style={{ flex: '70%', display: 'flex', flexDirection: 'column'}}>
                     <div style={{ flex: '33%',display: 'flex',alignItems: 'center'}}>
                             <CardContent sx={{fontSize:14}}>
-                                <h3 style={{ margin: 0 }}>Εργαστήριο Σημάτων και Συστημάτων</h3>
+                                <h3 style={{ margin: 0 }}>Εργαστήριο Κυκλωμάτων και Συστημάτων</h3>
                             </CardContent>
                     </div>
                     <div style={{ flex: '33%',display: 'flex',alignItems: 'center'}}>
@@ -112,7 +112,7 @@ const MainProf=()=>{
             </div>
             <div className="col-grades-prof">
                 <div className="row-grades-prof">
-                    <h3>Ανοικτές Βαθμολογίες</h3>
+                    <h3>Βαθμολογίες</h3>
                     <strong className="prof-prog">Σεπτέμβριος 2023-24</strong>
                 </div><br></br>
                 <Card sx={{width:"97%",display: 'flex'}}>
@@ -142,7 +142,7 @@ const MainProf=()=>{
                         </div><br></br>
                     </div>
                     <div style={{ flex: '30%', display: 'flex', flexDirection: 'column',alignItems:"center",justifyContent:'center'}}>
-                        <Link to="/MainProf/SubjectsSubmittedScore/Arch"><ColorButton variant="contained" style={{textTransform:"none",borderRadius: '25px'}}>Βαθμολόγηση</ColorButton></Link>
+                        <Link to="/MainProf/SubjectsSubmittedScore/Arch"><ColorButton variant="contained" style={{textTransform:"none",borderRadius: '25px'}}>Παρακολούθηση</ColorButton></Link>
                     </div>
                 </Card><br></br>
                 <Card sx={{width:"97%",display: 'flex'}}>
@@ -172,7 +172,7 @@ const MainProf=()=>{
                         </div><br></br>
                     </div>
                     <div style={{ flex: '30%', display: 'flex', flexDirection: 'column',alignItems:"center",justifyContent:'center'}}>
-                        <Link to="/MainProf/SubjectsSubmittedScore/Syspro"><ColorButton  variant="contained" style={{textTransform:"none",borderRadius: '25px'}}>Βαθμολόγηση</ColorButton></Link>
+                        <Link to="/MainProf/SubjectsSubmittedScore/Syspro"><ColorButton  variant="contained" style={{textTransform:"none",borderRadius: '25px'}}>Παρακολούθηση</ColorButton></Link>
                     </div>
                 </Card>
             </div>
