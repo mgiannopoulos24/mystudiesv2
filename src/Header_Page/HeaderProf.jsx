@@ -35,8 +35,8 @@ const HeaderProf=()=>{
                         <div className='dropdown-1'>
                             <button className='dropbutton-1'><span className='button-text-1'>Βαθμολογία</span><ExpandMoreRoundedIcon style={{fontSize: '20px'}}/></button>
                             <div className='dropdown-content-1'>
-                                <a href=''>Δημιουργία Βαθμολογίου</a>
-                                <a href=''>Παρακολούθηση Βαθμολογίου</a>
+                                <a href="/MainProf/SubjectsOpenScore">Δημιουργία Βαθμολογίου</a>
+                                <a href="/MainProf/SubjectsSubmittedScore">Παρακολούθηση Βαθμολογίου</a>
                             </div>
                         </div>
                     </div>                    
