@@ -15,6 +15,8 @@ import OpenScoreCompilers from "./Scorecard/OpenScore/OpenScoreCompilers";
 import OpenScoreGraphics from "./Scorecard/OpenScore/OpenScoreGraphics";
 import SubmittedScoreArch from "./Scorecard/SubmittedScore/SubmittedScoreArch";
 import SubmittedScoreSyspro from "./Scorecard/SubmittedScore/SubmittedScoreSyspro";
+import SubjectsOpenScore from "./Scorecard/SubjectsOpenScore/SubjectsOpenScore";
+import SubjectsSubmittedScore from "./Scorecard/SubjectsSubmittedScore/SubjectsSubmittedScore";
 // import { getFirestore } from 'firebase/firestore'
 //const db = getFirestore(firebaseApp);
 
@@ -37,6 +39,8 @@ export default function App(){
         <Route path="/MainProf" element={<MainProf/>} />
         <Route path="/MainProf/SubjectsOpenScore/Compilers" element={<OpenScoreCompilers/>}/>
         <Route path="/MainProf/SubjectsOpenScore/Graphics" element={<OpenScoreGraphics/>}/>
+        <Route path="/MainProf/SubjectsOpenScore" element={<SubjectsOpenScore/>}/>
+        <Route path="/MainProf/SubjectsSubmittedScore" element={<SubjectsSubmittedScore/>}/>       
         <Route path="/MainProf/SubjectsSubmittedScore/Arch" element={<SubmittedScoreArch/>}/>
         <Route path="/MainProf/SubjectsSubmittedScore/Syspro" element={<SubmittedScoreSyspro/>}/>
       </Routes>
