@@ -13,14 +13,16 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
+import  TextField  from "@mui/material/TextField";
+import Alert from "@mui/material/Alert";
 
 function createData(id, name, surname, semester, grade) {
-    return { id, name, surname, semester,  };
+    return { id, name, surname, semester, grade };
   }
 
 const rows = [
-    createData(111520230099, "Μαγδαληνή", "Λύτρα", 8, ),
-    createData(111520230100, "Έλλη", "Θεολόγα", 8, ),
+    createData(111520230099, "Μαγδαληνή", "Λύτρα", 8, 3),
+    createData(111520230100, "Έλλη", "Θεολόγα", 8, 10),
     
 ];
 
@@ -40,11 +42,31 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 const SubmittedScoreArch=()=>{
 
     const [activeTab, setActiveTab] = useState(0);
+    const [disableTextboxes, setDisableTextboxes] = useState(false);
+    const [successMessage, setSuccessMessage] = useState(null);
 
     const handleTabChange = (event, newValue) => {
         setActiveTab(newValue);
     };
 
+    const handleSave = () => {
+        // Disable textboxes after saving
+        setDisableTextboxes(true);
+        setSuccessMessage("Η οριστική αποθήκευση έγινε με επιτυχία");
+        setTimeout(() => {
+            setSuccessMessage(null);
+        }, 2000);
+    };
+
+    const handleTemporarySave = () => {
+
+        // Display success message
+        setSuccessMessage("Η προσωρινή αποθήκευση έγινε με επιτυχία");
+        setTimeout(() => {
+            setSuccessMessage(null);
+        }, 2000);
+    }
+    
     return(
         <>
         
@@ -53,6 +75,11 @@ const SubmittedScoreArch=()=>{
         <div className="row-arch">
             <h2>Αρχιτεκτονική ΙΙ</h2>
         </div>
+        {successMessage && (
+                <Alert severity="success" sx={{position: 'fixed', top: '25%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 1000,}}>
+                    {successMessage}
+                </Alert>
+        )}
         <div className="tabs-arch">
             <Tabs value={activeTab} onChange={handleTabChange}>
                 <Tab label="Eαρινό 2022-23" sx={{textTransform:"none", fontSize:18}} />
@@ -65,8 +92,8 @@ const SubmittedScoreArch=()=>{
                     <strong className="prof-subbed">Υποβληθείσα</strong>
                 </div>
                 <div className="status-arch-col-2">
-                    <Button variant='outlined' color="success" sx={{textTransform:"none", marginRight:'10px'}}>Προσωρινή Αποθήκευση</Button>
-                    <Button variant="contained" color="success" sx={{textTransform:"none"}}>Οριστική Αποθήκευση</Button>
+                    <Button variant='outlined' color="success" sx={{textTransform:"none", marginRight:'10px'}} onClick={handleTemporarySave}>Προσωρινή Αποθήκευση</Button>
+                    <Button variant="contained" color="success" sx={{textTransform:"none"}} onClick={handleSave}>Οριστική Αποθήκευση</Button>
                 </div>
             </div><br></br>
             <div className="students-arch">
@@ -89,7 +116,16 @@ const SubmittedScoreArch=()=>{
                             <TableCell style={{fontSize:16}}>{row.name}</TableCell>
                             <TableCell style={{fontSize:16}}>{row.surname}</TableCell>
                             <TableCell style={{fontSize:16}}>{row.semester}</TableCell>
-                            <TableCell style={{fontSize:16}}>{row.grade}</TableCell>
+                            <TableCell style={{fontSize:16}}>
+                            <TextField  
+                            type="text"
+                            variant="outlined"
+                            size="small" 
+                            sx={{width:"80px",height:"45px"}}  
+                            disabled={disableTextboxes} 
+                            value={row.grade !== null ? row.grade : ""}                   
+                            />
+                            </TableCell>
                         </TableRow>
                     ))}
                     </TableBody>
