@@ -92,8 +92,14 @@ const SubmittedScoreArch=()=>{
                     <strong className="prof-subbed">Υποβληθείσα</strong>
                 </div>
                 <div className="status-arch-col-2">
-                    <Button variant='outlined' color="success" sx={{textTransform:"none", marginRight:'10px'}} onClick={handleTemporarySave}>Προσωρινή Αποθήκευση</Button>
-                    <Button variant="contained" color="success" sx={{textTransform:"none"}} onClick={handleSave}>Οριστική Αποθήκευση</Button>
+                    <div className="status-arch-col-2-row-1">
+                        <Button variant='outlined' color="success" sx={{textTransform:"none", marginRight:'10px'}} onClick={handleTemporarySave}>Προσωρινή Αποθήκευση</Button>
+                        <Button variant="contained" color="success" sx={{textTransform:"none"}} onClick={handleSave}>Οριστική Αποθήκευση</Button>
+                    </div><br></br>
+                    <div className="status-arch-col-2-row-2">
+                        <Button variant="contained" color="secondary" sx={{textTransform:"none"}}>Λήψη βαθμολογίου</Button>
+                    </div>
+                    
                 </div>
             </div><br></br>
             <div className="students-arch">
