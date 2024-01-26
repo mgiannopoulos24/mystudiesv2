@@ -14,7 +14,7 @@ import Select from '@mui/material/Select';
 import SubjectCard from "../../SubjectCard/SubjectCard";
 import BackToTop from "../../BackToTop/BackToTop";
 import PrintIcon from '@mui/icons-material/Print';
-
+import { CardContent } from '@mui/material';
 
 
 
@@ -112,7 +112,7 @@ const DGrades =()=> {
                     <div className="row-sort">
                     <Card sx={{width:'100%',display:'flex',background:""}}>
                         <div className="sort-column-1" style={{display:'flex',flex:"40%",alignItems:"center",justifyContent:"center"}}>
-                            Ταξινόμηση κατά:
+                            Εμφάνιση:
                             <span>
                                 <div className="filter-select">
                                   <Select value={selectedOption} onChange={handleDropdownChange} sx={{width:'250px', margin:'0 15px',size:"xsmall",height:"40px"}}>
@@ -148,6 +148,29 @@ const DGrades =()=> {
                     </Card>
                     </div>
                     <br></br>
+                    <Card sx={{width:'99%',display:'flex',background:"",marginLeft:"10px",justifyContent:"center"}}>
+                        <CardContent sx={{display:"flex",width:"25%"}}>
+                            <strong>Μάθημα</strong>
+                        </CardContent>
+                        <CardContent sx={{display:"flex",width:"5%"}}>
+                            <strong>Κωδικός</strong>
+                        </CardContent>
+                        <CardContent sx={{display:"flex",width:"20%"}}>
+                            <strong>Διδάσκων</strong>
+                        </CardContent>
+                        <CardContent sx={{display:"flex",width:"15%"}}>
+                            <strong>Εξεταστική</strong>
+                        </CardContent>
+                        <CardContent sx={{display:"flex",width:"15%"}}>
+                            <strong>Τύπος μαθήματος</strong>
+                        </CardContent>
+                        <CardContent sx={{display:"flex",width:"5%"}}>
+                            <strong>ΔΜ</strong>
+                        </CardContent>
+                        <CardContent sx={{display:"flex",width:"10%"}}>
+                            <strong>Βαθμός</strong>
+                        </CardContent>
+                    </Card><br></br>
                     <div className="row-semesters">
                         {filteredSubjects.map((subject, index) => (
                             <SubjectCard key={index} {...subject} />
