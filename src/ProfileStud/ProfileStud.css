@@ -59,7 +59,12 @@
 }
 
 .track-progress li span {
-    padding-left: 0.75em;
+    position: absolute;
+    top: 100%; 
+    left: 50%;
+    transform: translateX(-50%); 
+    display: inline-block; 
+    white-space: nowrap;
 }
   
 .track-progress li.done {
