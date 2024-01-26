@@ -23,6 +23,7 @@ const Breadcrumbs = () => {
     Graphics: 'Γραφικά',
     Syspro: 'Προγραμματισμός Συστήματος',
     Arch: 'Αρχιτεκτονική ΙΙ',
+    ProfileProf: 'Το προφίλ μου'
   };
   
   return (
