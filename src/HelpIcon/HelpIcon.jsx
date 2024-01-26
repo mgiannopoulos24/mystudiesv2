@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState,useEffect} from "react";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -17,6 +17,7 @@ const HelpIcon = () => {
     const [collapse1, setCollapse1] = useState(false);
     const [collapse2, setCollapse2] = useState(false);
     const [collapse3, setCollapse3] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
 
   const handleOpen = () => {
     setOpen(true);
@@ -42,10 +43,34 @@ const HelpIcon = () => {
     }
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setScrolled(scrollTop > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="helpicon">
-      <Button color="primary" variant="contained" onClick={handleOpen} sx={{ borderRadius: "100%", width: "10px", height: "60px", backgroundColor: 'rgba(33, 150, 243, 0.8)' }}>
-        <QuestionMarkOutlinedIcon sx={{fontSize:"xlarge"}}/>
+    <div className={`helpicon ${scrolled ? 'scrolled' : ''}`}>
+      <Button color="primary" variant="contained" onClick={handleOpen} 
+        sx={{
+          borderRadius: scrolled ? "100%" : "5px",
+          width: scrolled ? "30px" : "100px",
+          height: scrolled ? "60px" : "50px",
+          backgroundColor: "rgba(33, 150, 243, 0.8)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: scrolled ? "flex-start":"center", // Centering both icon and text horizontally
+         
+        }}>
+        <QuestionMarkOutlinedIcon sx={{fontSize:"xlarge", marginLeft: scrolled ? "3px" : "0"}}/>
+        <span className="help-text">Βοήθεια</span>
       </Button>
       <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
         <DialogTitle>
