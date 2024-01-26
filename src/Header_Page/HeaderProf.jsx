@@ -8,7 +8,7 @@ import "./HeaderProf.css"
 import Badge from '@mui/material/Badge';
 
 const HeaderProf=()=>{
-    const notificationsCount = 1;
+    const notificationsCount = 2;
     const [userEmail, setUserEmail] = useState(null);
 
     useEffect(() => {
@@ -48,7 +48,8 @@ const HeaderProf=()=>{
                                 </Badge>
                             </button>
                             <div className="dropdown-content-1">
-                                <a href=""><div>Καλημέρα σας. ΓΑΜΩ ΤΗΝ ΠΑΤΡΑ.</div></a>
+                                <a href="/MainProf/SubjectsOpenScore/Compilers"><div>Υπενθύμιση υποβολής βαθμολογίας για το μάθημα Μεταγλωττιστές</div></a>
+                                <a href="/MainProf/SubjectsOpenScore/Graphics"><div>Υπενθύμιση υποβολής βαθμολογίας για το μάθημα Γραφικά</div></a>
                             </div>
                            
                     </div>    
@@ -57,7 +58,7 @@ const HeaderProf=()=>{
                         <div className='dropdown-1'>
                             <button className='dropbutton-1'><span className='button-text-1'>{userEmail}</span><ExpandMoreRoundedIcon style={{fontSize: '20px'}}/></button>
                             <div className='dropdown-content-1'>
-                                <a href=''>Το προφίλ μου</a>
+                                <a href="/MainProf/ProfileProf">Το προφίλ μου</a>
                                 <a href='/Login'>Αποσύνδεση</a>
                             </div>
                         </div>
