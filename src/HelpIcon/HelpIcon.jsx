@@ -14,9 +14,9 @@ import "./HelpIcon.css";
 const HelpIcon = () => {
   
     const [open, setOpen] = useState(false);
-    const [collapse1, setCollapse1] = useState(true);
-    const [collapse2, setCollapse2] = useState(true);
-    const [collapse3, setCollapse3] = useState(true);
+    const [collapse1, setCollapse1] = useState(false);
+    const [collapse2, setCollapse2] = useState(false);
+    const [collapse3, setCollapse3] = useState(false);
 
   const handleOpen = () => {
     setOpen(true);
@@ -99,7 +99,7 @@ const HelpIcon = () => {
                 <li>Κάντε κλικ στην επιλογή <strong>Αιτήσεις</strong>.</li>
                 <li>Κάντε κλικ στο κουμπί <strong>Νέα αίτηση</strong>.</li>
                 <li>Στο μενού που θα σας εμφανιστεί διαλέξτε τον τύπο του πιστοποιητικού που θέλετε.</li>
-                <li>Τέλος, θα εμφανιστεί το μενού μετα στοιχεία σας και πατώντας <strong>Αποστολή</strong> επιβεβαιώνετε την δήλωση σας.</li>
+                <li>Τέλος, θα εμφανιστεί το μενού με τα στοιχεία σας και πατώντας <strong>Αποστολή</strong> επιβεβαιώνετε την δήλωση σας.</li>
               </ol>
             </Typography>
           </Collapse>
