@@ -6,7 +6,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-
+import HelpIcon from '../../HelpIcon/HelpIcon';
 import { useState } from "react";
 import "./DecHistory.css"
 import Breadcrumbs from "../../Breadcrumbs/Breadcrumbs";
@@ -59,6 +59,7 @@ const DecHistory=()=>{
             <Header/>
             <Breadcrumbs/>
             <BackToTop/>
+            <HelpIcon/>
             <div className="row-dhis-title">
                 <h2>Ιστορικό Δηλώσεων</h2>
             </div>

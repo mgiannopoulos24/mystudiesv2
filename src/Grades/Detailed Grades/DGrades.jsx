@@ -15,7 +15,7 @@ import SubjectCard from "../../SubjectCard/SubjectCard";
 import BackToTop from "../../BackToTop/BackToTop";
 import PrintIcon from '@mui/icons-material/Print';
 import { CardContent } from '@mui/material';
-
+import HelpIcon from '../../HelpIcon/HelpIcon';
 
 
 
@@ -102,8 +102,10 @@ const DGrades =()=> {
         <div className="header-and-breadcrumbs">
         <Header />
         <Breadcrumbs />
+        <HelpIcon/>
         </div>
         <BackToTop/>
+        
         <div className="two-columns-dgrade">
             <div className="column-1-dgrade">
                     <div className="row-dgrade">

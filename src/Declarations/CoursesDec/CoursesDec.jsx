@@ -17,7 +17,7 @@ import DialogActions from '@mui/material/DialogActions';
 import Alert from '@mui/material/Alert';
 import Breadcrumbs from '../../Breadcrumbs/Breadcrumbs';
 import BackToTop from '../../BackToTop/BackToTop';
-
+import HelpIcon from '../../HelpIcon/HelpIcon';
 
 function createData(subject, id, professor,  type,points,declare) {
     return {subject, id, professor,  type,points,declare};
@@ -162,6 +162,7 @@ const CoursesDec=()=>{
             <Header/>
             <Breadcrumbs/>
             <BackToTop/>
+            <HelpIcon/>
             <div className="row-coursesdec-title">
                 <div className='row-coursesdec-title-col1' style={{flex:'33%'}}>
                 <h2>Δήλωση Μαθημάτων</h2>    

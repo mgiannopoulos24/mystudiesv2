@@ -86,7 +86,7 @@ export const ProfileProf =()=>{
         <HeaderProf/>
         <Breadcrumbs/>
         <div className='row-header-profprof'>
-            <h2>Το προφίλ μου</h2><span style={{marginLeft:"83%",alignItems:"center",marginTop:"10px"}}><SettingsIcon onClick={handleClick} sx={{fontSize:"30px"}}/></span>
+            <h2>Το προφίλ μου</h2><span style={{marginLeft:"83%",alignItems:"center",marginTop:"10px"}}><SettingsIcon onClick={handleClick} sx={{fontSize:"30px",cursor:"pointer"}}/></span>
             <Popover
                     id={id}
                     open={open}

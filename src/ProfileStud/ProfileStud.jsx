@@ -9,6 +9,7 @@ import Popover from '@mui/material/Popover';
 import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
 import ClickAwayListener from '@mui/material/ClickAwayListener';
+import HelpIcon from '../HelpIcon/HelpIcon';
 
 export const ProfileStud =()=>{
     const [newUserImg, setNewUserImg] = useState(user_img_default);
@@ -85,8 +86,9 @@ export const ProfileStud =()=>{
         <>
         <Header/>
         <Breadcrumbs/>
+        <HelpIcon/>
         <div className='row-header'>
-            <h2>Το προφίλ μου</h2><span style={{marginLeft:"83%",alignItems:"center",marginTop:"10px"}}><SettingsIcon onClick={handleClick} sx={{fontSize:"30px"}}/></span>
+            <h2>Το προφίλ μου</h2><span style={{marginLeft:"83%",alignItems:"center",marginTop:"10px"}}><SettingsIcon onClick={handleClick} sx={{fontSize:"30px",cursor:"pointer"}}/></span>
             <Popover
                     id={id}
                     open={open}

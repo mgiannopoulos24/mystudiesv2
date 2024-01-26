@@ -10,6 +10,7 @@ import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 import BackToTop from "../BackToTop/BackToTop";
+import HelpIcon from "../HelpIcon/HelpIcon";
 
 const MainStud = () =>{
     const AllCourses = 'https://www.di.uoa.gr/studies/undergraduate/courses';
@@ -18,6 +19,7 @@ const MainStud = () =>{
         <Header/>
         <Breadcrumbs/>
         <BackToTop/>
+        <HelpIcon/>
         <div className="row-header">
             <img src={user_img} alt="user"/><span><h2>Αρχική Σελίδα</h2></span>
         </div>

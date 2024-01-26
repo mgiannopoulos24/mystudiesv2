@@ -8,6 +8,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import FlagOutlinedIcon from '@mui/icons-material/FlagOutlined';
 import Breadcrumbs from "../../Breadcrumbs/Breadcrumbs";
 import BackToTop from "../../BackToTop/BackToTop";
+import HelpIcon from '../../HelpIcon/HelpIcon';
 
 const RGrades=()=>{
     return(
@@ -15,6 +16,7 @@ const RGrades=()=>{
         <Header/>
         <Breadcrumbs/>
         <BackToTop/>
+        <HelpIcon/>
         <div className="two-columns-rgrade">
             <div className="column-1-rgrade">
                 <div className="row-rgrade">

@@ -21,6 +21,7 @@ import FileDownloadOffIcon from '@mui/icons-material/FileDownloadOff';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import IconButton from '@mui/material/IconButton';
 import Alert from '@mui/material/Alert';
+import HelpIcon from '../HelpIcon/HelpIcon';
 
 const Requests=()=>{
     const [selectedOption, setSelectedOption] = useState("All");
@@ -231,6 +232,7 @@ const Requests=()=>{
         <>
         <Header/>
         <Breadcrumbs/>
+        <HelpIcon/>
         <div className="row-requests">
             <h2>Αιτήσεις προς την Γραμματεία</h2><span style={{marginRight:"30px",marginTop:"5px"}}><Button variant="contained" color="success" sx={{textTransform:"none",fontSize:16}} onClick={handleNewRequestClick}>Νέα αίτηση</Button></span>
         </div>

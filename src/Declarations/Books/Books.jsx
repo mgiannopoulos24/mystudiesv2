@@ -8,7 +8,7 @@ import  book1 from "./assets/book1.jpg"
 import book2 from "./assets/book2.jpg"
 import "./Books.css"
 import BackToTop from "../../BackToTop/BackToTop";
-
+import HelpIcon from '../../HelpIcon/HelpIcon';
 
 
 
@@ -25,6 +25,7 @@ const Books=()=>{
         <Header/>
         <Breadcrumbs/>
         <BackToTop/>
+        <HelpIcon/>
         <div className="row-books-title">
             <h2>Συγγράμματα</h2>
         </div>
