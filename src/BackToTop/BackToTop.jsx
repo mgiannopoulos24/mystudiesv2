@@ -31,7 +31,7 @@ const BackToTop = () => {
   return (
     <div className={`back-to-top ${isVisible ? "visible" : "hidden"}`}>
       <Button onClick={scrollToTop} color="primary" variant="contained" sx={{ borderRadius: "100%", width: "10px", height: "60px", backgroundColor: 'rgba(33, 150, 243, 0.8)' }}>
-        <ArrowUpwardIcon sx={{fontSize:"small"}}/>
+        <ArrowUpwardIcon sx={{fontSize:"xlarge"}}/>
       </Button>
     </div>
   );
