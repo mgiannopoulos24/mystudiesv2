@@ -15,7 +15,7 @@ import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 import  TextField  from "@mui/material/TextField";
 import Alert from "@mui/material/Alert";
-
+import UploadContent from "../../UploadContent/UploadContent";
 
 function createData(id, name, surname, semester, grade) {
     return { id, name, surname, semester,  grade};
@@ -97,8 +97,13 @@ const OpenScoreGraphics=()=>{
                     <strong className="prof-pending">Σε εκκρεμότητα</strong>
                 </div>
                 <div className="status-graphics-col-2">
-                    <Button variant='outlined' color="success" sx={{textTransform:"none", marginRight:'10px'}} onClick={handleTemporarySave}>Προσωρινή Αποθήκευση</Button>
-                    <Button variant="contained" color="success" sx={{textTransform:"none"}}  onClick={handleSave}>Οριστική Αποθήκευση</Button>
+                    <div className="status-graphics-col-2-row-1">
+                        <Button variant='outlined' color="success" sx={{textTransform:"none", marginRight:'10px'}} onClick={handleTemporarySave}>Προσωρινή Αποθήκευση</Button>
+                        <Button variant="contained" color="success" sx={{textTransform:"none"}}  onClick={handleSave}>Οριστική Αποθήκευση</Button>
+                    </div><br></br>           
+                    <div className="status-graphics-col-2-row-2">
+                        <h4 style={{padding:0,margin:0}}>Μαζική εισαγωγή βαθμών:</h4><span><UploadContent /></span>
+                    </div>     
                 </div>
             </div><br></br>
             <div className="students-graphics">
