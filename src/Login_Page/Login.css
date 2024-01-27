@@ -58,11 +58,10 @@
   display: flex;
   flex:50%;
   align-items: center;
+  justify-content: flex-end;
 }
 
-.column-4 div{
-  flex:25%
-}
+
 
 .row-2 ul{
   width: 400px;

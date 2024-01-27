@@ -63,7 +63,7 @@ const Login_Form=({onLoginSuccess})=>{
                 </div>
                 <br></br>
                 <div className="row-forgotten" style={{ marginTop: "10px", fontSize: "12px", marginRight: "250px" }}>
-                    <a href="http://www.noc.uoa.gr/diaxeirish-logariasmoy.html" style={{ color: "inherit"}}>Ξεχάσατε τον κωδικό σας;</a>
+                    <a href="http://www.noc.uoa.gr/diaxeirish-logariasmoy.html" target="_blank" rel="noreferrer" style={{ color: "inherit"}}>Ξεχάσατε τον κωδικό σας;</a>
                 </div>
                 <div className="row-submit" style={{marginTop:"30px"}}>
                     <Button variant= "contained" color="success" type="submit" sx={{textTransform:"none"}}>Είσοδος</Button>

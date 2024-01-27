@@ -1,9 +1,10 @@
 import "./Login.css"
 import ekpa_logo from "./assets/ekpa-logo.png"
 import Button from '@mui/material/Button';
-import digi_conv from "./assets/digital-convergence_111x30.jpg"
-import espa_img from "./assets/espa52x30.jpg"
-import eu_img from "./assets/eu-erdf_113x30.jpg"
+import gr_flag from "./assets/GR_FLAG.png"
+import greece_img from "./assets/EU_Greece.png"
+import papaki_img from "./assets/papaki.png"
+import eu_img from "./assets/EU_FLAG.png"
 import Login_Form from "./Login_Form/Login_Form";
 import { useState} from "react";
 import Signup_Form from "./Signup_Form/Signup_Form";
@@ -29,7 +30,6 @@ const Login =() => {
         <>
         <div className={`Page ${showLoginForm ? 'form-visible' : ''}`}>
         <div className="nav-bar">
-            <a href=""><h2>en</h2></a>
         </div>
         <div className="row-1">
             <div className="column-1">
@@ -96,10 +96,10 @@ const Login =() => {
                 και κατά 25% από το Ελληνικό Δημόσιο.</p>
             </div>
             <div className="column-4">
-                <div><img src={espa_img} alt="espa"/></div>
-                <div><img src={digi_conv} alt="digi-conv"/></div>
-                <div><img src={eu_img} alt="european-union"/></div>
-                <div></div>
+                <img src={greece_img} alt="greece_img"/>
+                <img src={gr_flag} alt="gr_flag"/>
+                <img src={papaki_img} alt="papaki"/>
+                <img src={eu_img} alt="eu"/>
 
             </div>
         </div>
