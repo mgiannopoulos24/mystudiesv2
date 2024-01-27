@@ -15,6 +15,7 @@ import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 import  TextField  from "@mui/material/TextField";
 import Alert from "@mui/material/Alert";
+import HelpIconProf from "../../HelpIcon/HelpIconProf";
 
 function createData(id, name, surname, semester, grade) {
     return { id, name, surname, semester, grade };
@@ -72,6 +73,7 @@ const SubmittedScoreArch=()=>{
         
         <HeaderProf/>
         <Breadcrumbs/>
+        <HelpIconProf/>
         <div className="row-arch">
             <h2>Αρχιτεκτονική ΙΙ</h2>
         </div>

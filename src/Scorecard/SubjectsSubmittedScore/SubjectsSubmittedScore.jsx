@@ -9,7 +9,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import { purple } from '@mui/material/colors';
 import { styled } from '@mui/material/styles';
 import { Link } from "react-router-dom";
-
+import HelpIconProf from "../../HelpIcon/HelpIconProf";
 
 const ColorButton = styled(Button)(({ theme }) => ({
     color: theme.palette.getContrastText(purple[500]),
@@ -25,6 +25,7 @@ const SubjectsSubmittedScore=()=>{
         <>
             <HeaderProf/>
             <Breadcrumbs/>
+            <HelpIconProf/>
             <div className="subsubm-title">
                 <h2>Παρακολούθηση Βαθμολογίου</h2>
             </div>

@@ -16,6 +16,7 @@ import { styled } from '@mui/material/styles';
 import  TextField  from "@mui/material/TextField";
 import Alert from "@mui/material/Alert";
 import UploadContent from "../../UploadContent/UploadContent";
+import HelpIconProf from "../../HelpIcon/HelpIconProf";
 
 function createData(id, name, surname, semester, grade) {
     return { id, name, surname, semester,  grade};
@@ -78,6 +79,7 @@ const OpenScoreCompilers=()=>{
         
         <HeaderProf/>
         <Breadcrumbs/>
+        <HelpIconProf/>
         <div className="row-compilers">
             <h2>Μεταγλωττιστές</h2>
         </div>

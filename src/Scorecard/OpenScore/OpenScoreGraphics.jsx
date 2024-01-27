@@ -16,6 +16,7 @@ import { styled } from '@mui/material/styles';
 import  TextField  from "@mui/material/TextField";
 import Alert from "@mui/material/Alert";
 import UploadContent from "../../UploadContent/UploadContent";
+import HelpIconProf from "../../HelpIcon/HelpIconProf";
 
 function createData(id, name, surname, semester, grade) {
     return { id, name, surname, semester,  grade};
@@ -77,6 +78,7 @@ const OpenScoreGraphics=()=>{
         
         <HeaderProf/>
         <Breadcrumbs/>
+        <HelpIconProf/>
         <div className="row-graphics">
             <h2>Γραφικά</h2>
         </div>

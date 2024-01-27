@@ -10,6 +10,7 @@ import { purple } from '@mui/material/colors';
 import { styled } from '@mui/material/styles';
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs";
 import { Link } from "react-router-dom";
+import HelpIconProf from "../HelpIcon/HelpIconProf";
 
 const ColorButton = styled(Button)(({ theme }) => ({
     color: theme.palette.getContrastText(purple[500]),
@@ -26,6 +27,7 @@ const MainProf=()=>{
         <>
         <HeaderProf/>
         <Breadcrumbs/>
+        <HelpIconProf/>
         <div className="row-prof">
             <h2>Αρχική Σελίδα</h2>
         </div>
