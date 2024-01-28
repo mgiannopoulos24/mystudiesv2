@@ -21,11 +21,7 @@ function createData(id, name, surname, semester, grade) {
     return { id, name, surname, semester, grade };
   }
 
-const rows = [
-    createData(111520230099, "Μαγδαληνή", "Λύτρα", 8, 3),
-    createData(111520230100, "Έλλη", "Θεολόγα", 8, 10),
-    
-];
+
 
 
   
@@ -59,6 +55,12 @@ const SubmittedScoreArch=()=>{
         }, 2000);
     };
 
+    const [rows,setRows] = useState([
+        createData(111520230099, "Μαγδαληνή", "Λύτρα", 8, 3),
+        createData(111520230100, "Έλλη", "Θεολόγα", 8, 10),
+        
+    ]);
+    
     const handleTemporarySave = () => {
 
         // Display success message
@@ -68,6 +70,14 @@ const SubmittedScoreArch=()=>{
         }, 2000);
     }
     
+    const updateGrade = (rowId, newValue) => {
+        setRows((prevRows) =>
+          prevRows.map((row) =>
+            row.id === rowId ? { ...row, grade: newValue } : row
+          )
+        );
+      };
+
     return(
         <>
         
@@ -131,7 +141,12 @@ const SubmittedScoreArch=()=>{
                             size="small" 
                             sx={{width:"80px",height:"45px"}}  
                             disabled={disableTextboxes} 
-                            value={row.grade !== null ? row.grade : ""}                   
+                            value={row.grade !== null ? row.grade : ""}   
+                            onChange={(e) => {
+                                const newValue = e.target.value;
+                                
+                                updateGrade(row.id, newValue);
+                            }}                
                             />
                             </TableCell>
                         </TableRow>
