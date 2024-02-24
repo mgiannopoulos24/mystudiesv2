@@ -18,3 +18,10 @@
 1. [React Beginner Tutorial](https://www.youtube.com/watch?v=Rh3tobg7hEo)
 2. [UI Components](https://mui.com/material-ui/)
 3. [Firebase Auth](https://www.youtube.com/watch?v=Vv_Oi7zPPTw)
+
+## Εγκατάσταση
+
+1. `git clone https://github.com/mgiannopoulos24/mystudiesv2.git`.
+2. `cd mystudiesv2`
+3. `npm install`
+4. `npm start`
