@@ -1,5 +1,12 @@
 # My Studies 
-### Human Computer Interaction 2023-24 | DIT
+### Human Computer Interaction Course 2023-24 | DIT
+
+<p align="center">
+
+<img src="https://i.imgur.com/VSKZ3Mg.png">
+
+</p>
+
 ### Περιγραφή
 
 Υλοποίηση επανασχεδιασμού της ιστοσελίδας My Studies του ΕΚΠΑ.
